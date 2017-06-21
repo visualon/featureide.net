@@ -22,7 +22,9 @@
   <ItemGroup>
     <None Include=".gitignore" />
     <None Include="de.ovgu.featureide.fm.jar" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="build.ps1" />
@@ -32,17 +34,17 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="org.sat4j.core">
-      <HintPath>packages\org.sat4j.core.2.3.5-rc04\lib\net20\org.sat4j.core.dll</HintPath>
+      <HintPath>packages\org.sat4j.core.2.3.5\lib\net20\org.sat4j.core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="org.sat4j.pb">
-      <HintPath>packages\org.sat4j.pb.2.3.5-rc04\lib\net20\org.sat4j.pb.dll</HintPath>
+      <HintPath>packages\org.sat4j.pb.2.3.5\lib\net20\org.sat4j.pb.dll</HintPath>
       <Private>True</Private>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
   </ItemGroup>
   <Target Name="Build">
     <MakeDir Directories="$(OutputPath)" Condition="!Exists('$(OutputPath)')" />
