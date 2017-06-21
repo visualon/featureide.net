@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>de.ovgu.featureide.fm</id>
+        <version>$version$</version>
+        <title>FeatureIDE</title>
+        <authors>Michael Kriese</authors>
+        <owners>VisualOn GmbH</owners>
+        <licenseUrl>https://github.com/FeatureIDE/FeatureIDE/blob/develop/plugins/de.ovgu.featureide.fm.core/license.txt</licenseUrl>
+        <projectUrl>https://github.com/FeatureIDE/FeatureIDE/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>
+            An extensible framework for feature-oriented software development
+
+            This is the IKVM version; which is to say that this is compiled from Java to .NET
+        </description>
+        <releaseNotes></releaseNotes>
+        <tags>IKVM.NET Java .NET SAT</tags>
+        <dependencies>
+            <dependency id="IKVM" version="8.1.5717.0" />
+        </dependencies>
+    </metadata>
+</package>
