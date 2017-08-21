@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## 3.3.0 - 2017-08-21
+## [3.3.0] - 2017-08-21
 ### Changed
 - Updated FeatureIDE library to version 3.3.0
 
@@ -14,5 +14,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial release based on FeatureIDE library 3.2.0
 
-[Unreleased]: https://github.com/ViceIce/unity.wcf/compare/v3.3.0...HEAD
-[3.3.0]: https://github.com/ViceIce/unity.wcf/compare/v3.2.0...v3.3.0
+[Unreleased]: https://github.com/VisualOn/FeatureIDE.net/compare/v3.3.0...HEAD
+[3.3.0]: https://github.com/VisualOn/FeatureIDE.net/compare/v3.2.0...v3.3.0
