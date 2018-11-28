@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- Updated FeatureIDE library to version 3.5.2
 
 ## [3.3.0] - 2017-08-21
 ### Changed
