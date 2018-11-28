@@ -1,7 +1,7 @@
 ﻿param(
 
     [string] $ikvmc = "c:\tools\ikvm-8.1.5717.0\bin\ikvmc.exe",
-    [string] $version = "3.3.0",
+    [string] $version = "3.5.2",
     [string] $assemblyversion = "3.0.0",
     [string] $pre = $null
 )
