@@ -6,8 +6,9 @@
         <title>FeatureIDE</title>
         <authors>Michael Kriese</authors>
         <owners>VisualOn GmbH</owners>
-        <licenseUrl>https://github.com/FeatureIDE/FeatureIDE/blob/develop/plugins/de.ovgu.featureide.fm.core/license.txt</licenseUrl>
+        <license type="expression">GPL-3.0</license>
         <projectUrl>https://github.com/FeatureIDE/FeatureIDE/</projectUrl>
+        <repository type="git" url="https://github.com/VisualOn/FeatureIDE.net" />
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>
             An extensible framework for feature-oriented software development
