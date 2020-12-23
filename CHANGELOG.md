@@ -11,7 +11,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Updated nuspec file.
 - Updated FeatureIDE library to version 3.5.5
-- Update Sat4j to 2.3.6
 
 ## [3.5.2] - 2018-11-28
 ### Changed

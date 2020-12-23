@@ -34,11 +34,11 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="org.sat4j.core">
-      <HintPath>packages\org.sat4j.core.2.3.6\lib\net20\org.sat4j.core.dll</HintPath>
+      <HintPath>packages\org.sat4j.core.2.3.5\lib\net20\org.sat4j.core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="org.sat4j.pb">
-      <HintPath>packages\org.sat4j.pb.2.3.6\lib\net20\org.sat4j.pb.dll</HintPath>
+      <HintPath>packages\org.sat4j.pb.2.3.5\lib\net20\org.sat4j.pb.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
