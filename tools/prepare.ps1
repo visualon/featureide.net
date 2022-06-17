@@ -3,7 +3,7 @@
 $ErrorActionPreference = 'Stop';
 
 # renovate: datasource=github-releases depName=IKVM packageName=ikvm-revived/ikvm
-$IKVM_VERSION = "8.2.0-prerelease.392"
+$IKVM_VERSION = "8.2.0-prerelease.809"
 
 
 function install-ikvm {
