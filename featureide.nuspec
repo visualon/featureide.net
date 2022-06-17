@@ -1,24 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
-    <metadata minClientVersion="2.12">
-        <id>de.ovgu.featureide.fm</id>
-        <version>$version$</version>
-        <title>FeatureIDE</title>
-        <authors>Michael Kriese</authors>
-        <owners>VisualOn GmbH</owners>
-        <license type="expression">LGPL-3.0-only</license>
-        <projectUrl>https://featureide.github.io</projectUrl>
-        <repository type="git" url="https://github.com/visualon/featureide.net" />
-        <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>
-            An extensible framework for feature-oriented software development
+  <metadata minClientVersion="4.3">
+    <id>de.ovgu.featureide.fm</id>
+    <version>$version$</version>
+    <title>FeatureIDE</title>
+    <authors>Michael Kriese</authors>
+    <owners>VisualOn GmbH</owners>
+    <license type="expression">LGPL-3.0-only</license>
+    <projectUrl>https://featureide.github.io</projectUrl>
+    <repository type="git" url="https://github.com/visualon/featureide.net" />
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+        An extensible framework for feature-oriented software development
 
-            This is the IKVM version; which is to say that this is compiled from Java to .NET
-        </description>
-        <releaseNotes></releaseNotes>
-        <tags>IKVM.NET Java .NET SAT</tags>
-        <dependencies>
-            <dependency id="IKVM" version="8.1.5717.0" />
-        </dependencies>
-    </metadata>
+        This is the IKVM version; which is to say that this is compiled from Java to .NET
+    </description>
+    <releaseNotes></releaseNotes>
+    <tags>IKVM.NET Java .NET SAT</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.1">
+        <dependency id="IKVM" version="8.2.0-prerelease0911" />
+        <dependency id="org.sat4j.core" version="$sat4jversion$" />
+        <dependency id="org.sat4j.pb" version="$sat4jversion$" />
+      </group>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="IKVM" version="8.2.0-prerelease0911" />
+        <dependency id="org.sat4j.core" version="$sat4jversion$" />
+        <dependency id="org.sat4j.pb" version="$sat4jversion$" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\**\de.ovgu.featureide.fm.dll" target="lib" />
+  </files>
 </package>
