@@ -7,7 +7,7 @@ param(
 )
 
 # renovate: datasource=github-releases depName=featureide packageName=FeatureIDE/FeatureIDE
-$FEATUREIDE_VERSION = "3.3.0"
+$FEATUREIDE_VERSION = "v3.3.2"
 # renovate: datasource=nuget depName=org.sat4j.pb
 $SAT4J_VERSION = "2.3.600-beta.1"
 
