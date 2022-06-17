@@ -3,7 +3,7 @@
 $ErrorActionPreference = 'Stop';
 
 # renovate: datasource=github-releases depName=IKVM packageName=ikvm-revived/ikvm
-$IKVM_VERSION="8.2.0-prerelease.392"
+$IKVM_VERSION = "8.2.0-prerelease.392"
 
 
 function install-ikvm {
@@ -19,13 +19,13 @@ function install-ikvm {
   $file = "$env:TEMP/ikvm-${IKVM_VERSION}-${tfm}-${platform}.zip"
   $target = "./tools/ikvm/${tfm}"
 
-  if (Test-Path $target){
+  if (Test-Path $target) {
     Remove-Item $target -Recurse -Force
   }
 
   New-Item $target -ItemType Directory -Force | Out-Null
 
-  if (!(Test-Path $file)){
+  if (!(Test-Path $file)) {
     Invoke-WebRequest $url -OutFile $file
   }
 

@@ -1,6 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "local>visualon/renovate-config"
+  "extends": ["local>visualon/renovate-config"],
+  "packageRules": [
+    {
+      "description": "Don't automerge until we've good tests",
+      "matchPackageNames": ["IKVM", "sat4j"],
+      "matchPackagePrefixes": ["org.sat4j."],
+      "automerge": false
+    }
   ]
 }
