@@ -3,10 +3,11 @@
 param(
   [Parameter()]
   [string]
-  # renovate: datasource=github-releases depName=featureide packageName=FeatureIDE/FeatureIDE
-  $version = "3.3.0"
+  $version = $null
 )
 
+# renovate: datasource=github-releases depName=featureide packageName=FeatureIDE/FeatureIDE
+$FEATUREIDE_VERSION = "3.3.0"
 # renovate: datasource=nuget depName=org.sat4j.pb
 $SAT4J_VERSION = "2.3.600-beta.1"
 
@@ -14,10 +15,18 @@ $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
 $PSDefaultParameterValues['*:ErrorAction'] = 'Stop'
 
+if ($null -eq $version) {
+  $version = $SAT4J_VERSION
+}
+
 $target = "bin"
 
 if ($env:GITHUB_REF_TYPE -eq 'tag' ) {
   $version = $env:GITHUB_REF_NAME
+}
+
+if ($null -eq $version) {
+  $version = $FEATUREIDE_VERSION
 }
 
 # trim leading v
