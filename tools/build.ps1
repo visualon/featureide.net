@@ -3,7 +3,7 @@
 param(
   [Parameter()]
   [string]
-  $version = $null
+  $version
 )
 
 # renovate: datasource=github-releases depName=featureide packageName=FeatureIDE/FeatureIDE
@@ -15,17 +15,13 @@ $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
 $PSDefaultParameterValues['*:ErrorAction'] = 'Stop'
 
-if ($null -eq $version) {
-  $version = $SAT4J_VERSION
-}
-
 $target = "bin"
 
 if ($env:GITHUB_REF_TYPE -eq 'tag' ) {
   $version = $env:GITHUB_REF_NAME
 }
 
-if ($null -eq $version) {
+if (!$version) {
   $version = $FEATUREIDE_VERSION
 }
 
