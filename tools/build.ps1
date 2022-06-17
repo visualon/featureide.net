@@ -62,7 +62,7 @@ function get-jar {
   $file = "$env:TEMP/${name}-${jarVersion}.jar"
   if (!(Test-Path $file)) {
     $uri = "$baseUri/v$jarVersion/$name-v$jarVersion.jar"
-    if ($jarVersion -eq "3.3.0") {
+    if ($name -eq "de.ovgu.featureide.fm") {
       $uri = $uri -replace "de.ovgu.featureide.fm", "de.ovgu.featureide.lib.fm"
     }
     Invoke-WebRequest -URI $uri -OutFile $file
