@@ -3,10 +3,6 @@ name: build
 on:
   push:
 
-env:
-  DRY_RUN: ${{ github.ref != 'refs/heads/master' }}
-
-
 jobs:
   build:
     runs-on: windows-latest
@@ -16,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2.3.4
 
       - name: prepare
-        run: cinst ikvm --version 8.1.5717.20170308
+        run: pwsh ./tools/prepare.ps1
 
       - name: build
         run: pwsh ./build.ps1
@@ -26,9 +22,19 @@ jobs:
           name: packages
           path: bin/*.nupkg
 
-      # - name: deploy
-      #   if: ${{ startsWith( github.ref, 'refs/tags/' }}
-      #   run: nuget push -SkipDuplicate -Source https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json ${{ github.token }} *.nupkg
-      #   working-directory: bin
+      - name: deploy github.com
+        if: ${{ github.ref_type == 'tag' }}
+        run: find bin -name '*.nupkg' -exec dotnet nuget push {} -s $NUGET_SOURCE -k $NUGET_KEY --skip-duplicate --force-english-output \;
+        shell: bash
+        env:
+          NUGET_SOURCE: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
+          NUGET_KEY: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: deploy nuget.org
+        if: ${{ github.ref_type == 'tag' }}
+        run: find bin -name '*.nupkg' -exec dotnet nuget push {} -s $NUGET_SOURCE -k $NUGET_KEY --skip-duplicate --force-english-output \;
+        shell: bash
+        env:
+          NUGET_SOURCE: https://api.nuget.org/v3/index.json
+          NUGET_KEY: ${{ secrets.NUGET_API_KEY }}
 
