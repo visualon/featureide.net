@@ -1,7 +1,10 @@
 #Requires -Version 5.1
 
 param(
-  [string] $version = "3.3.0"
+  [Parameter()]
+  [string]
+  # renovate: datasource=github-releases depName=featureide packageName=FeatureIDE/FeatureIDE
+  $version = "3.3.0"
 )
 
 # renovate: datasource=nuget depName=org.sat4j.pb
