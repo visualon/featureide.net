@@ -19,7 +19,7 @@ jobs:
         shell: pwsh
         run: ./tools/build.ps1
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@97b7dace6c8d860ce9708aba808be6a2ee4cbc3a # tag=v2.0.1
         with:
           name: packages
           path: bin/*.nupkg
