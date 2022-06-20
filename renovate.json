@@ -7,6 +7,11 @@
       "matchPackageNames": ["IKVM", "sat4j", "featureide"],
       "matchPackagePrefixes": ["org.sat4j."],
       "automerge": false
+    },
+    {
+      "description": "Group sat4j updates",
+      "matchSourceUrls": ["https://github.com/visualon/sat4j.net"],
+      "groupName": "Sat4j packages"
     }
   ]
 }
