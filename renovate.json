@@ -12,6 +12,26 @@
       "description": "Group sat4j updates",
       "matchSourceUrls": ["https://github.com/visualon/sat4j.net"],
       "groupName": "Sat4j packages"
+    },
+    {
+      "description": "Automerge test deps",
+      "matchSourceUrls": [
+        "https://github.com/adamralph/minver",
+        "https://github.com/dotnet/sourcelink",
+        "https://github.com/dotnet/roslyn-analyzers",
+        "https://github.com/DotNetAnalyzers/StyleCopAnalyzers",
+        "https://togithub.com/fluffynuts/NExpect",
+        "https://github.com/microsoft/vstest",
+        "https://github.com/Microsoft/MSBuildSdks",
+        "https://github.com/theramis/Snapper",
+        "https://nsubstitute.github.io/"
+      ],
+      "automerge": "true"
+    },
+    {
+      "description": "Automerge test deps",
+      "matchSourceUrlPrefixes": ["https://github.com/nsubstitute/", "https://github.com/nunit/"],
+      "automerge": "true"
     }
   ]
 }
