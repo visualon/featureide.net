@@ -1,3 +1,4 @@
+using org.prop4j;
 using de.ovgu.featureide.fm.core.@base;
 using de.ovgu.featureide.fm.core.@base.impl;
 using de.ovgu.featureide.fm.core.configuration;
@@ -34,6 +35,15 @@ namespace de.ovgu.featureide.fm.test
       {
         yield return (T)it.next();
       }
+    }
+
+    public static IConstraint Add(this IFeatureModel @this, Node rule)
+    {
+      var res = FACTORY.createConstraint(@this, rule);
+
+      @this.addConstraint(res);
+
+      return res;
     }
   }
 }
