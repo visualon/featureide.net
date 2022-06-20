@@ -20,21 +20,21 @@
       },
       "org.sat4j.core": {
         "type": "Direct",
-        "requested": "[2.3.600-beta.1, )",
-        "resolved": "2.3.600-beta.1",
-        "contentHash": "8eG+DWc+B4c0GC0Fsg+JP8rg8Mv9GaBIP5kx3X+s1qI7W9kDtLpSz2g7AwJqa1AXYtHvr2CDsjXu/hsDOgL/ug==",
+        "requested": "[2.3.600, )",
+        "resolved": "2.3.600",
+        "contentHash": "WiknXQWG6DeawcUtbe2ZZ7vFv4IXMDnTx8kXikLMyxXquut0tRGn3FNK5vADuLPvWXg9OTx14cCyiOXkSDymPg==",
         "dependencies": {
           "IKVM": "8.2.0-prerelease0911"
         }
       },
       "org.sat4j.pb": {
         "type": "Direct",
-        "requested": "[2.3.600-beta.1, )",
-        "resolved": "2.3.600-beta.1",
-        "contentHash": "7IAinfw12xLthJc8/yRtN3Adv+LiFg6URUDOyiDR/fxOh5GzgP3/xDsb5BoHCTGZPUfVrby5cGx7G4+jvLvzfg==",
+        "requested": "[2.3.600, )",
+        "resolved": "2.3.600",
+        "contentHash": "AilLqSM8DFgH31qpkfHs8EWrERibrJPMKRweCYzK8XgE4jnrNiDTPrhHcFX5VLVipAiZinKeIy9pnQujupR0Mw==",
         "dependencies": {
           "IKVM": "8.2.0-prerelease0911",
-          "org.sat4j.core": "2.3.600-beta.1"
+          "org.sat4j.core": "2.3.600"
         }
       },
       "Microsoft.Build.Tasks.Git": {
@@ -478,21 +478,21 @@
       },
       "org.sat4j.core": {
         "type": "Direct",
-        "requested": "[2.3.600-beta.1, )",
-        "resolved": "2.3.600-beta.1",
-        "contentHash": "8eG+DWc+B4c0GC0Fsg+JP8rg8Mv9GaBIP5kx3X+s1qI7W9kDtLpSz2g7AwJqa1AXYtHvr2CDsjXu/hsDOgL/ug==",
+        "requested": "[2.3.600, )",
+        "resolved": "2.3.600",
+        "contentHash": "WiknXQWG6DeawcUtbe2ZZ7vFv4IXMDnTx8kXikLMyxXquut0tRGn3FNK5vADuLPvWXg9OTx14cCyiOXkSDymPg==",
         "dependencies": {
           "IKVM": "8.2.0-prerelease0911"
         }
       },
       "org.sat4j.pb": {
         "type": "Direct",
-        "requested": "[2.3.600-beta.1, )",
-        "resolved": "2.3.600-beta.1",
-        "contentHash": "7IAinfw12xLthJc8/yRtN3Adv+LiFg6URUDOyiDR/fxOh5GzgP3/xDsb5BoHCTGZPUfVrby5cGx7G4+jvLvzfg==",
+        "requested": "[2.3.600, )",
+        "resolved": "2.3.600",
+        "contentHash": "AilLqSM8DFgH31qpkfHs8EWrERibrJPMKRweCYzK8XgE4jnrNiDTPrhHcFX5VLVipAiZinKeIy9pnQujupR0Mw==",
         "dependencies": {
           "IKVM": "8.2.0-prerelease0911",
-          "org.sat4j.core": "2.3.600-beta.1"
+          "org.sat4j.core": "2.3.600"
         }
       },
       "Microsoft.Build.Tasks.Git": {

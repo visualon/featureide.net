@@ -13,8 +13,8 @@
 
   <ItemGroup>
     <PackageVersion Include="IKVM" Version="8.2.0-prerelease0911" />
-    <PackageVersion Include="org.sat4j.core" Version="2.3.600-beta.1" />
-    <PackageVersion Include="org.sat4j.pb" Version="2.3.600-beta.1" />
+    <PackageVersion Include="org.sat4j.core" Version="2.3.600" />
+    <PackageVersion Include="org.sat4j.pb" Version="2.3.600" />
   </ItemGroup>
 
   <ItemGroup>
