@@ -1,4 +1,7 @@
-/bin
+bin/
+obj/
 /packages
 *.jar
 /tools/ikvm
+/.vs
+TestResults/

@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.Build.NoTargets">
+
+  <PropertyGroup>
+    <TargetFrameworks>net461;netcoreapp3.1</TargetFrameworks>
+    <Product>FeatureIDE</Product>
+    <Copyright>© VisualOn GmbH $([System.DateTime]::Now.ToString("yyyy"))</Copyright>
+    <Authors>VisualOn GmbH</Authors>
+    <Company>VisualOn GmbH</Company>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeBuildOutput>true</IncludeBuildOutput>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="org.sat4j.core" GeneratePathProperty="true" />
+    <PackageReference Include="org.sat4j.pb" GeneratePathProperty="true" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All"/>
+  </ItemGroup>
+
+  <Target Name="BuildAssemblies" BeforeTargets="AfterBuild">
+    <PropertyGroup>
+      <Args>-tfm $(TargetFramework)</Args>
+      <Args>$(Args) -sat4jcore $(Pkgorg_sat4j_core)/lib/$(TargetFramework)/org.sat4j.core.dll</Args>
+      <Args>$(Args) -sat4jpb $(Pkgorg_sat4j_pb)/lib/$(TargetFramework)/org.sat4j.pb.dll</Args>
+      <Args>$(Args) -configuration $(Configuration)</Args>
+      <Args>$(Args) -outdir $(BaseIntermediateOutputPath)</Args>
+    </PropertyGroup>
+    <Message Importance="high" Text="Args: $(Args)" />
+    <Message Importance="high" Text="AssemblyName: $(AssemblyName)" />
+    <Message Importance="high" Text="OutputPath: $(OutputPath)" />
+    <Exec Command="pwsh $(SolutionDir)/tools/build-assembly.ps1 $(Args)" />
+    <Copy DestinationFolder="$(OutputPath)" SourceFiles="$(BaseIntermediateOutputPath)$(Configuration)/$(TargetFramework)/$(AssemblyName).dll" />
+  </Target>
+</Project>

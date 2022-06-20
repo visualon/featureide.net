@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <RestoreLockedMode Condition="'$(CI)' == 'true'">true</RestoreLockedMode>
+    <DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder>
+    <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
+    <!-- TODO: fix me-->
+    <NoWarn>$(NoWarn);NU1507</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="IKVM" Version="8.2.0-prerelease0911" />
+    <PackageVersion Include="org.sat4j.core" Version="2.3.600-beta.1" />
+    <PackageVersion Include="org.sat4j.pb" Version="2.3.600-beta.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="6.0.0" />
+    <PackageVersion Include="Microsoft.CodeCoverage" Version="17.2.0" />
+    <PackageVersion Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+    <PackageVersion Include="MinVer" Version="4.0.0" />
+    <PackageVersion Include="NExpect" Version="1.0.266" />
+    <PackageVersion Include="NExpect.Matchers.NSubstitute" Version="1.0.266" />
+    <PackageVersion Include="NSubstitute" Version="4.3.0" />
+    <PackageVersion Include="NSubstitute.Analyzers.CSharp" Version="1.0.15" />
+    <PackageVersion Include="NUnit" Version="3.13.3" />
+    <PackageVersion Include="NUnit.Analyzers" Version="3.3.0" />
+    <PackageVersion Include="NUnit3TestAdapter" Version="4.2.1" />
+    <PackageVersion Include="Snapper" Version="2.3.2" />
+    <PackageVersion Include="Snapper.Nunit" Version="2.3.2" />
+    <PackageVersion Include="StyleCop.Analyzers" Version="1.2.0-beta.435" />
+  </ItemGroup>
+</Project>
