@@ -1,19 +1,45 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "featureide", "featureide.csproj", "{6183C948-9D0E-48BE-B883-EE92DB295185}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{23D1173E-D636-41E5-9B9D-2123BDD7A2FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "de.ovgu.featureide.fm", "src\de.ovgu.featureide.fm\de.ovgu.featureide.fm.csproj", "{8FBEE9FC-42B7-48CE-B5CF-35D0C1D21EE0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B95567D4-AA88-41AF-AA84-EC452AFE83AA}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{8F344BA8-EF69-42E0-84C6-9CA1128DAFE6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "de.ovgu.featureide.fm.test", "test\de.ovgu.featureide.fm.test\de.ovgu.featureide.fm.test.csproj", "{87431B37-B6C3-432D-800C-28D71357E020}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6183C948-9D0E-48BE-B883-EE92DB295185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6183C948-9D0E-48BE-B883-EE92DB295185}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FBEE9FC-42B7-48CE-B5CF-35D0C1D21EE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FBEE9FC-42B7-48CE-B5CF-35D0C1D21EE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FBEE9FC-42B7-48CE-B5CF-35D0C1D21EE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FBEE9FC-42B7-48CE-B5CF-35D0C1D21EE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87431B37-B6C3-432D-800C-28D71357E020}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87431B37-B6C3-432D-800C-28D71357E020}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87431B37-B6C3-432D-800C-28D71357E020}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87431B37-B6C3-432D-800C-28D71357E020}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8FBEE9FC-42B7-48CE-B5CF-35D0C1D21EE0} = {23D1173E-D636-41E5-9B9D-2123BDD7A2FB}
+		{87431B37-B6C3-432D-800C-28D71357E020} = {8F344BA8-EF69-42E0-84C6-9CA1128DAFE6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {320B3A9C-D860-4783-8A3D-31F69E3545DC}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net48;net6.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+
+    <FineCodeCoverage>
+      <Enabled>
+        True
+      </Enabled>
+      <RunMsCodeCoverage>true</RunMsCodeCoverage>
+      <!-- and more -->
+    </FineCodeCoverage>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="org.sat4j.core" GeneratePathProperty="true" />
+    <PackageReference Include="org.sat4j.pb" GeneratePathProperty="true" />
+    <PackageReference Include="IKVM" />
+    <PackageReference Include="Microsoft.CodeCoverage" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="NExpect" />
+    <PackageReference Include="NExpect.Matchers.NSubstitute" />
+    <PackageReference Include="NSubstitute" />
+    <PackageReference Include="NSubstitute.Analyzers.CSharp" />
+    <PackageReference Include="NUnit" />
+    <PackageReference Include="NUnit.Analyzers" />
+    <PackageReference Include="NUnit3TestAdapter" />
+
+    <Using Remove="System.Net.Http" />
+
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+    <Reference Include="..\..\bin\net461\de.ovgu.featureide.fm.dll" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <Reference Include="..\..\bin\netcoreapp3.1\de.ovgu.featureide.fm.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--<ProjectReference Include="..\..\src\de.ovgu.featureide.fm\de.ovgu.featureide.fm.csproj" />-->
+  </ItemGroup>
+
+  <Target Name="RemoveTestResults" BeforeTargets="Build;Clean">
+    <RemoveDir Directories="TestResults" Condition="Exists('TestResults')" />
+  </Target>
+
+</Project>

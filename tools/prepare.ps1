@@ -36,3 +36,6 @@ function install-ikvm {
 
 install-ikvm -tfm "net461" -platform "any"
 install-ikvm -tfm "netcoreapp3.1" -platform "win7-x64"
+
+
+dotnet restore

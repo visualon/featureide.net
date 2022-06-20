@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project>
+    <PropertyGroup>
+        <MinVerMinimumMajorMinor>2.0</MinVerMinimumMajorMinor>
+        <MinVerTagPrefix>v</MinVerTagPrefix>
+        <SolutionDir>$(MSBuildThisFileDirectory)/</SolutionDir>
+        <NoWarn>CA1014;CA1031;CA1065;CA1812;CA2225;SA0001;SA1404;SA1636;NU1701;$(NoWarn)</NoWarn>
+        <!-- Caused somehow by minver https://github.com/adamralph/minver/issues/754 -->
+        <NoWarn>CS7035;$(NoWarn)</NoWarn>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+        <LangVersion>latest</LangVersion>
+
+         <RunSettingsFilePath>$(MSBuildThisFileDirectory)\featureide.runsettings</RunSettingsFilePath> 
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- <AdditionalFiles Include="$(MSBuildThisFileDirectory)/.stylecop.json" link="stylecop.json" /> -->
+        <!-- <PackageReference Include="MinVer" PrivateAssets="All" /> -->
+        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" PrivateAssets="All" />
+        <!--<PackageReference Include="StyleCop.Analyzers" PrivateAssets="All" />-->
+    </ItemGroup>
+
+    <Target Name="_AfterMinVer" AfterTargets="MinVer">
+        <PropertyGroup>
+            <BUILD_NUMBER Condition="'$(BUILD_NUMBER)' == ''">0</BUILD_NUMBER>
+            <FileVersion>$(MinVerMajor).$(MinVerMinor).$(MinVerPatch).$(BUILD_NUMBER)</FileVersion>
+        </PropertyGroup>
+    </Target>
+</Project>
