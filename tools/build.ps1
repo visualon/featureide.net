@@ -9,7 +9,7 @@ param(
 # renovate: datasource=github-releases depName=featureide packageName=FeatureIDE/FeatureIDE
 $FEATUREIDE_VERSION = "3.3.0"
 # renovate: datasource=nuget depName=org.sat4j.pb
-$SAT4J_VERSION = "2.3.600-beta.1"
+$SAT4J_VERSION = "2.3.600"
 
 $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
