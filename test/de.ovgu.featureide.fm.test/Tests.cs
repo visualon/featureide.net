@@ -49,18 +49,22 @@ public class Tests
     formula.resetFormula();
     var config = new Configuration(formula);
     var cp = new ConfigurationPropagator(formula, config);
-    var sCore1 = config.GetFeatures().FirstOrDefault(sf => sf.getName() == "CORE1");
+    cp.setIncludeAbstractFeatures(true);
+    var features = config.GetFeatures().ToArray();
+    var sCore1 = features.FirstOrDefault(sf => sf.getName() == "CORE1");
     var sCore2 = config.GetFeatures().FirstOrDefault(sf => sf.getName() == "CORE2");
 
     cp.Update(true);
+
+    Console.WriteLine(formula.getCNF().getClauseString());
 
     Expect(sCore1?.getAutomatic()).To.Equal(Selection.UNDEFINED);
     Expect(sCore1?.getSelection()).To.Equal(Selection.UNDEFINED);
     Expect(sCore2?.getAutomatic()).To.Equal(Selection.UNDEFINED);
     Expect(sCore2?.getSelection()).To.Equal(Selection.UNDEFINED);
 
-    Expect(cp.IsValid()).To.Be.False("Shouldn't be valid");
     Expect(cp.CanBeValid()).To.Be.True("Should have a solution");
+    Expect(cp.IsValid()).To.Be.False("Shouldn't be valid");
   }
 
   [Test]
@@ -74,6 +78,8 @@ public class Tests
     formula.resetFormula();
     var config = new Configuration(formula);
     var cp = new ConfigurationPropagator(formula, config);
+    cp.setIncludeAbstractFeatures(true);
+    var features = config.GetFeatures().ToArray();
     var sCore = config.GetFeatures().FirstOrDefault(sf => sf.getName() == "CORE1");
 
     //config.setPropagate(true);
@@ -83,8 +89,8 @@ public class Tests
     Expect(sCore?.getAutomatic()).To.Equal(Selection.SELECTED);
     Expect(sCore?.getSelection()).To.Equal(Selection.SELECTED);
 
-    Expect(cp.IsValid()).To.Be.True();
-    Expect(cp.CanBeValid()).To.Be.True();
+    Expect(cp.CanBeValid()).To.Be.True("Should have a solution");
+    Expect(cp.IsValid()).To.Be.True("Should be valid");
   }
 
   [Test]
@@ -128,6 +134,7 @@ public class Tests
     formula.resetFormula();
     var config = new Configuration(formula);
     var cp = new ConfigurationPropagator(formula, config);
+    cp.setIncludeAbstractFeatures(true);
     var sCore = config.GetFeatures().FirstOrDefault(sf => sf.getName() == "CORE");
     var sm4 = config.GetFeatures().FirstOrDefault(sf => sf.getName() == "M4");
 
@@ -140,7 +147,7 @@ public class Tests
     Expect(sm4?.getAutomatic()).To.Equal(Selection.SELECTED);
     Expect(sm4?.getSelection()).To.Equal(Selection.SELECTED);
 
-    Expect(cp.IsValid()).To.Be.False();
-    Expect(cp.CanBeValid()).To.Be.True();
+    Expect(cp.CanBeValid()).To.Be.True("Should have a solution");
+    Expect(cp.IsValid()).To.Be.False("Shouldn't be valid");
   }
 }
