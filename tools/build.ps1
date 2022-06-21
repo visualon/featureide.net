@@ -3,13 +3,17 @@
 param(
   [Parameter()]
   [string]
-  $version
+  $version,
+
+  [Parameter()]
+  [bool]
+  $IkvmDebug
 )
 
 # renovate: datasource=github-releases depName=featureide packageName=FeatureIDE/FeatureIDE
-$FEATUREIDE_VERSION = "3.3.0"
+$FEATUREIDE_VERSION = "3.8.3"
 # renovate: datasource=nuget depName=org.sat4j.pb
-$SAT4J_VERSION = "2.3.600"
+$SAT4J_VERSION = "2.3.500"
 
 $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
@@ -23,6 +27,10 @@ if ($env:GITHUB_REF_TYPE -eq 'tag' ) {
 
 if (!$version) {
   $version = $FEATUREIDE_VERSION
+}
+
+if ($version.Contains('-')) {
+  $IkvmDebug = $true
 }
 
 # trim leading v
@@ -107,6 +115,10 @@ function build-assembly {
     "-version:$assemblyversion",
     "-fileversion:$version"
   )
+
+  if ($IkvmDebug) {
+    $ikvm_args += '-debug'
+  }
 
   if ($tfm -eq "netcoreapp3.1") {
     $ikvm_args += "-nostdlib", "-r:./refs/*.dll"

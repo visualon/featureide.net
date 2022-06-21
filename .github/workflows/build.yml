@@ -28,7 +28,7 @@ jobs:
 
       - name: build
         shell: pwsh
-        run: ./tools/build.ps1
+        run: ./tools/build.ps1 -IkvmDebug $true
 
       - name: test
         shell: pwsh

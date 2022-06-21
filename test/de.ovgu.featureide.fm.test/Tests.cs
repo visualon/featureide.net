@@ -1,3 +1,4 @@
+using de.ovgu.featureide.fm.core.analysis.cnf.formula;
 using de.ovgu.featureide.fm.core.@base;
 using de.ovgu.featureide.fm.core.configuration;
 using org.prop4j;
@@ -10,6 +11,7 @@ public class Tests
   private IFeatureStructure cores;
   private IFeatureStructure mods;
   private IFeatureStructure devs;
+  private FeatureModelFormula formula;
 
   [SetUp]
   public void Setup()
@@ -31,6 +33,9 @@ public class Tests
     devs = model.AddFeature("Devices", true);
     devs.changeToOr();
     root.addChild(devs);
+
+
+    formula = new FeatureModelFormula(model);
   }
 
   [Test]
@@ -41,13 +46,21 @@ public class Tests
     cores.addChild(core1);
     cores.addChild(core2);
 
-    var config = new Configuration(model, false);
+    formula.resetFormula();
+    var config = new Configuration(formula);
+    var cp = new ConfigurationPropagator(formula, config);
+    var sCore1 = config.GetFeatures().FirstOrDefault(sf => sf.getName() == "CORE1");
+    var sCore2 = config.GetFeatures().FirstOrDefault(sf => sf.getName() == "CORE2");
 
-    config.setPropagate(true);
-    config.update(true, null);
+    cp.Update(true);
 
-    Expect(config.isValid()).To.Be.False();
-    Expect(config.canBeValid()).To.Be.True();
+    Expect(sCore1?.getAutomatic()).To.Equal(Selection.UNDEFINED);
+    Expect(sCore1?.getSelection()).To.Equal(Selection.UNDEFINED);
+    Expect(sCore2?.getAutomatic()).To.Equal(Selection.UNDEFINED);
+    Expect(sCore2?.getSelection()).To.Equal(Selection.UNDEFINED);
+
+    Expect(cp.IsValid()).To.Be.False("Shouldn't be valid");
+    Expect(cp.CanBeValid()).To.Be.True("Should have a solution");
   }
 
   [Test]
@@ -56,16 +69,22 @@ public class Tests
     var core1 = model.AddFeature("CORE1");
     cores.addChild(core1);
 
-    var config = new Configuration(model, false);
+
+    //var config = new Configuration(model, false);
+    formula.resetFormula();
+    var config = new Configuration(formula);
+    var cp = new ConfigurationPropagator(formula, config);
     var sCore = config.GetFeatures().FirstOrDefault(sf => sf.getName() == "CORE1");
 
-    config.setPropagate(true);
-    config.update(true, null);
+    //config.setPropagate(true);
+    //config.update(true, null);
+    cp.Update(true);
 
-    Expect(config.isValid()).To.Be.True();
-    Expect(config.canBeValid()).To.Be.True();
     Expect(sCore?.getAutomatic()).To.Equal(Selection.SELECTED);
     Expect(sCore?.getSelection()).To.Equal(Selection.SELECTED);
+
+    Expect(cp.IsValid()).To.Be.True();
+    Expect(cp.CanBeValid()).To.Be.True();
   }
 
   [Test]
@@ -105,18 +124,23 @@ public class Tests
       )
     ));
 
-    var config = new Configuration(model, false);
+    //var config = new Configuration(model, false);
+    formula.resetFormula();
+    var config = new Configuration(formula);
+    var cp = new ConfigurationPropagator(formula, config);
     var sCore = config.GetFeatures().FirstOrDefault(sf => sf.getName() == "CORE");
     var sm4 = config.GetFeatures().FirstOrDefault(sf => sf.getName() == "M4");
 
-    config.setPropagate(true);
-    config.update(true, null);
+    //config.setPropagate(true);
+    //config.update(true, null);
+    var res = cp.Update(true);
 
-    Expect(config.isValid()).To.Be.False();
-    Expect(config.canBeValid()).To.Be.True();
     Expect(sCore?.getAutomatic()).To.Equal(Selection.SELECTED);
     Expect(sCore?.getSelection()).To.Equal(Selection.SELECTED);
     Expect(sm4?.getAutomatic()).To.Equal(Selection.SELECTED);
     Expect(sm4?.getSelection()).To.Equal(Selection.SELECTED);
+
+    Expect(cp.IsValid()).To.Be.False();
+    Expect(cp.CanBeValid()).To.Be.True();
   }
 }
