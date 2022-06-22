@@ -12,10 +12,6 @@ param(
 
 . $PSScriptRoot/utils/index.ps1
 
-$ErrorActionPreference = 'Stop'
-$ProgressPreference = 'SilentlyContinue'
-$PSDefaultParameterValues['*:ErrorAction'] = 'Stop'
-
 $target = "bin"
 
 $version = get-version -version $version
@@ -88,5 +84,5 @@ build-assembly -tfm netcoreapp3.1
 Write-Output "Packing files" | Out-Host
 
 
-nuget pack featureide.nuspec -OutputDirectory bin -version $version -properties "sat4jversion=$SAT4J_VERSION"
+nuget pack featureide.nuspec -OutputDirectory bin -version $version
 ThrowOnNativeFailure

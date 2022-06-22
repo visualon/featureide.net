@@ -6,13 +6,6 @@ param(
   $version
 )
 
-
-
-$ErrorActionPreference = 'Stop'
-$ProgressPreference = 'SilentlyContinue'
-$PSDefaultParameterValues['*:ErrorAction'] = 'Stop'
-
-
 . $PSScriptRoot/utils/index.ps1
 
 $target = "java"

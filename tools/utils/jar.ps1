@@ -11,7 +11,7 @@ function get-jar {
     [Parameter(Mandatory)]
     [string] $version
   )
-  $file = "$env:TEMP/${name}-${version}.jar"
+  $file = "$tmp/${name}-${version}.jar"
   if (!(Test-Path $file)) {
     if ($name -eq "de.ovgu.featureide.fm") {
       $uri = "https://github.com/FeatureIDE/FeatureIDE/releases/download/v$version/de.ovgu.featureide.lib.fm-v$version.jar"
@@ -43,5 +43,5 @@ function copy-jar {
   )
 
   "Copy jar $name@$version"
-  Copy-Item $env:TEMP/$name-${version}.jar -Destination "$target/$name.jar"
+  Copy-Item $tmp/$name-${version}.jar -Destination "$target/$name.jar"
 }
