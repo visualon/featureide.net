@@ -21,9 +21,6 @@ class Tests {
   private IFeatureStructure cores;
   private IFeatureStructure mods;
   private IFeatureStructure devs;
-  private FeatureModelFormula formula;
-  private Configuration config;
-  private ConfigurationAnalyzer configAnalyzer;
 
   @BeforeEach
   void BeforeEach() {
@@ -44,10 +41,6 @@ class Tests {
     devs = Utils.addFeature(model, "Devices", true);
     devs.changeToOr();
     root.addChild(devs);
-
-    formula = new FeatureModelFormula(model);
-    config = new Configuration(formula);
-    configAnalyzer = new ConfigurationAnalyzer(formula, config);
   }
 
   @Test
@@ -55,8 +48,9 @@ class Tests {
     cores.addChild(Utils.addFeature(model, "CORE1"));
     cores.addChild(Utils.addFeature(model, "CORE2"));
 
-    formula.resetFormula();
-    config.reset();
+    var formula = new FeatureModelFormula(model);
+    var config = new Configuration(formula);
+    var configAnalyzer = new ConfigurationAnalyzer(formula, config);
 
     configAnalyzer.update(true);
 
@@ -68,8 +62,9 @@ class Tests {
   void shouldBeValid() {
     cores.addChild(Utils.addFeature(model, "CORE"));
 
-    formula.resetFormula();
-    config.reset();
+    var formula = new FeatureModelFormula(model);
+    var config = new Configuration(formula);
+    var configAnalyzer = new ConfigurationAnalyzer(formula, config);
 
     configAnalyzer.update(true);
 
@@ -105,8 +100,9 @@ class Tests {
         new Not(
             new Literal("M3"))));
 
-    formula.resetFormula();
-    config.reset();
+    var formula = new FeatureModelFormula(model);
+    var config = new Configuration(formula);
+    var configAnalyzer = new ConfigurationAnalyzer(formula, config);
 
     configAnalyzer.update(true);
 
