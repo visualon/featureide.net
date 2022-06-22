@@ -12,6 +12,8 @@ public class Tests
   private IFeatureStructure mods;
   private IFeatureStructure devs;
   private FeatureModelFormula formula;
+  private Configuration config;
+  private ConfigurationAnalyzer configAnalyzer;
 
   [SetUp]
   public void Setup()
@@ -36,6 +38,8 @@ public class Tests
 
 
     formula = new FeatureModelFormula(model);
+    config = new Configuration(formula);
+    configAnalyzer = new ConfigurationAnalyzer(formula, config);
   }
 
   [Test]
@@ -47,14 +51,13 @@ public class Tests
     cores.addChild(core2);
 
     formula.resetFormula();
-    var config = new Configuration(formula);
-    var cp = new ConfigurationPropagator(formula, config);
-    cp.setIncludeAbstractFeatures(true);
+    config.reset();
+
     var features = config.GetFeatures().ToArray();
     var sCore1 = features.FirstOrDefault(sf => sf.getName() == "CORE1");
     var sCore2 = config.GetFeatures().FirstOrDefault(sf => sf.getName() == "CORE2");
 
-    cp.Update(true);
+    configAnalyzer.update(true);
 
     Console.WriteLine(formula.getCNF().getClauseString());
 
@@ -63,8 +66,8 @@ public class Tests
     Expect(sCore2?.getAutomatic()).To.Equal(Selection.UNDEFINED);
     Expect(sCore2?.getSelection()).To.Equal(Selection.UNDEFINED);
 
-    Expect(cp.CanBeValid()).To.Be.True("Should have a solution");
-    Expect(cp.IsValid()).To.Be.False("Shouldn't be valid");
+    Expect(configAnalyzer.canBeValid()).To.Be.True("Should have a solution");
+    Expect(configAnalyzer.isValid()).To.Be.False("Shouldn't be valid");
   }
 
   [Test]
@@ -75,22 +78,20 @@ public class Tests
 
 
     //var config = new Configuration(model, false);
+
     formula.resetFormula();
-    var config = new Configuration(formula);
-    var cp = new ConfigurationPropagator(formula, config);
-    cp.setIncludeAbstractFeatures(true);
-    var features = config.GetFeatures().ToArray();
-    var sCore = config.GetFeatures().FirstOrDefault(sf => sf.getName() == "CORE1");
+    config.reset();
+    var sCore = config.getSelectableFeature("CORE1");
 
     //config.setPropagate(true);
     //config.update(true, null);
-    cp.Update(true);
+    configAnalyzer.update(true);
 
     Expect(sCore?.getAutomatic()).To.Equal(Selection.SELECTED);
     Expect(sCore?.getSelection()).To.Equal(Selection.SELECTED);
 
-    Expect(cp.CanBeValid()).To.Be.True("Should have a solution");
-    Expect(cp.IsValid()).To.Be.True("Should be valid");
+    Expect(configAnalyzer.canBeValid()).To.Be.True("Should have a solution");
+    Expect(configAnalyzer.isValid()).To.Be.True("Should be valid");
   }
 
   [Test]
@@ -132,22 +133,20 @@ public class Tests
 
     //var config = new Configuration(model, false);
     formula.resetFormula();
-    var config = new Configuration(formula);
-    var cp = new ConfigurationPropagator(formula, config);
-    cp.setIncludeAbstractFeatures(true);
-    var sCore = config.GetFeatures().FirstOrDefault(sf => sf.getName() == "CORE");
-    var sm4 = config.GetFeatures().FirstOrDefault(sf => sf.getName() == "M4");
+    config.reset();
+    var sCore = config.getSelectableFeature("CORE");
+    var sm4 = config.getSelectableFeature("M4");
 
     //config.setPropagate(true);
     //config.update(true, null);
-    var res = cp.Update(true);
+    configAnalyzer.update(true);
 
     Expect(sCore?.getAutomatic()).To.Equal(Selection.SELECTED);
     Expect(sCore?.getSelection()).To.Equal(Selection.SELECTED);
     Expect(sm4?.getAutomatic()).To.Equal(Selection.SELECTED);
     Expect(sm4?.getSelection()).To.Equal(Selection.SELECTED);
 
-    Expect(cp.CanBeValid()).To.Be.True("Should have a solution");
-    Expect(cp.IsValid()).To.Be.False("Shouldn't be valid");
+    Expect(configAnalyzer.canBeValid()).To.Be.True("Should have a solution");
+    Expect(configAnalyzer.isValid()).To.Be.False("Shouldn't be valid");
   }
 }

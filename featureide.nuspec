@@ -20,17 +20,15 @@
     <dependencies>
       <group targetFramework=".NETFramework4.6.1">
         <dependency id="IKVM" version="8.2.0-prerelease0911" />
-        <dependency id="org.sat4j.core" version="$sat4jversion$" />
-        <dependency id="org.sat4j.pb" version="$sat4jversion$" />
       </group>
       <group targetFramework=".NETCoreApp3.1">
         <dependency id="IKVM" version="8.2.0-prerelease0911" />
-        <dependency id="org.sat4j.core" version="$sat4jversion$" />
-        <dependency id="org.sat4j.pb" version="$sat4jversion$" />
       </group>
     </dependencies>
   </metadata>
   <files>
+    <file src="bin\**\org.sat4j.core.dll" target="lib" />
+    <file src="bin\**\org.sat4j.pb.dll" target="lib" />
     <file src="bin\**\de.ovgu.featureide.fm.dll" target="lib" />
   </files>
 </package>

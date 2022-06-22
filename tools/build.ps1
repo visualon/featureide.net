@@ -10,10 +10,7 @@ param(
   $IkvmDebug
 )
 
-# renovate: datasource=github-releases depName=featureide packageName=FeatureIDE/FeatureIDE
-$FEATUREIDE_VERSION = "3.8.3"
-# renovate: datasource=nuget depName=org.sat4j.pb
-$SAT4J_VERSION = "2.3.500"
+. $PSScriptRoot/utils/index.ps1
 
 $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
@@ -21,81 +18,19 @@ $PSDefaultParameterValues['*:ErrorAction'] = 'Stop'
 
 $target = "bin"
 
-if ($env:GITHUB_REF_TYPE -eq 'tag' ) {
-  $version = $env:GITHUB_REF_NAME
-}
-
-if (!$version) {
-  $version = $FEATUREIDE_VERSION
-}
+$version = get-version -version $version
+$jarVersion = get-jar-version -version $version
+$assemblyversion = get-assembly-version -version $version
 
 if ($version.Contains('-')) {
   $IkvmDebug = $true
 }
 
-# trim leading v
-$version = $version -replace "^v?", ""
-
-$major, $minor, $patch = $version.Split('-')[0].Split('.')
-$assemblyversion = "$major.0.0.0"
-
-if ($patch.Length -ge 3) {
-  $patch = $patch.Substring(0, $patch.Length - 2)
-}
-
-$jarVersion = "$major.$minor.$patch"
-
 if (Test-Path $target) {
   Remove-Item $target -Recurse -Force
 }
+
 New-Item $target -ItemType Directory -Force | Out-Null
-
-function ThrowOnNativeFailure {
-  if (-not $?) {
-    throw 'Native Failure'
-  }
-}
-
-
-New-Item bin -ItemType Directory -ErrorAction SilentlyContinue | Out-Null
-
-$baseUri = "https://github.com/FeatureIDE/FeatureIDE/releases/download"
-
-function get-jar {
-  param (
-    [Parameter(Mandatory)]
-    [ValidateSet("de.ovgu.featureide.fm")]
-    [string] $name
-  )
-  $file = "$env:TEMP/${name}-${jarVersion}.jar"
-  if (!(Test-Path $file)) {
-    $uri = "$baseUri/v$jarVersion/$name-v$jarVersion.jar"
-    if ($name -eq "de.ovgu.featureide.fm") {
-      $uri = $uri -replace "de.ovgu.featureide.fm", "de.ovgu.featureide.lib.fm"
-    }
-    Invoke-WebRequest -URI $uri -OutFile $file
-  }
-}
-
-function copy-jar {
-  param (
-    [Parameter(Mandatory)]
-    [ValidateSet("de.ovgu.featureide.fm")]
-    [string] $name
-  )
-  Copy-Item $env:TEMP/$name-${jarVersion}.jar -Destination "$tgt/$name.jar"
-}
-
-function get-sat4j {
-  param (
-    [Parameter(Mandatory)]
-    [ValidateSet("core", "pb")]
-    [string] $name
-  )
-  if (!(Test-Path $target/org.sat4j.$name.$SAT4J_VERSION)) {
-    nuget install "org.sat4j.$name" -Version $SAT4J_VERSION -o $target -PackageSaveMode 'nuspec' -DependencyVersion Ignore -ForceEnglishOutput
-  }
-}
 
 function build-assembly {
   param (
@@ -105,7 +40,9 @@ function build-assembly {
   )
 
   $tgt = New-Item $target/$tfm -ItemType Directory -Force
-  copy-jar -name de.ovgu.featureide.fm
+  copy-jar -name de.ovgu.featureide.fm -version $jarVersion -target $tgt
+  copy-jar -name org.sat4j.core -version $SAT4J_VERSION -target $tgt
+  copy-jar -name org.sat4j.pb -version $SAT4J_VERSION -target $tgt
   Copy-Item tools/ikvm/$tfm/* -Destination $tgt -Recurse
 
   $ikvm_args = @(
@@ -124,10 +61,8 @@ function build-assembly {
     $ikvm_args += "-nostdlib", "-r:./refs/*.dll"
   }
 
-  $ikvm_args += "-r:../org.sat4j.core.$SAT4J_VERSION/lib/$tfm/org.sat4j.core.dll"
-  $ikvm_args += "-r:../org.sat4j.pb.$SAT4J_VERSION/lib/$tfm/org.sat4j.pb.dll"
-
-
+  $ikvm_args += "{", "org.sat4j.core.jar", "}"
+  $ikvm_args += "{", "org.sat4j.pb.jar", "}"
   $ikvm_args += "{", "de.ovgu.featureide.fm.jar", "}"
 
   try {
@@ -141,11 +76,9 @@ function build-assembly {
 }
 
 Write-Output "Downloading jars for version $jarVersion" | Out-Host
-get-jar -name de.ovgu.featureide.fm
-
-Write-Output "Downloading sat4j for version $SAT4J_VERSION" | Out-Host
-get-sat4j -name core
-get-sat4j -name pb
+get-jar -name de.ovgu.featureide.fm -version $jarVersion
+get-jar -name org.sat4j.core -version $SAT4J_VERSION
+get-jar -name org.sat4j.pb -version $SAT4J_VERSION
 
 Write-Output "Compiling jars for version $version" | Out-Host
 
