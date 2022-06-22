@@ -27,7 +27,7 @@ namespace de.ovgu.featureide.fm.test
       return res;
     }
 
-    public static IFeatureModel CreateModel() => FACTORY.createFeatureModel();
+    public static IFeatureModel CreateModel() => FACTORY.create();
     public static IEnumerable<SelectableFeature> GetFeatures(this Configuration @this) => @this.getFeatures().Cast<SelectableFeature>();
 
     public static IEnumerable<T> Cast<T>(this Iterable @this)

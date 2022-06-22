@@ -10,7 +10,7 @@ public class Utils {
   private static DefaultFeatureModelFactory FACTORY = new DefaultFeatureModelFactory();
 
   public static IFeatureModel CreateModel() {
-    return FACTORY.createFeatureModel();
+    return FACTORY.create();
   }
 
   public static IFeatureStructure addFeature(IFeatureModel self, String feature) {

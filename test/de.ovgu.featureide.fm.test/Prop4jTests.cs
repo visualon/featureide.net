@@ -1,14 +1,16 @@
 using org.prop4j;
+using org.prop4j.explain.solvers;
 
 namespace de.ovgu.featureide.fm.test
 {
   internal class Prop4jTests
   {
-    private readonly long Timeout = (long)TimeSpan.FromSeconds(5).TotalMilliseconds;
+    private org.prop4j.explain.solvers.SatSolver solver;
 
     [SetUp]
     public void Setup()
     {
+      solver = SatSolverFactory.getDefault().getSatSolver();
     }
 
     [Test]
@@ -16,7 +18,11 @@ namespace de.ovgu.featureide.fm.test
     {
       var formula = new And();
 
-      var solver = new SatSolver(formula, Timeout);
+
+
+      Expect(solver.isSatisfiable()).To.Be.True();
+
+      solver.addFormula(formula);
 
       Expect(solver.isSatisfiable()).To.Be.True();
     }
@@ -24,13 +30,15 @@ namespace de.ovgu.featureide.fm.test
     [Test]
     public void CanBeValid()
     {
-      var formula = new And(
-        new Implies(new Literal("CORE1"), new Not(new Literal("CORE2"))),
-        new Implies(new Literal("CORE2"), new Not(new Literal("CORE1")))
-      );
-      var solver = new SatSolver(formula, Timeout);
+      solver.addFormula(new Implies(new Literal("CORE1"), new Not(new Literal("CORE2"))));
+      solver.addFormula(new Implies(new Literal("CORE2"), new Not(new Literal("CORE1"))));
 
       Expect(solver.isSatisfiable()).To.Be.True();
+
+
+      var map = solver.getAssumptions();
+      var m = solver.getModel();
+      Console.WriteLine("assumptions: " + map.keySet().Cast<string>().ToArray());
     }
   }
 }

@@ -1,3 +1,4 @@
+using de.ovgu.featureide.fm.core.analysis.cnf.formula;
 using de.ovgu.featureide.fm.core.@base;
 using de.ovgu.featureide.fm.core.configuration;
 using org.prop4j;
@@ -10,6 +11,9 @@ public class Tests
   private IFeatureStructure cores;
   private IFeatureStructure mods;
   private IFeatureStructure devs;
+  private FeatureModelFormula formula;
+  private Configuration config;
+  private ConfigurationAnalyzer configAnalyzer;
 
   [SetUp]
   public void Setup()
@@ -31,6 +35,11 @@ public class Tests
     devs = model.AddFeature("Devices", true);
     devs.changeToOr();
     root.addChild(devs);
+
+
+    formula = new FeatureModelFormula(model);
+    config = new Configuration(formula);
+    configAnalyzer = new ConfigurationAnalyzer(formula, config);
   }
 
   [Test]
@@ -41,20 +50,24 @@ public class Tests
     cores.addChild(core1);
     cores.addChild(core2);
 
-    var config = new Configuration(model, false);
-    var sCore1 = config.getSelectablefeature( "CORE1");
-    var sCore2 = config.getSelectablefeature("CORE2");
+    formula.resetFormula();
+    config.reset();
 
-    config.setPropagate(true);
-    config.update(true, null);
+    var features = config.GetFeatures().ToArray();
+    var sCore1 = features.FirstOrDefault(sf => sf.getName() == "CORE1");
+    var sCore2 = config.GetFeatures().FirstOrDefault(sf => sf.getName() == "CORE2");
+
+    configAnalyzer.update(true);
+
+    Console.WriteLine(formula.getCNF().getClauseString());
 
     Expect(sCore1?.getAutomatic()).To.Equal(Selection.UNDEFINED);
     Expect(sCore1?.getSelection()).To.Equal(Selection.UNDEFINED);
     Expect(sCore2?.getAutomatic()).To.Equal(Selection.UNDEFINED);
     Expect(sCore2?.getSelection()).To.Equal(Selection.UNDEFINED);
 
-    Expect(config.canBeValid()).To.Be.True("Should have a solution");
-    Expect(config.isValid()).To.Be.False("Shouldn't be valid");
+    Expect(configAnalyzer.canBeValid()).To.Be.True("Should have a solution");
+    Expect(configAnalyzer.isValid()).To.Be.False("Shouldn't be valid");
   }
 
   [Test]
@@ -62,18 +75,22 @@ public class Tests
   {
     var core1 = model.AddFeature("CORE1");
     cores.addChild(core1);
-    var config = new Configuration(model, false);
 
-    var sCore = config.getSelectablefeature("CORE1");
+    //var config = new Configuration(model, false);
 
-    config.setPropagate(true);
-    config.update(true, null);
+    formula.resetFormula();
+    config.reset();
+    var sCore = config.getSelectableFeature("CORE1");
+
+    //config.setPropagate(true);
+    //config.update(true, null);
+    configAnalyzer.update(true);
 
     Expect(sCore?.getAutomatic()).To.Equal(Selection.SELECTED);
     Expect(sCore?.getSelection()).To.Equal(Selection.SELECTED);
 
-    Expect(config.canBeValid()).To.Be.True("Should have a solution");
-    Expect(config.isValid()).To.Be.True("Should be valid");
+    Expect(configAnalyzer.canBeValid()).To.Be.True("Should have a solution");
+    Expect(configAnalyzer.isValid()).To.Be.True("Should be valid");
   }
 
   [Test]
@@ -113,19 +130,22 @@ public class Tests
       )
     ));
 
-    var config = new Configuration(model, false);
-    var sCore = config.getSelectablefeature("CORE");
-    var sm4 = config.getSelectablefeature("M4");
+    //var config = new Configuration(model, false);
+    formula.resetFormula();
+    config.reset();
+    var sCore = config.getSelectableFeature("CORE");
+    var sm4 = config.getSelectableFeature("M4");
 
-    config.setPropagate(true);
-    config.update(true, null);
+    //config.setPropagate(true);
+    //config.update(true, null);
+    configAnalyzer.update(true);
 
     Expect(sCore?.getAutomatic()).To.Equal(Selection.SELECTED);
     Expect(sCore?.getSelection()).To.Equal(Selection.SELECTED);
     Expect(sm4?.getAutomatic()).To.Equal(Selection.SELECTED);
     Expect(sm4?.getSelection()).To.Equal(Selection.SELECTED);
 
-    Expect(config.canBeValid()).To.Be.True("Should have a solution");
-    Expect(config.isValid()).To.Be.False("Shouldn't be valid");
+    Expect(configAnalyzer.canBeValid()).To.Be.True("Should have a solution");
+    Expect(configAnalyzer.isValid()).To.Be.False("Shouldn't be valid");
   }
 }

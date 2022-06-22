@@ -9,9 +9,11 @@ import org.prop4j.Implies;
 import org.prop4j.Literal;
 import org.prop4j.Not;
 
+import de.ovgu.featureide.fm.core.analysis.cnf.formula.FeatureModelFormula;
 import de.ovgu.featureide.fm.core.base.IFeatureModel;
 import de.ovgu.featureide.fm.core.base.IFeatureStructure;
 import de.ovgu.featureide.fm.core.configuration.Configuration;
+import de.ovgu.featureide.fm.core.configuration.ConfigurationAnalyzer;
 import de.ovgu.featureide.fm.core.configuration.Selection;
 
 class Tests {
@@ -19,6 +21,9 @@ class Tests {
   private IFeatureStructure cores;
   private IFeatureStructure mods;
   private IFeatureStructure devs;
+  private FeatureModelFormula formula;
+  private Configuration config;
+  private ConfigurationAnalyzer configAnalyzer;
 
   @BeforeEach
   void BeforeEach() {
@@ -39,6 +44,10 @@ class Tests {
     devs = Utils.addFeature(model, "Devices", true);
     devs.changeToOr();
     root.addChild(devs);
+
+    formula = new FeatureModelFormula(model);
+    config = new Configuration(formula);
+    configAnalyzer = new ConfigurationAnalyzer(formula, config);
   }
 
   @Test
@@ -46,26 +55,28 @@ class Tests {
     cores.addChild(Utils.addFeature(model, "CORE1"));
     cores.addChild(Utils.addFeature(model, "CORE2"));
 
-    var config = new Configuration(model, false);
-    config.setPropagate(true);
-    config.update(true, null);
+    formula.resetFormula();
+    config.reset();
 
-    assertTrue(config.canBeValid(), "canbeValid");
-    assertFalse(config.isValid(), "isValid");
+    configAnalyzer.update(true);
+
+    assertTrue(configAnalyzer.canBeValid(), "canbeValid");
+    assertFalse(configAnalyzer.isValid(), "isValid");
   }
 
   @Test
   void shouldBeValid() {
     cores.addChild(Utils.addFeature(model, "CORE"));
 
-    var config = new Configuration(model, false);
-    config.setPropagate(true);
-    config.update(true, null);
+    formula.resetFormula();
+    config.reset();
 
-    assertTrue(config.canBeValid(), "canBeValid");
-    assertTrue(config.isValid(), "isValid");
+    configAnalyzer.update(true);
 
-    var sfCore = config.getSelectablefeature("CORE");
+    assertTrue(configAnalyzer.canBeValid(), "canBeValid");
+    assertTrue(configAnalyzer.isValid(), "isValid");
+
+    var sfCore = config.getSelectableFeature("CORE");
     assertNotNull(sfCore);
     assertEquals(Selection.SELECTED, sfCore.getAutomatic(), "isAutoSelected");
   }
@@ -94,14 +105,15 @@ class Tests {
         new Not(
             new Literal("M3"))));
 
-    var config = new Configuration(model, false);
-    config.setPropagate(true);
-    config.update(true, null);
+    formula.resetFormula();
+    config.reset();
 
-    assertTrue(config.canBeValid(), "canBeValid");
-    assertTrue(config.isValid(), "isValid");
+    configAnalyzer.update(true);
 
-    var sfCore = config.getSelectablefeature("CORE");
+    assertTrue(configAnalyzer.canBeValid(), "canBeValid");
+    assertTrue(configAnalyzer.isValid(), "isValid");
+
+    var sfCore = config.getSelectableFeature("CORE");
     assertNotNull(sfCore);
     assertEquals(Selection.SELECTED, sfCore.getAutomatic(), "isAutoSelected");
   }
