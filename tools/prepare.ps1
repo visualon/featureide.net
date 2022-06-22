@@ -1,9 +1,7 @@
 #Requires -Version 5.1
 
-$ErrorActionPreference = 'Stop';
 
-# renovate: datasource=github-releases depName=IKVM packageName=ikvm-revived/ikvm
-$IKVM_VERSION = "8.2.0-prerelease.911"
+. $PSScriptRoot/utils/index.ps1
 
 
 function install-ikvm {
@@ -16,7 +14,7 @@ function install-ikvm {
     [string] $platform
   )
   $url = "https://github.com/ikvm-revived/ikvm/releases/download/${IKVM_VERSION}/IKVM-${IKVM_VERSION}-tools-${tfm}-${platform}.zip"
-  $file = "$env:TEMP/ikvm-${IKVM_VERSION}-${tfm}-${platform}.zip"
+  $file = "$tmp/ikvm-${IKVM_VERSION}-${tfm}-${platform}.zip"
   $target = "./tools/ikvm/${tfm}"
 
   if (Test-Path $target) {

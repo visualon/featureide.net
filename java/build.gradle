@@ -1,0 +1,24 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+version = '0.0.1'
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+  implementation fileTree(include: ['*.jar'], dir: 'libs')
+  testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+}

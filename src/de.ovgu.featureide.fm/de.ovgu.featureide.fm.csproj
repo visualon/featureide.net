@@ -11,16 +11,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="org.sat4j.core" GeneratePathProperty="true" />
-    <PackageReference Include="org.sat4j.pb" GeneratePathProperty="true" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All"/>
   </ItemGroup>
 
   <Target Name="BuildAssemblies" BeforeTargets="AfterBuild">
     <PropertyGroup>
       <Args>-tfm $(TargetFramework)</Args>
-      <Args>$(Args) -sat4jcore $(Pkgorg_sat4j_core)/lib/$(TargetFramework)/org.sat4j.core.dll</Args>
-      <Args>$(Args) -sat4jpb $(Pkgorg_sat4j_pb)/lib/$(TargetFramework)/org.sat4j.pb.dll</Args>
       <Args>$(Args) -configuration $(Configuration)</Args>
       <Args>$(Args) -outdir $(BaseIntermediateOutputPath)</Args>
     </PropertyGroup>
@@ -28,6 +24,14 @@
     <Message Importance="high" Text="AssemblyName: $(AssemblyName)" />
     <Message Importance="high" Text="OutputPath: $(OutputPath)" />
     <Exec Command="pwsh $(SolutionDir)/tools/build-assembly.ps1 $(Args)" />
-    <Copy DestinationFolder="$(OutputPath)" SourceFiles="$(BaseIntermediateOutputPath)$(Configuration)/$(TargetFramework)/$(AssemblyName).dll" />
+    <ItemGroup>
+      <_ToCopy Include="$(BaseIntermediateOutputPath)$(Configuration)/$(TargetFramework)/$(AssemblyName).dll" />
+      <_ToCopy Include="$(BaseIntermediateOutputPath)$(Configuration)/$(TargetFramework)/$(AssemblyName).pdb" Condition="'$(Configuration)' == 'Debug'" />
+      <_ToCopy Include="$(BaseIntermediateOutputPath)$(Configuration)/$(TargetFramework)/org.sat4j.core.dll" />
+      <_ToCopy Include="$(BaseIntermediateOutputPath)$(Configuration)/$(TargetFramework)/org.sat4j.core.pdb" Condition="'$(Configuration)' == 'Debug'" />
+      <_ToCopy Include="$(BaseIntermediateOutputPath)$(Configuration)/$(TargetFramework)/org.sat4j.pb.dll" />
+      <_ToCopy Include="$(BaseIntermediateOutputPath)$(Configuration)/$(TargetFramework)/org.sat4j.pb.pdb" Condition="'$(Configuration)' == 'Debug'" />
+    </ItemGroup>
+    <Copy DestinationFolder="$(OutputPath)" SourceFiles="@(_ToCopy)" />
   </Target>
 </Project>

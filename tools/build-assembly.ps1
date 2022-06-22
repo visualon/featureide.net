@@ -1,90 +1,29 @@
 #Requires -Version 5.1
 
 param(
-  [Parameter()]
+  [Parameter(Mandatory)]
   [ValidateSet("net461", "netcoreapp3.1")]
   [string]
-  $tfm = '',
+  $tfm,
   [Parameter()]
   [string]
   $version,
 
-  $sat4jcore,
-  $sat4jpb,
   $outdir,
   $configuration
 )
 
-# renovate: datasource=github-releases depName=featureide packageName=FeatureIDE/FeatureIDE
-$FEATUREIDE_VERSION = "3.3.0"
-
-$ErrorActionPreference = 'Stop'
-$ProgressPreference = 'SilentlyContinue'
-$PSDefaultParameterValues['*:ErrorAction'] = 'Stop'
+. $PSScriptRoot/utils/index.ps1
 
 $root = Split-Path -Parent $PSScriptRoot
 $target = Join-Path $outdir $configuration
 
-if ($env:GITHUB_REF_TYPE -eq 'tag' ) {
-  $version = $env:GITHUB_REF_NAME
-}
+$version = get-version -version $version
+$jarVersion = get-jar-version -version $version
+$assemblyversion = get-assembly-version -version $version
 
-if (!$version) {
-  $version = $FEATUREIDE_VERSION
-}
-
-# trim leading v
-$version = $version -replace "^v?", ""
-
-$major, $minor, $patch = $version.Split('-')[0].Split('.')
-$assemblyversion = "$major.0.0.0"
-
-if ($patch.Length -ge 3) {
-  $patch = $patch.Substring(0, $patch.Length - 2)
-}
-
-$jarVersion = "$major.$minor.$patch"
-
-# if (Test-Path $target) {
-#   Remove-Item $target -Recurse -Force
-# }
 New-Item $target -ItemType Directory -Force | Out-Null
 
-function ThrowOnNativeFailure {
-  if (-not $?) {
-    throw 'Native Failure'
-  }
-}
-
-
-New-Item bin -ItemType Directory -ErrorAction SilentlyContinue | Out-Null
-
-$baseUri = "https://github.com/FeatureIDE/FeatureIDE/releases/download"
-
-function get-jar {
-  param (
-    [Parameter(Mandatory)]
-    [ValidateSet("de.ovgu.featureide.fm")]
-    [string] $name
-  )
-  $file = "$env:TEMP/${name}-${jarVersion}.jar"
-  if (!(Test-Path $file)) {
-    $uri = "$baseUri/v$jarVersion/$name-v$jarVersion.jar"
-    if ($name -eq "de.ovgu.featureide.fm") {
-      $uri = $uri -replace "de.ovgu.featureide.fm", "de.ovgu.featureide.lib.fm"
-    }
-    Invoke-WebRequest -URI $uri -OutFile $file
-  }
-}
-
-function copy-jar {
-  param (
-    [Parameter(Mandatory)]
-    [ValidateSet("de.ovgu.featureide.fm")]
-    [string] $name
-  )
-  Copy-Item $env:TEMP/$name-${jarVersion}.jar -Destination "$tgt/$name.jar" -Force
-}
 
 function build-assembly {
   param (
@@ -94,7 +33,9 @@ function build-assembly {
   )
 
   $tgt = New-Item $target/$tfm -ItemType Directory -Force
-  copy-jar -name de.ovgu.featureide.fm
+  copy-jar -name 'de.ovgu.featureide.fm' -version $jarVersion -target $tgt
+  copy-jar -name 'org.sat4j.core' -version $SAT4J_VERSION -target $tgt
+  copy-jar -name 'org.sat4j.pb' -version $SAT4J_VERSION -target $tgt
   Copy-Item $PSScriptRoot/ikvm/$tfm/* -Destination $tgt -Recurse  -Force
 
   $ikvm_args = @(
@@ -109,10 +50,12 @@ function build-assembly {
     $ikvm_args += "-nostdlib", "-r:./refs/*.dll"
   }
 
-  $ikvm_args += "-r:$sat4jcore"
-  $ikvm_args += "-r:$sat4jpb"
+  if ($configuration -eq "debug"){
+    $ikvm_args += '-debug'
+  }
 
-
+  $ikvm_args += "{", "org.sat4j.core.jar", "}"
+  $ikvm_args += "{", "org.sat4j.pb.jar", "}"
   $ikvm_args += "{", "de.ovgu.featureide.fm.jar", "}"
 
   try {
@@ -126,7 +69,9 @@ function build-assembly {
 }
 
 Write-Output "Downloading jars for version $jarVersion" | Out-Host
-get-jar -name de.ovgu.featureide.fm
+get-jar -name 'de.ovgu.featureide.fm' -version $jarVersion
+get-jar -name 'org.sat4j.core' -version $SAT4J_VERSION
+get-jar -name 'org.sat4j.pb' -version $SAT4J_VERSION
 
 Write-Output "Compiling jars for version $version" | Out-Host
 

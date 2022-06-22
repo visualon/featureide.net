@@ -42,12 +42,19 @@ public class Tests
     cores.addChild(core2);
 
     var config = new Configuration(model, false);
+    var sCore1 = config.getSelectablefeature( "CORE1");
+    var sCore2 = config.getSelectablefeature("CORE2");
 
     config.setPropagate(true);
     config.update(true, null);
 
-    Expect(config.isValid()).To.Be.False();
-    Expect(config.canBeValid()).To.Be.True();
+    Expect(sCore1?.getAutomatic()).To.Equal(Selection.UNDEFINED);
+    Expect(sCore1?.getSelection()).To.Equal(Selection.UNDEFINED);
+    Expect(sCore2?.getAutomatic()).To.Equal(Selection.UNDEFINED);
+    Expect(sCore2?.getSelection()).To.Equal(Selection.UNDEFINED);
+
+    Expect(config.canBeValid()).To.Be.True("Should have a solution");
+    Expect(config.isValid()).To.Be.False("Shouldn't be valid");
   }
 
   [Test]
@@ -55,17 +62,18 @@ public class Tests
   {
     var core1 = model.AddFeature("CORE1");
     cores.addChild(core1);
-
     var config = new Configuration(model, false);
-    var sCore = config.GetFeatures().FirstOrDefault(sf => sf.getName() == "CORE1");
+
+    var sCore = config.getSelectablefeature("CORE1");
 
     config.setPropagate(true);
     config.update(true, null);
 
-    Expect(config.isValid()).To.Be.True();
-    Expect(config.canBeValid()).To.Be.True();
     Expect(sCore?.getAutomatic()).To.Equal(Selection.SELECTED);
     Expect(sCore?.getSelection()).To.Equal(Selection.SELECTED);
+
+    Expect(config.canBeValid()).To.Be.True("Should have a solution");
+    Expect(config.isValid()).To.Be.True("Should be valid");
   }
 
   [Test]
@@ -106,17 +114,18 @@ public class Tests
     ));
 
     var config = new Configuration(model, false);
-    var sCore = config.GetFeatures().FirstOrDefault(sf => sf.getName() == "CORE");
-    var sm4 = config.GetFeatures().FirstOrDefault(sf => sf.getName() == "M4");
+    var sCore = config.getSelectablefeature("CORE");
+    var sm4 = config.getSelectablefeature("M4");
 
     config.setPropagate(true);
     config.update(true, null);
 
-    Expect(config.isValid()).To.Be.False();
-    Expect(config.canBeValid()).To.Be.True();
     Expect(sCore?.getAutomatic()).To.Equal(Selection.SELECTED);
     Expect(sCore?.getSelection()).To.Equal(Selection.SELECTED);
     Expect(sm4?.getAutomatic()).To.Equal(Selection.SELECTED);
     Expect(sm4?.getSelection()).To.Equal(Selection.SELECTED);
+
+    Expect(config.canBeValid()).To.Be.True("Should have a solution");
+    Expect(config.isValid()).To.Be.False("Shouldn't be valid");
   }
 }

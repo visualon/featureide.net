@@ -83,25 +83,6 @@
         "resolved": "4.2.1",
         "contentHash": "kgH8VKsrcZZgNGQXRpVCrM7TnNz9li3b/snH+YmnXUNqsaWa1Xw9EQWHpbzq4Li2FbTjTE/E5N5HdLNXzZ8BpQ=="
       },
-      "org.sat4j.core": {
-        "type": "Direct",
-        "requested": "[2.3.600, )",
-        "resolved": "2.3.600",
-        "contentHash": "WiknXQWG6DeawcUtbe2ZZ7vFv4IXMDnTx8kXikLMyxXquut0tRGn3FNK5vADuLPvWXg9OTx14cCyiOXkSDymPg==",
-        "dependencies": {
-          "IKVM": "8.2.0-prerelease0911"
-        }
-      },
-      "org.sat4j.pb": {
-        "type": "Direct",
-        "requested": "[2.3.600, )",
-        "resolved": "2.3.600",
-        "contentHash": "AilLqSM8DFgH31qpkfHs8EWrERibrJPMKRweCYzK8XgE4jnrNiDTPrhHcFX5VLVipAiZinKeIy9pnQujupR0Mw==",
-        "dependencies": {
-          "IKVM": "8.2.0-prerelease0911",
-          "org.sat4j.core": "2.3.600"
-        }
-      },
       "Castle.Core": {
         "type": "Transitive",
         "resolved": "4.4.1",
@@ -242,25 +223,6 @@
         "requested": "[4.2.1, )",
         "resolved": "4.2.1",
         "contentHash": "kgH8VKsrcZZgNGQXRpVCrM7TnNz9li3b/snH+YmnXUNqsaWa1Xw9EQWHpbzq4Li2FbTjTE/E5N5HdLNXzZ8BpQ=="
-      },
-      "org.sat4j.core": {
-        "type": "Direct",
-        "requested": "[2.3.600, )",
-        "resolved": "2.3.600",
-        "contentHash": "WiknXQWG6DeawcUtbe2ZZ7vFv4IXMDnTx8kXikLMyxXquut0tRGn3FNK5vADuLPvWXg9OTx14cCyiOXkSDymPg==",
-        "dependencies": {
-          "IKVM": "8.2.0-prerelease0911"
-        }
-      },
-      "org.sat4j.pb": {
-        "type": "Direct",
-        "requested": "[2.3.600, )",
-        "resolved": "2.3.600",
-        "contentHash": "AilLqSM8DFgH31qpkfHs8EWrERibrJPMKRweCYzK8XgE4jnrNiDTPrhHcFX5VLVipAiZinKeIy9pnQujupR0Mw==",
-        "dependencies": {
-          "IKVM": "8.2.0-prerelease0911",
-          "org.sat4j.core": "2.3.600"
-        }
       },
       "Castle.Core": {
         "type": "Transitive",

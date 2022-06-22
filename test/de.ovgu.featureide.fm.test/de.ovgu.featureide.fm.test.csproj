@@ -18,8 +18,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="org.sat4j.core" GeneratePathProperty="true" />
-    <PackageReference Include="org.sat4j.pb" GeneratePathProperty="true" />
+    <!-- <PackageReference Include="org.sat4j.core" GeneratePathProperty="true" /> -->
+    <!-- <PackageReference Include="org.sat4j.pb" GeneratePathProperty="true" /> -->
     <PackageReference Include="IKVM" />
     <PackageReference Include="Microsoft.CodeCoverage" PrivateAssets="all" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
@@ -36,10 +36,14 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+    <Reference Include="..\..\bin\net461\org.sat4j.core.dll" />
+    <Reference Include="..\..\bin\net461\org.sat4j.pb.dll" />
     <Reference Include="..\..\bin\net461\de.ovgu.featureide.fm.dll" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <Reference Include="..\..\bin\net461\org.sat4j.core.dll" />
+    <Reference Include="..\..\bin\net461\org.sat4j.pb.dll" />
     <Reference Include="..\..\bin\netcoreapp3.1\de.ovgu.featureide.fm.dll" />
   </ItemGroup>
 
