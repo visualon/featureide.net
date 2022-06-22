@@ -33,9 +33,9 @@ function build-assembly {
   )
 
   $tgt = New-Item $target/$tfm -ItemType Directory -Force
-  copy-jar -name de.ovgu.featureide.fm -version $jarVersion -target $tgt
-  copy-jar -name org.sat4j.core -version $SAT4J_VERSION -target $tgt
-  copy-jar -name org.sat4j.pb -version $SAT4J_VERSION -target $tgt
+  copy-jar -name 'de.ovgu.featureide.fm' -version $jarVersion -target $tgt
+  copy-jar -name 'org.sat4j.core' -version $SAT4J_VERSION -target $tgt
+  copy-jar -name 'org.sat4j.pb' -version $SAT4J_VERSION -target $tgt
   Copy-Item $PSScriptRoot/ikvm/$tfm/* -Destination $tgt -Recurse  -Force
 
   $ikvm_args = @(
@@ -69,9 +69,9 @@ function build-assembly {
 }
 
 Write-Output "Downloading jars for version $jarVersion" | Out-Host
-get-jar -name de.ovgu.featureide.fm -version $jarVersion
-get-jar -name org.sat4j.core -version $SAT4J_VERSION
-get-jar -name org.sat4j.pb -version $SAT4J_VERSION
+get-jar -name 'de.ovgu.featureide.fm' -version $jarVersion
+get-jar -name 'org.sat4j.core' -version $SAT4J_VERSION
+get-jar -name 'org.sat4j.pb' -version $SAT4J_VERSION
 
 Write-Output "Compiling jars for version $version" | Out-Host
 
