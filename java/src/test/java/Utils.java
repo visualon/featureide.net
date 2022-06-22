@@ -3,11 +3,17 @@ import org.prop4j.Node;
 import de.ovgu.featureide.fm.core.base.IConstraint;
 import de.ovgu.featureide.fm.core.base.IFeatureModel;
 import de.ovgu.featureide.fm.core.base.IFeatureStructure;
+import de.ovgu.featureide.fm.core.base.impl.ConfigurationFactoryManager;
+import de.ovgu.featureide.fm.core.base.impl.DefaultConfigurationFactory;
 import de.ovgu.featureide.fm.core.base.impl.DefaultFeatureModelFactory;
 
 public class Utils {
 
   private static DefaultFeatureModelFactory FACTORY = new DefaultFeatureModelFactory();
+
+  static {
+    ConfigurationFactoryManager.getInstance().addExtension(DefaultConfigurationFactory.getInstance());
+  }
 
   public static IFeatureModel CreateModel() {
     return FACTORY.create();
