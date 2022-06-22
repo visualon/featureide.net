@@ -1,15 +1,20 @@
-using org.prop4j;
 using de.ovgu.featureide.fm.core.@base;
 using de.ovgu.featureide.fm.core.@base.impl;
 using de.ovgu.featureide.fm.core.configuration;
-using java.lang;
 using de.ovgu.featureide.fm.core.job;
+using java.lang;
+using org.prop4j;
 
 namespace de.ovgu.featureide.fm.test
 {
   internal static class Utils
   {
     private static readonly DefaultFeatureModelFactory FACTORY = new();
+
+    static Utils()
+    {
+      ConfigurationFactoryManager.getInstance().addExtension(DefaultConfigurationFactory.getInstance());
+    }
 
     public static IFeatureStructure AddFeature(this IFeatureModel @this, string feature, bool @abstract = false)
     {
@@ -27,7 +32,7 @@ namespace de.ovgu.featureide.fm.test
       return res;
     }
 
-    public static IFeatureModel CreateModel() => FACTORY.createFeatureModel();
+    public static IFeatureModel CreateModel() => FACTORY.create();
     public static IEnumerable<SelectableFeature> GetFeatures(this Configuration @this) => @this.getFeatures().Cast<SelectableFeature>();
 
     public static IEnumerable<T> Cast<T>(this Iterable @this)

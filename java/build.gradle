@@ -1,21 +1,25 @@
 plugins {
-    id 'java-library'
+  id 'java-library'
 }
 
 repositories {
-    mavenCentral()
+  mavenCentral()
 }
 
 java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(11)
-    }
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(11)
+  }
 }
 
 version = '0.0.1'
 
 test {
-    useJUnitPlatform()
+  useJUnitPlatform()
+  // testLogging {
+  //   showStandardStreams = true
+  //   events = ['standard_out']
+  // }
 }
 
 dependencies {

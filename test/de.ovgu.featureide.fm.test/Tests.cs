@@ -1,3 +1,4 @@
+using de.ovgu.featureide.fm.core.analysis.cnf.formula;
 using de.ovgu.featureide.fm.core.@base;
 using de.ovgu.featureide.fm.core.configuration;
 using org.prop4j;
@@ -20,16 +21,16 @@ public class Tests
     model.getStructure().setRoot(root);
 
     cores = model.AddFeature("CoreModules", true);
-    cores.changeToAlternative();
+    cores.setAlternative();
     cores.setMandatory(true);
     root.addChild(cores);
 
     mods = model.AddFeature("Modules", true);
-    mods.changeToOr();
+    mods.setOr();
     root.addChild(mods);
 
     devs = model.AddFeature("Devices", true);
-    devs.changeToOr();
+    devs.setOr();
     root.addChild(devs);
   }
 
@@ -41,43 +42,87 @@ public class Tests
     cores.addChild(core1);
     cores.addChild(core2);
 
-    var config = new Configuration(model, false);
-    var sCore1 = config.getSelectablefeature( "CORE1");
-    var sCore2 = config.getSelectablefeature("CORE2");
+    var formula = new FeatureModelFormula(model);
+    var config = new Configuration(formula);
+    var configAnalyzer = new ConfigurationAnalyzer(formula, config);
 
-    config.setPropagate(true);
-    config.update(true, null);
+    var sCore1 = config.getSelectableFeature("CORE1");
+    var sCore2 = config.getSelectableFeature("CORE2");
 
-    Expect(sCore1?.getAutomatic()).To.Equal(Selection.UNDEFINED);
-    Expect(sCore1?.getSelection()).To.Equal(Selection.UNDEFINED);
-    Expect(sCore2?.getAutomatic()).To.Equal(Selection.UNDEFINED);
-    Expect(sCore2?.getSelection()).To.Equal(Selection.UNDEFINED);
+    configAnalyzer.update(true);
 
-    Expect(config.canBeValid()).To.Be.True("Should have a solution");
-    Expect(config.isValid()).To.Be.False("Shouldn't be valid");
+    Expect(configAnalyzer.canBeValid()).To.Be.True("canBeValid");
+    Expect(configAnalyzer.isValid()).To.Be.False("isValid");
+
+    Expect(sCore1?.getAutomatic()?.name()).To.Equal(Selection.UNDEFINED.name(), "isAutoSelected");
+    Expect(sCore2?.getAutomatic()?.name()).To.Equal(Selection.UNDEFINED.name(), "isAutoSelected");
   }
 
   [Test]
   public void ShouldBeValid()
   {
-    var core1 = model.AddFeature("CORE1");
-    cores.addChild(core1);
-    var config = new Configuration(model, false);
+    cores.addChild(model.AddFeature("CORE"));
 
-    var sCore = config.getSelectablefeature("CORE1");
+    var formula = new FeatureModelFormula(model);
+    var config = new Configuration(formula);
+    var configAnalyzer = new ConfigurationAnalyzer(formula, config);
 
-    config.setPropagate(true);
-    config.update(true, null);
+    var sCore = config.getSelectableFeature("CORE");
 
-    Expect(sCore?.getAutomatic()).To.Equal(Selection.SELECTED);
-    Expect(sCore?.getSelection()).To.Equal(Selection.SELECTED);
+    configAnalyzer.update(true);
 
-    Expect(config.canBeValid()).To.Be.True("Should have a solution");
-    Expect(config.isValid()).To.Be.True("Should be valid");
+    Expect(configAnalyzer.canBeValid()).To.Be.True("canBeValid");
+    Expect(configAnalyzer.isValid()).To.Be.True("isValid");
+
+    Expect(sCore?.getAutomatic()?.name()).To.Equal(Selection.SELECTED.name(), "isAutoSelected");
   }
 
   [Test]
   public void Complex()
+  {
+    cores.addChild(model.AddFeature("CORE"));
+
+    mods.addChild(model.AddFeature("M1"));
+    mods.addChild(model.AddFeature("M2"));
+    mods.addChild(model.AddFeature("M3"));
+    mods.addChild(model.AddFeature("M4"));
+
+    devs.addChild(model.AddFeature("D1"));
+    devs.addChild(model.AddFeature("D2"));
+    devs.addChild(model.AddFeature("D3"));
+    devs.addChild(model.AddFeature("D4"));
+
+    model.Add(new Implies(
+      new Literal("M2"),
+      new Not(
+        new Literal("M3")
+      )
+    ));
+
+    model.Add(new Implies(
+      new Literal("D1"),
+      new Not(
+        new Literal("M3")
+      )
+    ));
+
+
+    var formula = new FeatureModelFormula(model);
+    var config = new Configuration(formula);
+    var configAnalyzer = new ConfigurationAnalyzer(formula, config);
+    var sCore = config.getSelectableFeature("CORE");
+
+    configAnalyzer.update(true);
+
+    Expect(configAnalyzer.canBeValid()).To.Be.True("canBeValid");
+    Expect(configAnalyzer.isValid()).To.Be.True("isValid");
+    Expect(sCore?.getAutomatic()?.name()).To.Equal(Selection.SELECTED.name(), "isAutoSelected");
+  }
+
+
+
+  [Test]
+  public void Complex2()
   {
     cores.addChild(model.AddFeature("CORE"));
 
@@ -113,19 +158,19 @@ public class Tests
       )
     ));
 
-    var config = new Configuration(model, false);
-    var sCore = config.getSelectablefeature("CORE");
-    var sm4 = config.getSelectablefeature("M4");
 
-    config.setPropagate(true);
-    config.update(true, null);
+    var formula = new FeatureModelFormula(model);
+    var config = new Configuration(formula);
+    var configAnalyzer = new ConfigurationAnalyzer(formula, config);
+    var sCore = config.getSelectableFeature("CORE");
+    var sm4 = config.getSelectableFeature("M4");
 
-    Expect(sCore?.getAutomatic()).To.Equal(Selection.SELECTED);
-    Expect(sCore?.getSelection()).To.Equal(Selection.SELECTED);
-    Expect(sm4?.getAutomatic()).To.Equal(Selection.SELECTED);
-    Expect(sm4?.getSelection()).To.Equal(Selection.SELECTED);
+    configAnalyzer.update(true);
 
-    Expect(config.canBeValid()).To.Be.True("Should have a solution");
-    Expect(config.isValid()).To.Be.False("Shouldn't be valid");
+    Expect(configAnalyzer.canBeValid()).To.Be.True("canBeValid");
+    Expect(configAnalyzer.isValid()).To.Be.False("isValid");
+
+    Expect(sCore?.getAutomatic()?.name()).To.Equal(Selection.SELECTED.name(), "isAutoSelected");
+    Expect(sm4?.getAutomatic()?.name()).To.Equal(Selection.SELECTED.name(), "isAutoSelected");
   }
 }
