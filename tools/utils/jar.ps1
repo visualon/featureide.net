@@ -19,9 +19,9 @@ function get-jar {
     else {
       # too big, so use official sat4j libs
       # $uri = "https://raw.githubusercontent.com/FeatureIDE/FeatureIDE/v$version/plugins/de.ovgu.featureide.fm.core/lib/$name.jar"
-      $name = $name -replace "org.sat4j.", ""
+      $n = $name -replace "org.sat4j.", ""
       $baseUri = "https://repository.ow2.org/nexus/content/repositories/releases/org/ow2/sat4j"
-      $uri = "$baseUri/org.ow2.sat4j.$name/$version/org.ow2.sat4j.$name-$version.jar"
+      $uri = "$baseUri/org.ow2.sat4j.$n/$version/org.ow2.sat4j.$n$version.jar"
     }
 
     "Download jar $name@$version"
