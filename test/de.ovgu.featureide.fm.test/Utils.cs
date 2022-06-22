@@ -27,7 +27,7 @@ namespace de.ovgu.featureide.fm.test
       return res;
     }
 
-    public static IFeatureModel CreateModel() => FACTORY.create();
+    public static IFeatureModel CreateModel() => FACTORY.createFeatureModel();
     public static IEnumerable<SelectableFeature> GetFeatures(this Configuration @this) => @this.getFeatures().Cast<SelectableFeature>();
 
     public static IEnumerable<T> Cast<T>(this Iterable @this)
@@ -54,6 +54,6 @@ namespace de.ovgu.featureide.fm.test
       ((java.lang.Boolean)LongRunningWrapper.runMethod(@this.canBeValid())).booleanValue();
 
     public static ICollection<SelectableFeature> Update(this ConfigurationPropagator @this, bool redundantManual = true) =>
-      ((java.util.Collection)LongRunningWrapper.runMethod(@this.update(redundantManual))).Cast<SelectableFeature>().ToArray();
+      ((java.util.Collection)LongRunningWrapper.runMethod(@this.update(redundantManual, null))).Cast<SelectableFeature>().ToArray();
   }
 }

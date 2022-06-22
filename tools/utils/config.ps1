@@ -9,7 +9,7 @@ $PSDefaultParameterValues['*:ErrorAction'] = 'Stop'
 $IKVM_VERSION = "8.2.0-prerelease.911"
 
 # renovate: datasource=github-releases depName=featureide packageName=FeatureIDE/FeatureIDE
-$FEATUREIDE_VERSION = "3.8.3"
+$FEATUREIDE_VERSION = "3.3.0"
 
 # newer version is broken
 #disabled renovate: datasource=maven depName=sat4j packageName=org.ow2.sat4j:org.ow2.sat4j.pom
