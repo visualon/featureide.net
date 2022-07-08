@@ -19,10 +19,10 @@
     <tags>IKVM.NET Java .NET SAT</tags>
     <dependencies>
       <group targetFramework=".NETFramework4.6.1">
-        <dependency id="IKVM" version="8.2.0-prerelease0911" />
+        <dependency id="IKVM" version="8.2.0" />
       </group>
       <group targetFramework=".NETCoreApp3.1">
-        <dependency id="IKVM" version="8.2.0-prerelease0911" />
+        <dependency id="IKVM" version="8.2.0" />
       </group>
     </dependencies>
   </metadata>

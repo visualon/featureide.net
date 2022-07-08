@@ -4,9 +4,9 @@
     ".NETFramework,Version=v4.8": {
       "IKVM": {
         "type": "Direct",
-        "requested": "[8.2.0-prerelease0911, )",
-        "resolved": "8.2.0-prerelease0911",
-        "contentHash": "T905a/Un92cYtVU32dz3wU0uLBuGJpmqtPbNwKwax6mZ4/7hTzPHyHigmVZT9Wxs7DxbCYFTUIvNeIf7yrVF5g==",
+        "requested": "[8.2.0, )",
+        "resolved": "8.2.0",
+        "contentHash": "GqvN1gSYM/7lJznWgEhGuwfOSOon5XrbRJ7u5e4i0VEd+rclTNlzLHkbj0cPtLhlFCVlc5ZKmL1KMWdktjV2IA==",
         "dependencies": {
           "SharpZipLib": "1.3.3",
           "System.Memory": "4.5.5"
@@ -127,9 +127,9 @@
     "net6.0": {
       "IKVM": {
         "type": "Direct",
-        "requested": "[8.2.0-prerelease0911, )",
-        "resolved": "8.2.0-prerelease0911",
-        "contentHash": "T905a/Un92cYtVU32dz3wU0uLBuGJpmqtPbNwKwax6mZ4/7hTzPHyHigmVZT9Wxs7DxbCYFTUIvNeIf7yrVF5g==",
+        "requested": "[8.2.0, )",
+        "resolved": "8.2.0",
+        "contentHash": "GqvN1gSYM/7lJznWgEhGuwfOSOon5XrbRJ7u5e4i0VEd+rclTNlzLHkbj0cPtLhlFCVlc5ZKmL1KMWdktjV2IA==",
         "dependencies": {
           "Microsoft.Extensions.DependencyModel": "6.0.0",
           "Microsoft.Win32.Registry": "5.0.0",
