@@ -2,5 +2,6 @@ bin/
 obj/
 /packages
 /tools/ikvm
+/tools/IKVM*
 /.vs
 TestResults/

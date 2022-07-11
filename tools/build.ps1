@@ -28,48 +28,7 @@ if (Test-Path $target) {
 
 New-Item $target -ItemType Directory -Force | Out-Null
 
-function build-assembly {
-  param (
-    [Parameter(Mandatory)]
-    [ValidateSet("net461", "netcoreapp3.1")]
-    [string] $tfm
-  )
 
-  $tgt = New-Item $target/$tfm -ItemType Directory -Force
-  copy-jar -name 'de.ovgu.featureide.fm' -version $jarVersion -target $tgt
-  copy-jar -name 'org.sat4j.core' -version $SAT4J_VERSION -target $tgt
-  copy-jar -name 'org.sat4j.pb' -version $SAT4J_VERSION -target $tgt
-  Copy-Item tools/ikvm/$tfm/* -Destination $tgt -Recurse
-
-  $ikvm_args = @(
-    "-target:library",
-    "-classloader:ikvm.runtime.AppDomainAssemblyClassLoader",
-    "-keyfile:../../featureide.snk",
-    "-version:$assemblyversion",
-    "-fileversion:$version"
-  )
-
-  if ($IkvmDebug) {
-    $ikvm_args += '-debug'
-  }
-
-  if ($tfm -eq "netcoreapp3.1") {
-    $ikvm_args += "-nostdlib", "-r:./refs/*.dll"
-  }
-
-  $ikvm_args += "{", "org.sat4j.core.jar", "}"
-  $ikvm_args += "{", "org.sat4j.pb.jar", "}"
-  $ikvm_args += "{", "de.ovgu.featureide.fm.jar", "}"
-
-  try {
-    Push-Location $tgt
-    . ./ikvmc $ikvm_args
-    ThrowOnNativeFailure
-  }
-  finally {
-    Pop-Location
-  }
-}
 
 Write-Output "Downloading jars for version $jarVersion" | Out-Host
 get-jar -name 'de.ovgu.featureide.fm' -version $jarVersion
@@ -78,8 +37,8 @@ get-jar -name 'org.sat4j.pb' -version $SAT4J_VERSION
 
 Write-Output "Compiling jars for version $version" | Out-Host
 
-build-assembly -tfm net461
-build-assembly -tfm netcoreapp3.1
+build-assembly -target $target -tfm net461 -platform any -assemblyversion $assemblyversion -IkvmDebug $IkvmDebug
+build-assembly -target $target -tfm netcoreapp3.1 -platform win7-x64 -assemblyversion $assemblyversion -IkvmDebug $IkvmDebug
 
 Write-Output "Packing files" | Out-Host
 

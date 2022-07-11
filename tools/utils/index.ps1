@@ -4,3 +4,4 @@
 . $PSScriptRoot/version.ps1
 . $PSScriptRoot/exec.ps1
 . $PSScriptRoot/jar.ps1
+. $PSScriptRoot/build.ps1
