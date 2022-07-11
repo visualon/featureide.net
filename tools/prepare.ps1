@@ -13,8 +13,8 @@ function install-ikvm {
     [ValidateSet("any", "win7-x64")]
     [string] $platform
   )
-  $url = "https://github.com/ikvm-revived/ikvm/releases/download/${IKVM_VERSION}/IKVM-${IKVM_VERSION}-tools-${tfm}-${platform}.zip"
-  $file = "$tmp/ikvm-${IKVM_VERSION}-${tfm}-${platform}.zip"
+  $url = "https://github.com/ikvm-revived/ikvm/releases/download/${IKVM_VERSION}/IKVM-${IKVM_VERSION}-tools-ikvmc-${tfm}.zip"
+  $file = "$tmp/ikvmc-${IKVM_VERSION}-${tfm}.zip"
   $target = "./tools/ikvm/${tfm}"
 
   if (Test-Path $target) {
@@ -25,11 +25,13 @@ function install-ikvm {
 
   if (!(Test-Path $file)) {
     Invoke-WebRequest $url -OutFile $file
+    Expand-Archive -Path $file -DestinationPath "$tmp/ikvmc-${IKVM_VERSION}-${tfm}"
   }
 
-  Expand-Archive -Path $file -DestinationPath $target
+  Copy-Item -Path "$tmp/ikvmc-${IKVM_VERSION}-${tfm}/${platform}/*" -Destination $target -Recurse
 
-  . $target/ikvm -version
+  (Get-Item "$target/ikvmc.exe").VersionInfo.ProductVersion
+  #. $target/ikvmc -version
 }
 
 install-ikvm -tfm "net461" -platform "any"
