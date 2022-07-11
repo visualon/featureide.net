@@ -25,7 +25,7 @@ function build-assembly {
   copy-jar -name 'de.ovgu.featureide.fm' -version $jarVersion -target $tgt
   copy-jar -name 'org.sat4j.core' -version $SAT4J_VERSION -target $tgt
   copy-jar -name 'org.sat4j.pb' -version $SAT4J_VERSION -target $tgt
-  $ikvm = Resolve-Path "$PSScriptRoot/../ikvm"
+  $ikvm = Resolve-Path "$PSScriptRoot/../IKVM.${IKVM_VERSION}"
   $ikvmc = "$ikvm/bin/ikvmc/${tfm}/${platform}/ikvmc.exe"
 
   $ikvm_args = @(
@@ -35,7 +35,9 @@ function build-assembly {
     "-version:$assemblyversion",
     "-fileversion:$version",
     "-lib:$ikvm/bin/ikvmc/${tfm}/${platform}/refs",
-    "-nojni"
+    "-nojni",
+    "-compressresources",
+    "-runtime:$ikvm/lib/${tfm}/IKVM.Runtime.dll"
   )
 
   if ($IkvmDebug) {
@@ -43,7 +45,7 @@ function build-assembly {
   }
 
   #if ($tfm -eq "netcoreapp3.1") {
-    $ikvm_args += "-nostdlib", "-r:$ikvm/bin/ikvmc/${tfm}/${platform}/refs/*.dll"
+   $ikvm_args += "-nostdlib", "-r:$ikvm/bin/ikvmc/${tfm}/${platform}/refs/*.dll"
   #}
 
   $ikvm_args += "{", "org.sat4j.core.jar", "}"
