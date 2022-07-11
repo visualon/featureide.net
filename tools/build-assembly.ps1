@@ -75,4 +75,4 @@ get-jar -name 'org.sat4j.pb' -version $SAT4J_VERSION
 
 Write-Output "Compiling jars for version $version" | Out-Host
 
-build-assembly -tfm $tfm
+#build-assembly -tfm $tfm
