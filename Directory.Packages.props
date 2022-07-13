@@ -22,8 +22,8 @@
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     <PackageVersion Include="MinVer" Version="4.1.0" />
-    <PackageVersion Include="NExpect" Version="1.0.270" />
-    <PackageVersion Include="NExpect.Matchers.NSubstitute" Version="1.0.270" />
+    <PackageVersion Include="NExpect" Version="1.0.271" />
+    <PackageVersion Include="NExpect.Matchers.NSubstitute" Version="1.0.271" />
     <PackageVersion Include="NSubstitute" Version="4.4.0" />
     <PackageVersion Include="NSubstitute.Analyzers.CSharp" Version="1.0.15" />
     <PackageVersion Include="NUnit" Version="3.13.3" />
