@@ -35,17 +35,17 @@
       },
       "NExpect": {
         "type": "Direct",
-        "requested": "[1.0.274, )",
-        "resolved": "1.0.274",
-        "contentHash": "K9dTgIjH5GRFFP2hdm1swjYaANVuClSVgKI41xYH6vwXHkdjyzmYa4Rwvvm9e++0sOYAIolwTS67Y5BLzwnj8g=="
+        "requested": "[1.0.276, )",
+        "resolved": "1.0.276",
+        "contentHash": "4J0UlIyXCFHgIAmnZbnr7jKneGetPJ38B+xkCkM8lmJ6disLgriJun/hriaXmxnfKIbX8K3lKZeyHZVaKonUhg=="
       },
       "NExpect.Matchers.NSubstitute": {
         "type": "Direct",
-        "requested": "[1.0.274, )",
-        "resolved": "1.0.274",
-        "contentHash": "8TlT3lrXeupWuBvjwPzOWYSaPakY2N3HjJ5h5w7Xfgqf/MnOsmF6ox2YsKHcdbFUmneqNY0j2Lum1ilKdej0Gw==",
+        "requested": "[1.0.276, )",
+        "resolved": "1.0.276",
+        "contentHash": "HS1KFyXy2RdHsqdi4LCslzsRpjYYgnnMNN0MEFyVjQ5WlmkyVvKQdomDFRNlMdXVM1UHEHFdeof8hZ6aRTb80g==",
         "dependencies": {
-          "NExpect": "1.0.274",
+          "NExpect": "1.0.276",
           "NSubstitute": "4.3.0"
         }
       },
@@ -174,17 +174,17 @@
       },
       "NExpect": {
         "type": "Direct",
-        "requested": "[1.0.274, )",
-        "resolved": "1.0.274",
-        "contentHash": "K9dTgIjH5GRFFP2hdm1swjYaANVuClSVgKI41xYH6vwXHkdjyzmYa4Rwvvm9e++0sOYAIolwTS67Y5BLzwnj8g=="
+        "requested": "[1.0.276, )",
+        "resolved": "1.0.276",
+        "contentHash": "4J0UlIyXCFHgIAmnZbnr7jKneGetPJ38B+xkCkM8lmJ6disLgriJun/hriaXmxnfKIbX8K3lKZeyHZVaKonUhg=="
       },
       "NExpect.Matchers.NSubstitute": {
         "type": "Direct",
-        "requested": "[1.0.274, )",
-        "resolved": "1.0.274",
-        "contentHash": "8TlT3lrXeupWuBvjwPzOWYSaPakY2N3HjJ5h5w7Xfgqf/MnOsmF6ox2YsKHcdbFUmneqNY0j2Lum1ilKdej0Gw==",
+        "requested": "[1.0.276, )",
+        "resolved": "1.0.276",
+        "contentHash": "HS1KFyXy2RdHsqdi4LCslzsRpjYYgnnMNN0MEFyVjQ5WlmkyVvKQdomDFRNlMdXVM1UHEHFdeof8hZ6aRTb80g==",
         "dependencies": {
-          "NExpect": "1.0.274",
+          "NExpect": "1.0.276",
           "NSubstitute": "4.3.0"
         }
       },
