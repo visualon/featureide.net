@@ -4,9 +4,9 @@
     ".NETFramework,Version=v4.8": {
       "IKVM": {
         "type": "Direct",
-        "requested": "[8.2.1, )",
-        "resolved": "8.2.1",
-        "contentHash": "7S0M4bwvaiNWkeNLBRzo/HoqaoubUlzZuLnvg1YKlCs7DVVz/2OFS5jWMKmbW/3aMjCG0xRdchGXqNkWbhPxnQ==",
+        "requested": "[8.2.3, )",
+        "resolved": "8.2.3",
+        "contentHash": "bOpE15P9OBwaJ9O0Bq30ryH45myNdZLLyvyPVjRzGh6If4pb2mklpKZs+zUBS0Cjw+cmU60FJ+aOeEpa2eFjVQ==",
         "dependencies": {
           "SharpZipLib": "1.3.3",
           "System.Memory": "4.5.5"
@@ -127,9 +127,9 @@
     "net6.0": {
       "IKVM": {
         "type": "Direct",
-        "requested": "[8.2.1, )",
-        "resolved": "8.2.1",
-        "contentHash": "7S0M4bwvaiNWkeNLBRzo/HoqaoubUlzZuLnvg1YKlCs7DVVz/2OFS5jWMKmbW/3aMjCG0xRdchGXqNkWbhPxnQ==",
+        "requested": "[8.2.3, )",
+        "resolved": "8.2.3",
+        "contentHash": "bOpE15P9OBwaJ9O0Bq30ryH45myNdZLLyvyPVjRzGh6If4pb2mklpKZs+zUBS0Cjw+cmU60FJ+aOeEpa2eFjVQ==",
         "dependencies": {
           "Microsoft.Extensions.DependencyModel": "6.0.0",
           "Microsoft.Win32.Registry": "5.0.0",
