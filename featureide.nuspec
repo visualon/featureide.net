@@ -4,8 +4,7 @@
     <id>de.ovgu.featureide.fm</id>
     <version>$version$</version>
     <title>FeatureIDE</title>
-    <authors>Michael Kriese</authors>
-    <owners>VisualOn GmbH</owners>
+    <authors>VisualOn</authors>
     <license type="expression">LGPL-3.0-only</license>
     <projectUrl>https://featureide.github.io</projectUrl>
     <repository type="git" url="https://github.com/visualon/featureide.net" />
