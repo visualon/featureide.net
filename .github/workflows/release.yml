@@ -9,6 +9,9 @@ env:
   DOTNET_NOLOGO: true
   ProjectLoadStyle: All
 
+permissions:
+  contents: read
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
   cancel-in-progress: true
@@ -21,9 +24,6 @@ jobs:
       packages: write
       contents: write
 
-    env:
-      CONFIGURATION: Release
-
     steps:
       - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # v3.1.0
 
@@ -31,10 +31,7 @@ jobs:
         with:
           path: ~/.nuget/packages
           # Look to see if there is a cache hit for the corresponding requirements file
-          # key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
-          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj', '**/*.props', '**/*.targets') }}
-          # restore-keys: |
-          #   ${{ runner.os }}-nuget
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
 
       - name: prepare
         shell: pwsh

@@ -8,6 +8,13 @@ on:
 env:
   DOTNET_NOLOGO: true
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test-java:
     runs-on: ubuntu-latest
@@ -32,8 +39,6 @@ jobs:
           path: ~/.nuget/packages
           # Look to see if there is a cache hit for the corresponding requirements file
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-nuget
 
       - name: prepare
         shell: pwsh
@@ -60,8 +65,6 @@ jobs:
           path: ~/.nuget/packages
           # Look to see if there is a cache hit for the corresponding requirements file
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-nuget
 
       - name: prepare
         shell: pwsh
