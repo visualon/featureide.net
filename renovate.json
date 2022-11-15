@@ -6,7 +6,8 @@
       "description": "Don't automerge until we've good tests",
       "matchPackageNames": ["IKVM", "sat4j", "featureide"],
       "matchPackagePrefixes": ["org.sat4j."],
-      "automerge": false
+      "automerge": false,
+      "semanticCommitType": "fix"
     },
     {
       "description": "Group sat4j updates",
