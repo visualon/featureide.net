@@ -37,6 +37,10 @@
     {
       "matchPackageNames": ["sat4j"],
       "registryUrls": ["https://repository.ow2.org/nexus/content/repositories/releases"]
+    },
+    {
+      "matchPaths": ["java/**"],
+      "semanticCommitType": "chore"
     }
   ]
 }
