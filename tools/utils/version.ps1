@@ -29,6 +29,8 @@ function get-jar-version {
 
   if ($patch.Length -ge 3) {
     $patch = $patch.Substring(0, $patch.Length - 2)
+  } else {
+    $patch = 0
   }
 
   "$major.$minor.$patch"
