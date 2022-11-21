@@ -6,7 +6,7 @@ $PSDefaultParameterValues['*:ErrorAction'] = 'Stop'
 
 
 # renovate: datasource=github-releases depName=IKVM packageName=ikvm-revived/ikvm
-$IKVM_VERSION = "8.2.3"
+$IKVM_VERSION = "8.3.2"
 
 # renovate: datasource=github-releases depName=featureide packageName=FeatureIDE/FeatureIDE
 $FEATUREIDE_VERSION = "v3.9.0"
