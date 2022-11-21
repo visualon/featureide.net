@@ -4,12 +4,12 @@
     ".NETFramework,Version=v4.8": {
       "IKVM": {
         "type": "Direct",
-        "requested": "[8.3.2, )",
-        "resolved": "8.3.2",
-        "contentHash": "nBburnaLBmtychP1nNvZPpSGlpKEkqqELLbY6YaJDsCU6un7nyumgm6oR0mEfrWhG79QsBsyxqF1E2LbRNreOQ==",
+        "requested": "[8.3.3, )",
+        "resolved": "8.3.3",
+        "contentHash": "0V6XQxMh96GkEzEj2Xd2Q50JVUkmOJ/gkks1mDh16CANio5s4OPY3ldjgUol5L0/VOX5Rr85cyYGcrq+KJgfew==",
         "dependencies": {
-          "IKVM.Image": "8.3.2",
-          "IKVM.MSBuild": "8.3.2",
+          "IKVM.Image": "8.3.3",
+          "IKVM.MSBuild": "8.3.3",
           "SharpZipLib": "1.3.3",
           "System.Memory": "4.5.5",
           "System.Runtime.CompilerServices.Unsafe": "6.0.0",
@@ -95,13 +95,13 @@
       },
       "IKVM.Image": {
         "type": "Transitive",
-        "resolved": "8.3.2",
-        "contentHash": "JEyGo7c2TxWlPZtuLM/fTpQaYFwdi3dy9hkKd0JBFrUwdSrwH7zZ8xhi0MyUreAgfRv2kOQd2CxurpSiWsSMVQ=="
+        "resolved": "8.3.3",
+        "contentHash": "lUvrXGKacXOpd/PDZhYRsDBCm0BvTsrYYAtSgKjyPL0r7K5n4M7AlZNV0y3KT6AfE9+bJ+jsDbTbmpVMEBFy/A=="
       },
       "IKVM.MSBuild": {
         "type": "Transitive",
-        "resolved": "8.3.2",
-        "contentHash": "gH6vfc7MnOYvvrM5eGSw0QV4ytw4GJBtMZaQEBIwJlTFnPc+YS162nEqsQUD8NWALGSgtOVRYOj2yix0VmUQxQ=="
+        "resolved": "8.3.3",
+        "contentHash": "BPEuU+cCVqDGFHyWopAQFwZ9VY/wzv5uIIdrS9vc0y1Weld9CE2vF1yOnEVqX9nJTNB4a5qDkB1kQZq8MngItg=="
       },
       "Microsoft.Bcl.AsyncInterfaces": {
         "type": "Transitive",
@@ -188,12 +188,12 @@
     "net6.0": {
       "IKVM": {
         "type": "Direct",
-        "requested": "[8.3.2, )",
-        "resolved": "8.3.2",
-        "contentHash": "nBburnaLBmtychP1nNvZPpSGlpKEkqqELLbY6YaJDsCU6un7nyumgm6oR0mEfrWhG79QsBsyxqF1E2LbRNreOQ==",
+        "requested": "[8.3.3, )",
+        "resolved": "8.3.3",
+        "contentHash": "0V6XQxMh96GkEzEj2Xd2Q50JVUkmOJ/gkks1mDh16CANio5s4OPY3ldjgUol5L0/VOX5Rr85cyYGcrq+KJgfew==",
         "dependencies": {
-          "IKVM.Image": "8.3.2",
-          "IKVM.MSBuild": "8.3.2",
+          "IKVM.Image": "8.3.3",
+          "IKVM.MSBuild": "8.3.3",
           "Microsoft.Extensions.DependencyModel": "6.0.0",
           "Microsoft.Win32.Registry": "5.0.0",
           "SharpZipLib": "1.3.3",
@@ -297,13 +297,13 @@
       },
       "IKVM.Image": {
         "type": "Transitive",
-        "resolved": "8.3.2",
-        "contentHash": "JEyGo7c2TxWlPZtuLM/fTpQaYFwdi3dy9hkKd0JBFrUwdSrwH7zZ8xhi0MyUreAgfRv2kOQd2CxurpSiWsSMVQ=="
+        "resolved": "8.3.3",
+        "contentHash": "lUvrXGKacXOpd/PDZhYRsDBCm0BvTsrYYAtSgKjyPL0r7K5n4M7AlZNV0y3KT6AfE9+bJ+jsDbTbmpVMEBFy/A=="
       },
       "IKVM.MSBuild": {
         "type": "Transitive",
-        "resolved": "8.3.2",
-        "contentHash": "gH6vfc7MnOYvvrM5eGSw0QV4ytw4GJBtMZaQEBIwJlTFnPc+YS162nEqsQUD8NWALGSgtOVRYOj2yix0VmUQxQ=="
+        "resolved": "8.3.3",
+        "contentHash": "BPEuU+cCVqDGFHyWopAQFwZ9VY/wzv5uIIdrS9vc0y1Weld9CE2vF1yOnEVqX9nJTNB4a5qDkB1kQZq8MngItg=="
       },
       "Microsoft.Extensions.DependencyModel": {
         "type": "Transitive",
