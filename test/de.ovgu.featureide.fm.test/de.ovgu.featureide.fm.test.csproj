@@ -42,8 +42,8 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
-    <Reference Include="..\..\bin\net461\org.sat4j.core.dll" />
-    <Reference Include="..\..\bin\net461\org.sat4j.pb.dll" />
+    <Reference Include="..\..\bin\netcoreapp3.1\org.sat4j.core.dll" />
+    <Reference Include="..\..\bin\netcoreapp3.1\org.sat4j.pb.dll" />
     <Reference Include="..\..\bin\netcoreapp3.1\de.ovgu.featureide.fm.dll" />
   </ItemGroup>
 

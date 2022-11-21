@@ -5,7 +5,7 @@ namespace de.ovgu.featureide.fm.test
 {
   internal class Prop4jTests
   {
-    private org.prop4j.explain.solvers.SatSolver solver;
+    private org.prop4j.explain.solvers.SatSolver? solver;
 
     [SetUp]
     public void Setup()
@@ -38,7 +38,7 @@ namespace de.ovgu.featureide.fm.test
 
       var map = solver.getAssumptions();
       var m = solver.getModel();
-      Console.WriteLine("assumptions: " + map.keySet().Cast<string>().ToArray());
+      Console.WriteLine("assumptions: " + string.Join(",", map.keySet().Cast<string>().ToArray()));
     }
   }
 }
