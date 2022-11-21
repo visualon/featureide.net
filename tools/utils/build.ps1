@@ -25,7 +25,8 @@ function build-assembly {
   copy-jar -name 'de.ovgu.featureide.fm' -version $jarVersion -target $tgt
   copy-jar -name 'org.sat4j.core' -version $SAT4J_VERSION -target $tgt
   copy-jar -name 'org.sat4j.pb' -version $SAT4J_VERSION -target $tgt
-  $ikvm = Resolve-Path "$PSScriptRoot/../IKVM.${IKVM_VERSION}"
+  $ikvm = Resolve-Path "$PSScriptRoot/../IKVM.MSBuild.${IKVM_VERSION}"
+  $ikvmRuntime = Resolve-Path "$PSScriptRoot/../IKVM.${IKVM_VERSION}"
   $ikvmc = "$ikvm/bin/ikvmc/${tfm}/${platform}/ikvmc.exe"
 
   $ikvm_args = @(
@@ -36,8 +37,8 @@ function build-assembly {
     "-fileversion:$version",
     "-lib:$ikvm/bin/ikvmc/${tfm}/${platform}/refs",
     "-nojni",
-    "-compressresources",
-    "-runtime:$ikvm/lib/${tfm}/IKVM.Runtime.dll"
+    "-compressresources"
+    "-runtime:$ikvmRuntime/lib/${tfm}/IKVM.Runtime.dll"
   )
 
   if ($IkvmDebug) {

@@ -37,7 +37,7 @@ get-jar -name 'org.sat4j.pb' -version $SAT4J_VERSION
 
 Write-Output "Compiling jars for version $version" | Out-Host
 
-build-assembly -target $target -tfm net461 -platform any -assemblyversion $assemblyversion -IkvmDebug $IkvmDebug
+build-assembly -target $target -tfm net461 -platform win7-x64 -assemblyversion $assemblyversion -IkvmDebug $IkvmDebug
 build-assembly -target $target -tfm netcoreapp3.1 -platform win7-x64 -assemblyversion $assemblyversion -IkvmDebug $IkvmDebug
 
 Write-Output "Packing files" | Out-Host

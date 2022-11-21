@@ -4,5 +4,6 @@
 . $PSScriptRoot/utils/index.ps1
 
 nuget install IKVM -OutputDirectory tools -Version $IKVM_VERSION  -DependencyVersion Ignore -PackageSaveMode 'nuspec'
+nuget install IKVM.MSBuild -OutputDirectory tools -Version $IKVM_VERSION  -DependencyVersion Ignore -PackageSaveMode 'nuspec'
 
 dotnet restore
