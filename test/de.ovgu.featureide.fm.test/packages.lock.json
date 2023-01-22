@@ -66,9 +66,9 @@
       },
       "NSubstitute.Analyzers.CSharp": {
         "type": "Direct",
-        "requested": "[1.0.15, )",
-        "resolved": "1.0.15",
-        "contentHash": "z3x/YxqxYNx+epVAQ22brgn8aijD93dQjL/xczf2NSY77qQaqFSGFtzrKwq1r+5RPq+JdQ8BtDLDYUfjtxafHw=="
+        "requested": "[1.0.16, )",
+        "resolved": "1.0.16",
+        "contentHash": "+sdWbGyEQl22A4fBWo17/T53TMdbxegNjqwCxdBUS5/tp8ESJwfvHvGdIGj83sR0jKxvpUQoHO35qcf9tdgmdw=="
       },
       "NUnit": {
         "type": "Direct",
@@ -262,9 +262,9 @@
       },
       "NSubstitute.Analyzers.CSharp": {
         "type": "Direct",
-        "requested": "[1.0.15, )",
-        "resolved": "1.0.15",
-        "contentHash": "z3x/YxqxYNx+epVAQ22brgn8aijD93dQjL/xczf2NSY77qQaqFSGFtzrKwq1r+5RPq+JdQ8BtDLDYUfjtxafHw=="
+        "requested": "[1.0.16, )",
+        "resolved": "1.0.16",
+        "contentHash": "+sdWbGyEQl22A4fBWo17/T53TMdbxegNjqwCxdBUS5/tp8ESJwfvHvGdIGj83sR0jKxvpUQoHO35qcf9tdgmdw=="
       },
       "NUnit": {
         "type": "Direct",
