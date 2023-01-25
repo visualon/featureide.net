@@ -40,18 +40,18 @@
       },
       "NExpect": {
         "type": "Direct",
-        "requested": "[2.0.20, )",
-        "resolved": "2.0.20",
-        "contentHash": "hyx8rsCzeF8CXdkcYBDcZquQUPMpsvMw1KzHJ4LGOQ53CpbIjClKUxzvy1zx8RAIl6fCAjoDLnqVXOSBotsOzw=="
+        "requested": "[2.0.21, )",
+        "resolved": "2.0.21",
+        "contentHash": "QQ7vxMya/e0WEu0qeKZtWhFxk0kzNUiJgSp2ip0k8ggMWTSQOhiBurT6iboqkP0ilhGPpAovo22JU2+quAx13A=="
       },
       "NExpect.Matchers.NSubstitute": {
         "type": "Direct",
-        "requested": "[2.0.20, )",
-        "resolved": "2.0.20",
-        "contentHash": "hU+0/zx0w1b/z/qJCmAvsSVrYhu7jjDrs3OaqeEkPcqyix/vVbNICdYqqkurxPCTa/emy0/ui76UuahoMUtLzw==",
+        "requested": "[2.0.21, )",
+        "resolved": "2.0.21",
+        "contentHash": "E6yXog9/xKb/R4GDccUy6fp8R6ySojXEBDbqKlql+KCaQIxtBRImr4KBdWDEVApFPFsv/z5nGnzMh5xEbB+7Nw==",
         "dependencies": {
-          "NExpect": "2.0.20",
-          "NSubstitute": "4.3.0"
+          "NExpect": "2.0.21",
+          "NSubstitute": "4.4.0"
         }
       },
       "NSubstitute": {
@@ -237,18 +237,18 @@
       },
       "NExpect": {
         "type": "Direct",
-        "requested": "[2.0.20, )",
-        "resolved": "2.0.20",
-        "contentHash": "hyx8rsCzeF8CXdkcYBDcZquQUPMpsvMw1KzHJ4LGOQ53CpbIjClKUxzvy1zx8RAIl6fCAjoDLnqVXOSBotsOzw=="
+        "requested": "[2.0.21, )",
+        "resolved": "2.0.21",
+        "contentHash": "QQ7vxMya/e0WEu0qeKZtWhFxk0kzNUiJgSp2ip0k8ggMWTSQOhiBurT6iboqkP0ilhGPpAovo22JU2+quAx13A=="
       },
       "NExpect.Matchers.NSubstitute": {
         "type": "Direct",
-        "requested": "[2.0.20, )",
-        "resolved": "2.0.20",
-        "contentHash": "hU+0/zx0w1b/z/qJCmAvsSVrYhu7jjDrs3OaqeEkPcqyix/vVbNICdYqqkurxPCTa/emy0/ui76UuahoMUtLzw==",
+        "requested": "[2.0.21, )",
+        "resolved": "2.0.21",
+        "contentHash": "E6yXog9/xKb/R4GDccUy6fp8R6ySojXEBDbqKlql+KCaQIxtBRImr4KBdWDEVApFPFsv/z5nGnzMh5xEbB+7Nw==",
         "dependencies": {
-          "NExpect": "2.0.20",
-          "NSubstitute": "4.3.0"
+          "NExpect": "2.0.21",
+          "NSubstitute": "4.4.0"
         }
       },
       "NSubstitute": {
