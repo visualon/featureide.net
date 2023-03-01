@@ -28,7 +28,7 @@
     <PackageVersion Include="NSubstitute.Analyzers.CSharp" Version="1.0.16" />
     <PackageVersion Include="NUnit" Version="3.13.3" />
     <PackageVersion Include="NUnit.Analyzers" Version="3.6.0" />
-    <PackageVersion Include="NUnit3TestAdapter" Version="4.3.1" />
+    <PackageVersion Include="NUnit3TestAdapter" Version="4.4.0" />
     <PackageVersion Include="Snapper" Version="2.4.0" />
     <PackageVersion Include="Snapper.Nunit" Version="2.4.0" />
     <PackageVersion Include="StyleCop.Analyzers" Version="1.2.0-beta.435" />
