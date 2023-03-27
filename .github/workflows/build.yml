@@ -51,7 +51,7 @@ jobs:
         run: dotnet build --no-restore
 
       - name: test
-        run: dotnet test test -l trx -v m --no-build
+        run: dotnet test -l trx -v m --no-build
 
   build:
     runs-on: windows-latest
