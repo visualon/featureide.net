@@ -8,30 +8,50 @@
     <Company>VisualOn GmbH</Company>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <IncludeBuildOutput>true</IncludeBuildOutput>
+    <!-- <GetIkvmReferenceItemsDependsOn>MinVer;_Refs;$(GetIkvmReferenceItemsDependsOn)</GetIkvmReferenceItemsDependsOn> -->
+    <Sat4JVersion>2.3.5</Sat4JVersion>
+    <FeatureIDEVersion>v3.9.1</FeatureIDEVersion>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="IKVM" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All"/>
+
+    <IkvmReference Include="$(SolutionDir)libs\org.sat4j.core.jar">
+      <AssemblyName>org.sat4j.core</AssemblyName>
+      <AssemblyVersion>$(Sat4JVersion.Split(`.`)[0]).0.0.0</AssemblyVersion>
+      <AssemblyFileVersion>$(Sat4JVersion)</AssemblyFileVersion>
+      <KeyFile>$(SolutionDir)featureide.snk</KeyFile>
+      <Debug>false</Debug>
+    </IkvmReference>
+    <IkvmReference Include="$(SolutionDir)libs\org.sat4j.pb.jar">
+      <AssemblyName>org.sat4j.pb</AssemblyName>
+      <AssemblyVersion>$(Sat4JVersion.Split(`.`)[0]).0.0.0</AssemblyVersion>
+      <AssemblyFileVersion>$(Sat4JVersion)</AssemblyFileVersion>
+      <KeyFile>$(SolutionDir)featureide.snk</KeyFile>
+      <References>$(SolutionDir)libs\org.sat4j.core.jar</References>
+      <Debug>false</Debug>
+    </IkvmReference>
+    <IkvmReference Include="$(SolutionDir)libs\de.ovgu.featureide.fm.jar">
+      <AssemblyName>de.ovgu.featureide.fm</AssemblyName>
+      <AssemblyVersion>$(FeatureIDEVersion.Replace(`v`, ``).Split(`.`)[0]).0.0.0</AssemblyVersion>
+      <AssemblyFileVersion>$(FeatureIDEVersion.Replace(`v`, ``))</AssemblyFileVersion>
+      <KeyFile>$(SolutionDir)featureide.snk</KeyFile>
+      <References>$(SolutionDir)libs\org.sat4j.core.jar;$(SolutionDir)libs\org.sat4j.pb.jar</References>
+      <Debug>false</Debug>
+   </IkvmReference>
   </ItemGroup>
 
-  <Target Name="BuildAssemblies" BeforeTargets="AfterBuild">
-    <PropertyGroup>
-      <Args>-tfm $(TargetFramework)</Args>
-      <Args>$(Args) -configuration $(Configuration)</Args>
-      <Args>$(Args) -outdir $(BaseIntermediateOutputPath)</Args>
-    </PropertyGroup>
-    <Message Importance="high" Text="Args: $(Args)" />
-    <Message Importance="high" Text="AssemblyName: $(AssemblyName)" />
-    <Message Importance="high" Text="OutputPath: $(OutputPath)" />
-    <Exec Command="pwsh $(SolutionDir)/tools/build-assembly.ps1 $(Args)" />
+  <Target Name="_refs">
     <ItemGroup>
-      <_ToCopy Include="$(BaseIntermediateOutputPath)$(Configuration)/$(TargetFramework)/$(AssemblyName).dll" />
-      <_ToCopy Include="$(BaseIntermediateOutputPath)$(Configuration)/$(TargetFramework)/$(AssemblyName).pdb" Condition="'$(Configuration)' == 'Debug'" />
-      <_ToCopy Include="$(BaseIntermediateOutputPath)$(Configuration)/$(TargetFramework)/org.sat4j.core.dll" />
-      <_ToCopy Include="$(BaseIntermediateOutputPath)$(Configuration)/$(TargetFramework)/org.sat4j.core.pdb" Condition="'$(Configuration)' == 'Debug'" />
-      <_ToCopy Include="$(BaseIntermediateOutputPath)$(Configuration)/$(TargetFramework)/org.sat4j.pb.dll" />
-      <_ToCopy Include="$(BaseIntermediateOutputPath)$(Configuration)/$(TargetFramework)/org.sat4j.pb.pdb" Condition="'$(Configuration)' == 'Debug'" />
+      <IkvmReference Update="$(SolutionDir)libs\*.jar">
+          <AssemblyVersion>$(AssemblyVersion)</AssemblyVersion>
+          <AssemblyFileVersion>$(FileVersion)</AssemblyFileVersion>
+      </IkvmReference>
     </ItemGroup>
-    <Copy DestinationFolder="$(OutputPath)" SourceFiles="@(_ToCopy)" />
+        <Message Text="Version = $(Version)" Importance="high" />
+        <Message Text="AssemblyVersion = $(AssemblyVersion)" Importance="high" />
+        <Message Text="FileVersion = $(FileVersion)" Importance="high" />
   </Target>
+
 </Project>

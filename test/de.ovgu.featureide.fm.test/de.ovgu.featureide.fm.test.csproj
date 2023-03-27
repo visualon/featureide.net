@@ -36,19 +36,19 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
-    <Reference Include="..\..\bin\net461\org.sat4j.core.dll" />
-    <Reference Include="..\..\bin\net461\org.sat4j.pb.dll" />
-    <Reference Include="..\..\bin\net461\de.ovgu.featureide.fm.dll" />
+    <Reference Include="$(SolutionDir)src\de.ovgu.featureide.fm\bin\$(Configuration)\net461\org.sat4j.core.dll" />
+    <Reference Include="$(SolutionDir)src\de.ovgu.featureide.fm\bin\$(Configuration)\net461\org.sat4j.pb.dll" />
+    <Reference Include="$(SolutionDir)src\de.ovgu.featureide.fm\bin\$(Configuration)\net461\de.ovgu.featureide.fm.dll" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
-    <Reference Include="..\..\bin\netcoreapp3.1\org.sat4j.core.dll" />
-    <Reference Include="..\..\bin\netcoreapp3.1\org.sat4j.pb.dll" />
-    <Reference Include="..\..\bin\netcoreapp3.1\de.ovgu.featureide.fm.dll" />
+    <Reference Include="$(SolutionDir)src\de.ovgu.featureide.fm\bin\$(Configuration)\netcoreapp3.1\org.sat4j.core.dll" />
+    <Reference Include="$(SolutionDir)src\de.ovgu.featureide.fm\bin\$(Configuration)\netcoreapp3.1\org.sat4j.pb.dll" />
+    <Reference Include="$(SolutionDir)src\de.ovgu.featureide.fm\bin\$(Configuration)\netcoreapp3.1\de.ovgu.featureide.fm.dll" />
   </ItemGroup>
 
   <ItemGroup>
-    <!--<ProjectReference Include="..\..\src\de.ovgu.featureide.fm\de.ovgu.featureide.fm.csproj" />-->
+    <ProjectReference Include="..\..\src\de.ovgu.featureide.fm\de.ovgu.featureide.fm.csproj" Private="true"/>
   </ItemGroup>
 
   <Target Name="RemoveTestResults" BeforeTargets="Build;Clean">

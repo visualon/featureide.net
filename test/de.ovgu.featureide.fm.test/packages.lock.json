@@ -233,6 +233,12 @@
         "type": "Transitive",
         "resolved": "4.5.0",
         "contentHash": "okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ=="
+      },
+      "de.ovgu.featureide.fm": {
+        "type": "Project",
+        "dependencies": {
+          "IKVM": "[8.4.5, )"
+        }
       }
     },
     "net6.0": {
@@ -813,6 +819,12 @@
         "contentHash": "IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
         "dependencies": {
           "System.Drawing.Common": "6.0.0"
+        }
+      },
+      "de.ovgu.featureide.fm": {
+        "type": "Project",
+        "dependencies": {
+          "IKVM": "[8.4.5, )"
         }
       }
     }
