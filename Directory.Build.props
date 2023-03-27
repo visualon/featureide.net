@@ -11,7 +11,8 @@
         <AnalysisMode>AllEnabledByDefault</AnalysisMode>
         <LangVersion>latest</LangVersion>
 
-         <RunSettingsFilePath>$(MSBuildThisFileDirectory)\featureide.runsettings</RunSettingsFilePath>
+        <RunSettingsFilePath>$(MSBuildThisFileDirectory)\featureide.runsettings</RunSettingsFilePath>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>

@@ -41,16 +41,17 @@ jobs:
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
 
       - name: prepare
+        run: dotnet restore
+
+      - name: jars
         shell: pwsh
-        run: ./tools/prepare.ps1
+        run: ./tools/get-jars.ps1
 
       - name: build
-        shell: pwsh
-        run: ./tools/build.ps1 -IkvmDebug $true
+        run: dotnet build --no-restore
 
       - name: test
-        shell: pwsh
-        run: dotnet test test -l trx -v m --no-restore
+        run: dotnet test test -l trx -v m --no-build
 
   build:
     runs-on: windows-latest
@@ -67,12 +68,13 @@ jobs:
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
 
       - name: prepare
-        shell: pwsh
-        run: ./tools/prepare.ps1
+        run: dotnet restore
 
       - name: build
-        shell: pwsh
-        run: ./tools/build.ps1
+        run: dotnet build --no-restore
+
+      - name: pack
+        run: dotnet pack --no-build -o bin
 
       - uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
         with:

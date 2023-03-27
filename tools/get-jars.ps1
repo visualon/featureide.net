@@ -8,7 +8,7 @@ param(
 
 . $PSScriptRoot/utils/index.ps1
 
-$libs = "libs"
+$libs = "bin"
 $version = get-version -version $version
 $jarVersion = get-jar-version -version $version
 
