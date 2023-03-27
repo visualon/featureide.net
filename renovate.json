@@ -49,7 +49,7 @@
       "fileMatch": ["\\.csproj$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
-        "<!-- renovate: datasource=(?<datasource>.+?) depName=(?<depName>.+?)(?: (?:packageName|lookupName)=(?<packageName>.+?))?(?: versioning=(?<versioning>.+?))? -->\\s+<[^>]+>(?<currentValue>.+?)</[^>]+>"
+        "<!-- renovate: datasource=(?<datasource>.+?) depName=(?<depName>.+?)(?: (?:packageName|lookupName)=(?<packageName>.+?))?(?: versioning=(?<versioning>.+?))? -->\\s+<[^>]+>(?<currentValue>.+?)<\\/[^>]+>"
       ]
     }
   ]
