@@ -3,35 +3,63 @@
   <PropertyGroup>
     <TargetFrameworks>net461;netcoreapp3.1</TargetFrameworks>
     <Product>FeatureIDE</Product>
-    <Copyright>© VisualOn GmbH $([System.DateTime]::Now.ToString("yyyy"))</Copyright>
-    <Authors>VisualOn GmbH</Authors>
+    <Copyright>VisualOn GmbH $([System.DateTime]::Now.ToString("yyyy"))</Copyright>
+    <Authors>VisualOn</Authors>
     <Company>VisualOn GmbH</Company>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <IncludeBuildOutput>true</IncludeBuildOutput>
+    <Sat4JVersion>2.3.5</Sat4JVersion>
+    <!-- renovate: datasource=github-releases depName=featureide packageName=FeatureIDE/FeatureIDE -->
+    <FeatureIDEVersion>v3.9.1</FeatureIDEVersion>
+
+    <Title>FeatureIDE</Title>
+    <Description>
+      An extensible framework for feature-oriented software development
+
+      This is the IKVM version; which is to say that this is compiled from Java to .NET
+    </Description>
+    <PackageTags>IKVM.NET Java .NET SAT</PackageTags>
+    <PackageLicenseExpression>LGPL-3.0-only</PackageLicenseExpression>
+
+    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);GetMyPackageFiles</TargetsForTfmSpecificBuildOutput>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="IKVM" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All"/>
+    <PackageReference Include="MinVer" PrivateAssets="All"/>
+
+    <IkvmReference Include="$(SolutionDir)bin\org.sat4j.core.jar">
+      <AssemblyName>org.sat4j.core</AssemblyName>
+      <AssemblyVersion>$(Sat4JVersion.Split(`.`)[0]).0.0.0</AssemblyVersion>
+      <AssemblyFileVersion>$(Sat4JVersion)</AssemblyFileVersion>
+      <KeyFile>$(SolutionDir)featureide.snk</KeyFile>
+      <Debug>false</Debug>
+    </IkvmReference>
+    <IkvmReference Include="$(SolutionDir)bin\org.sat4j.pb.jar">
+      <AssemblyName>org.sat4j.pb</AssemblyName>
+      <AssemblyVersion>$(Sat4JVersion.Split(`.`)[0]).0.0.0</AssemblyVersion>
+      <AssemblyFileVersion>$(Sat4JVersion)</AssemblyFileVersion>
+      <KeyFile>$(SolutionDir)featureide.snk</KeyFile>
+      <References>$(SolutionDir)bin\org.sat4j.core.jar</References>
+      <Debug>false</Debug>
+    </IkvmReference>
+    <IkvmReference Include="$(SolutionDir)bin\de.ovgu.featureide.fm.jar">
+      <AssemblyName>de.ovgu.featureide.fm</AssemblyName>
+      <AssemblyVersion>$(FeatureIDEVersion.Replace(`v`, ``).Split(`.`)[0]).0.0.0</AssemblyVersion>
+      <AssemblyFileVersion>$(FeatureIDEVersion.Replace(`v`, ``))</AssemblyFileVersion>
+      <KeyFile>$(SolutionDir)featureide.snk</KeyFile>
+      <References>$(SolutionDir)bin\org.sat4j.core.jar;$(SolutionDir)bin\org.sat4j.pb.jar</References>
+      <Debug>false</Debug>
+   </IkvmReference>
   </ItemGroup>
 
-  <Target Name="BuildAssemblies" BeforeTargets="AfterBuild">
-    <PropertyGroup>
-      <Args>-tfm $(TargetFramework)</Args>
-      <Args>$(Args) -configuration $(Configuration)</Args>
-      <Args>$(Args) -outdir $(BaseIntermediateOutputPath)</Args>
-    </PropertyGroup>
-    <Message Importance="high" Text="Args: $(Args)" />
-    <Message Importance="high" Text="AssemblyName: $(AssemblyName)" />
-    <Message Importance="high" Text="OutputPath: $(OutputPath)" />
-    <Exec Command="pwsh $(SolutionDir)/tools/build-assembly.ps1 $(Args)" />
+  <Target Name="GetMyPackageFiles">
     <ItemGroup>
-      <_ToCopy Include="$(BaseIntermediateOutputPath)$(Configuration)/$(TargetFramework)/$(AssemblyName).dll" />
-      <_ToCopy Include="$(BaseIntermediateOutputPath)$(Configuration)/$(TargetFramework)/$(AssemblyName).pdb" Condition="'$(Configuration)' == 'Debug'" />
-      <_ToCopy Include="$(BaseIntermediateOutputPath)$(Configuration)/$(TargetFramework)/org.sat4j.core.dll" />
-      <_ToCopy Include="$(BaseIntermediateOutputPath)$(Configuration)/$(TargetFramework)/org.sat4j.core.pdb" Condition="'$(Configuration)' == 'Debug'" />
-      <_ToCopy Include="$(BaseIntermediateOutputPath)$(Configuration)/$(TargetFramework)/org.sat4j.pb.dll" />
-      <_ToCopy Include="$(BaseIntermediateOutputPath)$(Configuration)/$(TargetFramework)/org.sat4j.pb.pdb" Condition="'$(Configuration)' == 'Debug'" />
+      <BuildOutputInPackage Include="$(OutputPath)org.sat4j.core.dll" />
+      <BuildOutputInPackage Include="$(OutputPath)org.sat4j.pb.dll" />
+      <BuildOutputInPackage Include="$(OutputPath)de.ovgu.featureide.fm.dll" />
     </ItemGroup>
-    <Copy DestinationFolder="$(OutputPath)" SourceFiles="@(_ToCopy)" />
   </Target>
+
 </Project>
