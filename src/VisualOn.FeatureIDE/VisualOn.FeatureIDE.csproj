@@ -22,7 +22,7 @@
     <PackageLicenseExpression>LGPL-3.0-only</PackageLicenseExpression>
 
     <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);GetMyPackageFiles</TargetsForTfmSpecificBuildOutput>
-    <ResolveIkvmRuntimeAssemblyDependsOn>DownloadJars;$(ResolveIkvmRuntimeAssemblyDependsOn)</ResolveIkvmRuntimeAssemblyDependsOn>
+    <GetIkvmReferenceItemsDependsOn>AddJars;$(GetIkvmReferenceItemsDependsOn)</GetIkvmReferenceItemsDependsOn>
 
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
@@ -44,7 +44,11 @@
     </ItemGroup>
   </Target>
 
-  <Target Name="DownloadJars" BeforeTargets="Build">
+  <Target Name="RestoreJars" BeforeTargets="Restore" DependsOnTargets="DownloadJars">
+
+  </Target>
+
+  <Target Name="DownloadJars">
     <DownloadFile
       SourceUrl="https://repository.ow2.org/nexus/content/repositories/releases/org/ow2/sat4j/org.ow2.sat4j.core/$(Sat4JVersion)/org.ow2.sat4j.core-$(Sat4JVersion).jar"
       DestinationFolder="$(MSBuildProjectDirectory)\bin"
@@ -63,7 +67,9 @@
       DestinationFileName="de.ovgu.featureide.fm.jar"
       SkipUnchangedFiles="true">
     </DownloadFile>
+  </Target>
 
+  <Target Name="AddJars" DependsOnTargets="DownloadJars">
     <ItemGroup>
       <IkvmReference Include="$(MSBuildProjectDirectory)\bin\org.sat4j.core.jar">
         <AssemblyName>org.sat4j.core</AssemblyName>
