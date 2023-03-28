@@ -8,9 +8,6 @@
     <Company>VisualOn GmbH</Company>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <IncludeBuildOutput>true</IncludeBuildOutput>
-    <Sat4JVersion>2.3.5</Sat4JVersion>
-    <!-- renovate: datasource=github-releases depName=featureide packageName=FeatureIDE/FeatureIDE -->
-    <FeatureIDEVersion>v3.9.1</FeatureIDEVersion>
 
     <Title>FeatureIDE</Title>
     <Description>
@@ -44,11 +41,7 @@
     </ItemGroup>
   </Target>
 
-  <Target Name="RestoreJars" BeforeTargets="Restore" DependsOnTargets="DownloadJars">
-
-  </Target>
-
-  <Target Name="DownloadJars">
+  <Target Name="DownloadJars" BeforeTargets="CollectPackageReferences" Condition="'$(TargetFramework)' == ''">
     <DownloadFile
       SourceUrl="https://repository.ow2.org/nexus/content/repositories/releases/org/ow2/sat4j/org.ow2.sat4j.core/$(Sat4JVersion)/org.ow2.sat4j.core-$(Sat4JVersion).jar"
       DestinationFolder="$(MSBuildProjectDirectory)\bin"
@@ -69,7 +62,7 @@
     </DownloadFile>
   </Target>
 
-  <Target Name="AddJars" DependsOnTargets="DownloadJars">
+  <Target Name="AddJars">
     <ItemGroup>
       <IkvmReference Include="$(MSBuildProjectDirectory)\bin\org.sat4j.core.jar">
         <AssemblyName>org.sat4j.core</AssemblyName>
