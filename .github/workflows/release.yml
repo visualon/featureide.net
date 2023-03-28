@@ -37,10 +37,6 @@ jobs:
       - name: prepare
         run: dotnet restore
 
-      - name: jars
-        shell: pwsh
-        run: ./tools/get-jars.ps1
-
       - name: build
         run: dotnet build --no-restore
 

@@ -12,7 +12,7 @@
           <CodeCoverage>
             <ModulePaths>
               <Include>
-                <ModulePath>de\.ovgu\.featureide\.fm\.dll$</ModulePath>
+                <ModulePath>VisualOn\.FeatureIDE\.dll$</ModulePath>
               </Include>
             </ModulePaths>
           </CodeCoverage>

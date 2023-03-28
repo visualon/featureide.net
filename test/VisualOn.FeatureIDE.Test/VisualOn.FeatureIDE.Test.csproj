@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>net48;net6.0</TargetFrameworks>
@@ -18,7 +18,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="IKVM" />
+    <!-- <PackageReference Include="IKVM" /> -->
     <PackageReference Include="Microsoft.CodeCoverage" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
     <PackageReference Include="NExpect" />
@@ -30,23 +30,25 @@
     <PackageReference Include="NUnit3TestAdapter" />
 
     <Using Remove="System.Net.Http" />
-
+    <Using Include="NExpect" />
+    <Using Include="NUnit.Framework" />
+    <Using Include="NExpect.Expectations" Static="true" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
-    <Reference Include="$(SolutionDir)src\de.ovgu.featureide.fm\bin\$(Configuration)\net461\org.sat4j.core.dll" />
-    <Reference Include="$(SolutionDir)src\de.ovgu.featureide.fm\bin\$(Configuration)\net461\org.sat4j.pb.dll" />
-    <Reference Include="$(SolutionDir)src\de.ovgu.featureide.fm\bin\$(Configuration)\net461\de.ovgu.featureide.fm.dll" />
+    <Reference Include="$(SolutionDir)src\VisualOn.FeatureIDE\bin\$(Configuration)\net461\org.sat4j.core.dll" />
+    <Reference Include="$(SolutionDir)src\VisualOn.FeatureIDE\bin\$(Configuration)\net461\org.sat4j.pb.dll" />
+    <Reference Include="$(SolutionDir)src\VisualOn.FeatureIDE\bin\$(Configuration)\net461\de.ovgu.featureide.fm.dll" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
-    <Reference Include="$(SolutionDir)src\de.ovgu.featureide.fm\bin\$(Configuration)\netcoreapp3.1\org.sat4j.core.dll" />
-    <Reference Include="$(SolutionDir)src\de.ovgu.featureide.fm\bin\$(Configuration)\netcoreapp3.1\org.sat4j.pb.dll" />
-    <Reference Include="$(SolutionDir)src\de.ovgu.featureide.fm\bin\$(Configuration)\netcoreapp3.1\de.ovgu.featureide.fm.dll" />
+    <Reference Include="$(SolutionDir)src\VisualOn.FeatureIDE\bin\$(Configuration)\net6.0\org.sat4j.core.dll" />
+    <Reference Include="$(SolutionDir)src\VisualOn.FeatureIDE\bin\$(Configuration)\net6.0\org.sat4j.pb.dll" />
+    <Reference Include="$(SolutionDir)src\VisualOn.FeatureIDE\bin\$(Configuration)\net6.0\de.ovgu.featureide.fm.dll" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\de.ovgu.featureide.fm\de.ovgu.featureide.fm.csproj" Private="true"/>
+    <ProjectReference Include="..\..\src\VisualOn.FeatureIDE\VisualOn.FeatureIDE.csproj" />
   </ItemGroup>
 
   <Target Name="RemoveTestResults" BeforeTargets="Build;Clean">
@@ -54,3 +56,4 @@
   </Target>
 
 </Project>
+ 

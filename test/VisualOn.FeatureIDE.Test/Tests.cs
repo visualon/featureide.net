@@ -3,7 +3,7 @@ using de.ovgu.featureide.fm.core.@base;
 using de.ovgu.featureide.fm.core.configuration;
 using org.prop4j;
 
-namespace de.ovgu.featureide.fm.test;
+namespace VisualOn.FeatureIDE.Test;
 
 public class Tests
 {
@@ -15,7 +15,7 @@ public class Tests
   [SetUp]
   public void Setup()
   {
-    model = Utils.CreateModel();
+    model = FeatureModelFactory.CreateModel();
     var root = model.AddFeature("Root", true);
     root.setMandatory(true);
     model.getStructure().setRoot(root);
@@ -32,6 +32,12 @@ public class Tests
     devs = model.AddFeature("Devices", true);
     devs.setOr();
     root.addChild(devs);
+  }
+
+  [Test]
+  public void Casts()
+  {
+    Assert.That(model.getFeatures().Cast<IFeature>(), Has.Exactly(4).Items);
   }
 
   [Test]
@@ -92,14 +98,14 @@ public class Tests
     devs.addChild(model.AddFeature("D3"));
     devs.addChild(model.AddFeature("D4"));
 
-    model.Add(new Implies(
+    model.AddConstraint(new Implies(
       new Literal("M2"),
       new Not(
         new Literal("M3")
       )
     ));
 
-    model.Add(new Implies(
+    model.AddConstraint(new Implies(
       new Literal("D1"),
       new Not(
         new Literal("M3")
@@ -136,7 +142,7 @@ public class Tests
     devs.addChild(model.AddFeature("D3"));
     devs.addChild(model.AddFeature("D4"));
 
-    model.Add(new Implies(
+    model.AddConstraint(new Implies(
       new Literal("CORE"),
       new Or(
         new And(new Literal("M4"), new Literal("M2")),
@@ -144,14 +150,14 @@ public class Tests
       )
     ));
 
-    model.Add(new Implies(
+    model.AddConstraint(new Implies(
       new Literal("M2"),
       new Not(
         new Literal("M3")
       )
     ));
 
-    model.Add(new Implies(
+    model.AddConstraint(new Implies(
       new Literal("D1"),
       new Not(
         new Literal("M3")

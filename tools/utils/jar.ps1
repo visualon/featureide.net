@@ -5,26 +5,29 @@
 function get-jar {
   param (
     [Parameter(Mandatory)]
-    [ValidateSet("de.ovgu.featureide.fm", "org.sat4j.core", "org.sat4j.pb")]
+    [ValidateSet('de.ovgu.featureide.fm', 'org.sat4j.core', 'org.sat4j.pb')]
     [string] $name,
 
     [Parameter(Mandatory)]
     [string] $version
   )
   $file = "$tmp/${name}-${version}.jar"
-  if (!(Test-Path $file)) {
-    if ($name -eq "de.ovgu.featureide.fm") {
-      $uri = "https://github.com/FeatureIDE/FeatureIDE/releases/download/v$version/de.ovgu.featureide.lib.fm-v$version.jar"
-    }
-    else {
-      # too big, so use official sat4j libs
-      # $uri = "https://raw.githubusercontent.com/FeatureIDE/FeatureIDE/v$version/plugins/de.ovgu.featureide.fm.core/lib/$name.jar"
-      $n = $name -replace "org.sat4j.", ""
-      $baseUri = "https://repository.ow2.org/nexus/content/repositories/releases/org/ow2/sat4j"
-      $uri = "$baseUri/org.ow2.sat4j.$n/$version/org.ow2.sat4j.$n-$version.jar"
-    }
+  if ($name -eq 'de.ovgu.featureide.fm') {
+    $uri = "https://github.com/FeatureIDE/FeatureIDE/releases/download/v$version/de.ovgu.featureide.lib.fm-v$version.jar"
+  }
+  else {
+    # too big, so use official sat4j libs
+    # $uri = "https://raw.githubusercontent.com/FeatureIDE/FeatureIDE/v$version/plugins/de.ovgu.featureide.fm.core/lib/$name.jar"
+    $n = $name -replace 'org.sat4j.', ''
+    $baseUri = 'https://repository.ow2.org/nexus/content/repositories/releases/org/ow2/sat4j'
+    $uri = "$baseUri/org.ow2.sat4j.$n/$version/org.ow2.sat4j.$n-$version.jar"
+  }
 
-    "Download jar $name@$version"
+  if ((Test-Path $file)) {
+    "Skipping download jar $name@$version ($uri)"
+  }
+  else {
+    "Download jar $name@$version ($uri)"
     Invoke-WebRequest -URI $uri -OutFile $file
   }
 }
@@ -32,7 +35,7 @@ function get-jar {
 function copy-jar {
   param (
     [Parameter(Mandatory)]
-    [ValidateSet("de.ovgu.featureide.fm", "org.sat4j.core", "org.sat4j.pb")]
+    [ValidateSet('de.ovgu.featureide.fm', 'org.sat4j.core', 'org.sat4j.pb')]
     [string] $name,
 
     [Parameter(Mandatory)]

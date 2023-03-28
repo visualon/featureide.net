@@ -3,7 +3,7 @@ name: build
 on:
   push:
     branches:
-      - "**"
+      - '**'
 
 env:
   DOTNET_NOLOGO: true
@@ -28,8 +28,12 @@ jobs:
         run: ./tools/build-java.ps1
 
   test-dotnet:
-    runs-on: windows-latest
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 15
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
 
     steps:
       - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3.5.0
@@ -43,15 +47,16 @@ jobs:
       - name: prepare
         run: dotnet restore
 
-      - name: jars
-        shell: pwsh
-        run: ./tools/get-jars.ps1
-
       - name: build
         run: dotnet build --no-restore
 
       - name: test
-        run: dotnet test -l trx -v m --no-build
+        run: dotnet test --no-build
+
+      - name: Codecov
+        uses: codecov/codecov-action@v3.1.1
+        with:
+          files: '**/TestResults/*/*.cobertura.xml'
 
   build:
     runs-on: windows-latest
@@ -69,10 +74,6 @@ jobs:
 
       - name: prepare
         run: dotnet restore
-
-      - name: jars
-        shell: pwsh
-        run: ./tools/get-jars.ps1
 
       - name: build
         run: dotnet build --no-restore
