@@ -1,7 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>net48;net6.0</TargetFrameworks>
+    <TargetFrameworks Condition="'$(NoNet4)' == 'true'">net6.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
@@ -56,4 +57,3 @@
   </Target>
 
 </Project>
- 

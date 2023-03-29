@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net461;net6.0</TargetFrameworks>
+    <TargetFrameworks Condition="'$(NoNet4)' == 'true'">net6.0</TargetFrameworks>
     <Product>FeatureIDE</Product>
     <Copyright>VisualOn GmbH $([System.DateTime]::Now.ToString("yyyy"))</Copyright>
     <Authors>VisualOn</Authors>
