@@ -46,7 +46,7 @@
   "regexManagers": [
     {
       "description": "Update jar versions",
-      "fileMatch": ["\\.csproj$"],
+      "fileMatch": ["^Directory\\.Build\\.props$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
         "<!-- renovate: datasource=(?<datasource>.+?) depName=(?<depName>.+?)(?: (?:packageName|lookupName)=(?<packageName>.+?))?(?: versioning=(?<versioning>.+?))? -->\\s+<[^>]+>(?<currentValue>.+?)<\\/[^>]+>"

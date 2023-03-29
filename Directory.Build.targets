@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project>
+
+  <Target Name="_AfterMinVer" AfterTargets="MinVer">
+    <PropertyGroup>
+      <BUILD_NUMBER Condition="'$(BUILD_NUMBER)' == ''">0</BUILD_NUMBER>
+      <FileVersion>$(MinVerMajor).$(MinVerMinor).$(MinVerPatch).$(BUILD_NUMBER)</FileVersion>
+    </PropertyGroup>
+  </Target>
+</Project>

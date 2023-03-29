@@ -3,9 +3,6 @@
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
-    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
-    <RestoreLockedMode Condition="'$(CI)' == 'true'">true</RestoreLockedMode>
-    <DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder>
     <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
     <!-- TODO: fix me-->
     <NoWarn>$(NoWarn);NU1507</NoWarn>
@@ -13,6 +10,7 @@
 
   <ItemGroup>
     <PackageVersion Include="IKVM" Version="8.4.5" />
+    <PackageVersion Include="Validation" Version="2.5.51" />
   </ItemGroup>
 
   <ItemGroup>
