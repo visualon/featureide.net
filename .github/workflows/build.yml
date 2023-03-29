@@ -53,7 +53,7 @@ jobs:
 
       - name: tfm
         # building net461 doesn't work on non windows
-        if: matrix.os != windows-latest
+        if: matrix.os != 'windows-latest'
         run: echo "TARGETFRAMEWORKS=net6.0" >> $GITHUB_ENV
 
       - name: build
