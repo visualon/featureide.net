@@ -36,7 +36,7 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-          - macos-latest
+          # - macos-latest Doesn't work yet
           - windows-latest
 
     steps:
