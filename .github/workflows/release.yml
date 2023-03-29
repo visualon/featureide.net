@@ -7,7 +7,6 @@ on:
 
 env:
   DOTNET_NOLOGO: true
-  ProjectLoadStyle: All
   Configuration: Release
 
 permissions:
