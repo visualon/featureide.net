@@ -35,8 +35,8 @@ jobs:
       # fail-fast: false
       matrix:
         os:
-          # - ubuntu-latest
-          # - macos-latest
+          - ubuntu-latest
+          - macos-latest
           - windows-latest
 
     steps:
@@ -50,6 +50,11 @@ jobs:
 
       - name: prepare
         run: dotnet restore
+
+      - name: tfm
+        # building net461 doesn't work on non windows
+        if: matrix.os != windows-latest
+        run: echo "TARGETFRAMEWORKS=net6.0" >> $GITHUB_ENV
 
       - name: build
         run: dotnet build --no-restore
