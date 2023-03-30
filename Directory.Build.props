@@ -13,7 +13,7 @@
 
     <RunSettingsFilePath>$(MSBuildThisFileDirectory)\featureide.runsettings</RunSettingsFilePath>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
-
+    <PackageIconUrl>https://visualon.github.io/img/nuget.png</PackageIconUrl>
 
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
     <RestoreLockedMode Condition="'$(CI)' == 'true'">true</RestoreLockedMode>
