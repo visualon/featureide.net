@@ -18,11 +18,13 @@
     </Description>
     <PackageTags>IKVM.NET Java .NET SAT</PackageTags>
     <PackageLicenseExpression>LGPL-3.0-only</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
 
     <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);GetMyPackageFiles</TargetsForTfmSpecificBuildOutput>
     <GetIkvmReferenceItemsDependsOn>AddJars;$(GetIkvmReferenceItemsDependsOn)</GetIkvmReferenceItemsDependsOn>
 
-    <PackageReadmeFile>README.md</PackageReadmeFile>
+
+    <SignAssembly Condition=" Exists('$(AssemblyOriginatorKeyFile)') ">true</SignAssembly>
   </PropertyGroup>
 
   <ItemGroup>

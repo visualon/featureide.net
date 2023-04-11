@@ -22,6 +22,9 @@
     <Sat4JVersion>2.3.5</Sat4JVersion>
     <!-- renovate: datasource=github-releases depName=featureide packageName=FeatureIDE/FeatureIDE -->
     <FeatureIDEVersion>v3.9.2</FeatureIDEVersion>
+
+
+    <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)\featureide.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
