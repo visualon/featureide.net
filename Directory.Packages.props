@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <PackageVersion Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="7.0.1" />
-    <PackageVersion Include="Microsoft.CodeCoverage" Version="17.5.0" />
+    <PackageVersion Include="Microsoft.CodeCoverage" Version="17.6.0" />
     <PackageVersion Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="1.1.1" />
