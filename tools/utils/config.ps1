@@ -5,7 +5,7 @@ $ProgressPreference = 'SilentlyContinue'
 $PSDefaultParameterValues['*:ErrorAction'] = 'Stop'
 
 
-# renovate: datasource=github-releases depName=IKVM packageName=ikvm-revived/ikvm
+# renovate: datasource=github-releases depName=IKVM packageName=ikvmnet/ikvm
 $IKVM_VERSION = "8.5.1"
 
 # renovate: datasource=github-releases depName=featureide packageName=FeatureIDE/FeatureIDE
