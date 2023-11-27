@@ -31,17 +31,12 @@
     },
     {
       "description": "Automerge test deps",
-      "matchSourceUrlPrefixes": [
-        "https://github.com/nsubstitute/",
-        "https://github.com/nunit/"
-      ],
+      "matchSourceUrlPrefixes": ["https://github.com/nsubstitute/", "https://github.com/nunit/"],
       "automerge": true
     },
     {
       "matchPackageNames": ["sat4j"],
-      "registryUrls": [
-        "https://repository.ow2.org/nexus/content/repositories/releases"
-      ]
+      "registryUrls": ["https://repository.ow2.org/nexus/content/repositories/releases"]
     },
     {
       "matchFileNames": ["java/**"],
