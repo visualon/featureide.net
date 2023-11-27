@@ -27,24 +27,25 @@
         "https://github.com/theramis/Snapper",
         "https://nsubstitute.github.io/"
       ],
-      "automerge": "true"
+      "automerge": true
     },
     {
       "description": "Automerge test deps",
       "matchSourceUrlPrefixes": ["https://github.com/nsubstitute/", "https://github.com/nunit/"],
-      "automerge": "true"
+      "automerge": true
     },
     {
       "matchPackageNames": ["sat4j"],
       "registryUrls": ["https://repository.ow2.org/nexus/content/repositories/releases"]
     },
     {
-      "matchPaths": ["java/**"],
+      "matchFileNames": ["java/**"],
       "semanticCommitType": "chore"
     }
   ],
-  "regexManagers": [
+  "customManagers": [
     {
+      "customType": "regex",
       "description": "Update jar versions",
       "fileMatch": ["^Directory\\.Build\\.props$"],
       "matchStringsStrategy": "any",
