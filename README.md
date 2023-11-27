@@ -1,14 +1,14 @@
 # FeatureIDE.net
 
 [![build](https://github.com/visualon/featureide.net/actions/workflows/build.yml/badge.svg)](https://github.com/visualon/featureide.net/actions/workflows/build.yml)
-![github-release](https://badgen.net/github/release/visualon/featureide.net?icon=github)
-![nuget](https://badgen.net/nuget/v/VisualOn.FeatureIDE/latest?icon=nuget)
+[![github-release](https://badgen.net/github/release/visualon/featureide.net?icon=github)](https://github.com/visualon/featureide.net/releases/latest)
+[![nuget](https://badgen.net/nuget/v/VisualOn.FeatureIDE/latest?icon=nuget)](https://www.nuget.org/packages/VisualOn.FeatureIDE)
 
 IKVM compiled dotnet version of the [FeatureIDE](https://featureide.github.io) library.
 
 This is the IKVM version; which is to say that this is compiled from Java to .NET
 
-Currently `net461` and `net6.0` are the minimum supported runtimes.
+Currently `net472`, `net6.0` and `net8.0` are the minimum supported runtimes.
 
 ## Changes
 
