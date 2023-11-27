@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project>
   <PropertyGroup>
-    <MinVerMinimumMajorMinor>4.0</MinVerMinimumMajorMinor>
+    <MinVerMinimumMajorMinor>5.0</MinVerMinimumMajorMinor>
     <MinVerTagPrefix>v</MinVerTagPrefix>
     <SolutionDir>$(MSBuildThisFileDirectory)/</SolutionDir>
     <NoWarn>CA1014;CA1031;CA1065;CA1812;CA2225;SA0001;SA1404;SA1636;NU1701;$(NoWarn)</NoWarn>
