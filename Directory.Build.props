@@ -10,6 +10,7 @@
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <AnalysisMode>AllEnabledByDefault</AnalysisMode>
     <LangVersion>latest</LangVersion>
+    <_SkipUpgradeNetAnalyzersNuGetWarning>true</_SkipUpgradeNetAnalyzersNuGetWarning>
 
     <RunSettingsFilePath>$(MSBuildThisFileDirectory)\featureide.runsettings</RunSettingsFilePath>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
