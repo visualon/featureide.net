@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageVersion Include="IKVM" Version="8.7.3" />
+    <PackageVersion Include="IKVM" Version="8.7.4" />
     <PackageVersion Include="Validation" Version="2.5.51" />
   </ItemGroup>
 
