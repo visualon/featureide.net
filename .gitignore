@@ -5,3 +5,6 @@ obj/
 /tools/IKVM*
 /.vs
 TestResults/
+
+# others
+/CHANGELOG.md
