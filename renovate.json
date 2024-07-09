@@ -4,8 +4,8 @@
   "packageRules": [
     {
       "description": "Don't automerge until we've good tests",
-      "matchPackageNames": ["IKVM", "sat4j", "featureide"],
-      "matchPackagePrefixes": ["org.sat4j."],
+      "matchDepNames": ["IKVM", "sat4j", "featureide"],
+      "matchDepPrefixes": ["org.sat4j."],
       "automerge": false,
       "semanticCommitType": "fix"
     },
@@ -35,7 +35,7 @@
       "automerge": true
     },
     {
-      "matchPackageNames": ["sat4j"],
+      "matchDepNames": ["sat4j"],
       "registryUrls": ["https://repository.ow2.org/nexus/content/repositories/releases"]
     },
     {
@@ -50,7 +50,7 @@
       "fileMatch": ["^Directory\\.Build\\.props$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
-        "<!-- renovate: datasource=(?<datasource>.+?) depName=(?<depName>.+?)(?: (?:packageName|lookupName)=(?<packageName>.+?))?(?: versioning=(?<versioning>.+?))? -->\\s+<[^>]+>(?<currentValue>.+?)<\\/[^>]+>"
+        "<!-- renovate: datasource=(?<datasource>.+?) depName=(?<depName>.+?)(?: (?:packageName)=(?<packageName>.+?))?(?: versioning=(?<versioning>.+?))? -->\\s+<[^>]+>(?<currentValue>.+?)<\\/[^>]+>"
       ]
     }
   ]
