@@ -4,8 +4,7 @@
   "packageRules": [
     {
       "description": "Don't automerge until we've good tests",
-      "matchDepNames": ["IKVM", "sat4j", "featureide"],
-      "matchDepPrefixes": ["org.sat4j."],
+      "matchDepNames": ["IKVM", "sat4j", "featureide", "org.sat4j.{/,}**"],
       "automerge": false,
       "semanticCommitType": "fix"
     },
@@ -31,8 +30,8 @@
     },
     {
       "description": "Automerge test deps",
-      "matchSourceUrlPrefixes": ["https://github.com/nsubstitute/", "https://github.com/nunit/"],
-      "automerge": true
+      "automerge": true,
+      "matchSourceUrls": ["https://github.com/nsubstitute/{/,}**", "https://github.com/nunit/{/,}**"]
     },
     {
       "matchDepNames": ["sat4j"],
