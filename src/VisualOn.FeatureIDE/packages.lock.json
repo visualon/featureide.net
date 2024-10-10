@@ -4,19 +4,19 @@
     ".NETFramework,Version=v4.7.2": {
       "IKVM": {
         "type": "Direct",
-        "requested": "[8.9.1, )",
-        "resolved": "8.9.1",
-        "contentHash": "fKMhwRlzStXJRRYt86DUeKo6GR2nrMbOFSfuWnJjfUqsP/wHB+cw8rpUU1o4+StMof8RZGTaxi3FxoX8mA6Tdg==",
+        "requested": "[8.10.2, )",
+        "resolved": "8.10.2",
+        "contentHash": "ME/exnX2ZS2Raokz8FbxiQ/ZDG8m2gdkCZ/u9o/eAa19Z2z8mdU5BJFHD057ob5QoaYEdjasf4Obzw+RZcr92w==",
         "dependencies": {
-          "IKVM.ByteCode": "8.9.1",
-          "IKVM.Image": "8.9.1",
-          "IKVM.MSBuild": "8.9.1",
+          "IKVM.ByteCode": "9.0.0",
+          "IKVM.Image": "8.10.2",
+          "IKVM.MSBuild": "8.10.2",
           "System.Buffers": "4.5.1",
-          "System.IO.Pipelines": "6.0.3",
+          "System.IO.Pipelines": "8.0.0",
           "System.Memory": "4.5.5",
           "System.Runtime.CompilerServices.Unsafe": "6.0.0",
           "System.Runtime.InteropServices.RuntimeInformation": "4.3.0",
-          "System.Text.Json": "8.0.0",
+          "System.Text.Json": "8.0.4",
           "System.ValueTuple": "4.5.0"
         }
       },
@@ -59,143 +59,144 @@
       },
       "IKVM.ByteCode": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "xzHy/T8s+vnQTl1qAHtXZIOa7QRK1PLEysf4v5I2NaeBZGLVB3JmaF/ALDuWIdf3848v/Qcu3csOSRu1Kn3zYw==",
+        "resolved": "9.0.0",
+        "contentHash": "bl1oJTB4c1sF18Sj+E1lecIwT0XM7K4V+ZhRBEdJRa/vc+f5GJZuzDE+S3El37XVq971bcVo2alzA19p/C73sA==",
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
-          "System.IO.Pipelines": "6.0.3",
+          "System.Collections.Immutable": "8.0.0",
+          "System.IO.Pipelines": "8.0.0",
           "System.Memory": "4.5.5"
         }
       },
       "IKVM.Image": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "YoVe5h+mg3+pG4p6edldVApA4yj6D4ANrtJRjhfB6aR22ZA4xIEdxJTdhh5eC58BdMmXvxdqUjxxtXy6+r0MKA==",
+        "resolved": "8.10.2",
+        "contentHash": "zXCOKCmIDkiatq6TzJJn9dTh4uwODPKRROIUBscV5ukls/6GKLAyQcUFCrLLJl/jD4tNv8CctEdoK5CB+7/SUA==",
         "dependencies": {
-          "IKVM.Image.runtime.linux-arm": "8.9.1",
-          "IKVM.Image.runtime.linux-arm64": "8.9.1",
-          "IKVM.Image.runtime.linux-musl-arm": "8.9.1",
-          "IKVM.Image.runtime.linux-musl-arm64": "8.9.1",
-          "IKVM.Image.runtime.linux-musl-x64": "8.9.1",
-          "IKVM.Image.runtime.linux-x64": "8.9.1",
-          "IKVM.Image.runtime.osx-arm64": "8.9.1",
-          "IKVM.Image.runtime.osx-x64": "8.9.1",
-          "IKVM.Image.runtime.win-arm64": "8.9.1",
-          "IKVM.Image.runtime.win-x64": "8.9.1",
-          "IKVM.Image.runtime.win-x86": "8.9.1"
+          "IKVM.Image.runtime.linux-arm": "8.10.2",
+          "IKVM.Image.runtime.linux-arm64": "8.10.2",
+          "IKVM.Image.runtime.linux-musl-arm": "8.10.2",
+          "IKVM.Image.runtime.linux-musl-arm64": "8.10.2",
+          "IKVM.Image.runtime.linux-musl-x64": "8.10.2",
+          "IKVM.Image.runtime.linux-x64": "8.10.2",
+          "IKVM.Image.runtime.osx-arm64": "8.10.2",
+          "IKVM.Image.runtime.osx-x64": "8.10.2",
+          "IKVM.Image.runtime.win-arm64": "8.10.2",
+          "IKVM.Image.runtime.win-x64": "8.10.2",
+          "IKVM.Image.runtime.win-x86": "8.10.2"
         }
       },
       "IKVM.Image.runtime.linux-arm": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "S1mxF07VYxhmJEn8+2Qv8JSX5/Yq2aavpJ7TyOqdkD1Naupnrm9UcSQ0jf6siwsor0y6s2nMElhbWF6R+Eg+jw=="
+        "resolved": "8.10.2",
+        "contentHash": "WcuRsMUf7Vr1TcQCSP8jm6as3XcorTFicsM7PB6EJylakujWdys9oncrYu1Cf2A3NBxSuxvGH1BYUdGo1jr1cg=="
       },
       "IKVM.Image.runtime.linux-arm64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "5IFxJyRRunyEuw6YrViilNHcNFPvX3csb+j5PbKymmQ0Bci1PHImT27Sge4YzGbAN21BhpVE4wPxOlHBgK8s5Q=="
+        "resolved": "8.10.2",
+        "contentHash": "kX7ceQEaHPcaoFBcTVZSkp3NkRtDEJkD0u3wUdgThlqmlq5UTcx2H93G9HITCpc6rFExfc4ytTax4glDHqqBoA=="
       },
       "IKVM.Image.runtime.linux-musl-arm": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "zQ9btUQXhrqbueXvWU/vFwfplhn3WWw8t9/zvEd9XxiXCgmnpI+ZvSsApgz08PG3IE4lb00b0n/tullSe4nPpg=="
+        "resolved": "8.10.2",
+        "contentHash": "GJ/j/RZXsXlq7bRXcz1hymYBSfzBxDBKi8g7Mu616BtL/pC+SeTtW0zEmKOMURogvC3exEj02qciGFdezv/3MA=="
       },
       "IKVM.Image.runtime.linux-musl-arm64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "UqminOWe/uoxqO72U36veAHu5RRg0CAVQ2y+po0yQtLjzhRpjX5KgoNAplXhWDATDvVVWQUrtKF+A4bQapptyA=="
+        "resolved": "8.10.2",
+        "contentHash": "paV9sts4di6sTy71OtqogbXtI+5Ko0cTG38NoP8QmBZE9heRq/8T5TRNt5OMN/+ydhIuFOnyz2oVT2AsoKenqA=="
       },
       "IKVM.Image.runtime.linux-musl-x64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "TJ5nO78dii5sRHKcifzgNdW8X4pYSibejsatM0JB8/yy7jvoYly8PjUJqPgfbvFblUuFOd/B4SAWuATDNApLFA=="
+        "resolved": "8.10.2",
+        "contentHash": "ZaFYxU0EZ8WhaYcedfLZkizOa64netCFGITcOADR6wLIDc3/jl7vx+9gaaS3UgIH0s31AURqMxOYPuJdVk+hzA=="
       },
       "IKVM.Image.runtime.linux-x64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "JC41sw5xySUFWuRntIrEhawhcuG+pRZmcIlswugNw6rzXmIVRK6MibeU8aNx6WDdFLThAw8RJsIQRd+/WMyTgg=="
+        "resolved": "8.10.2",
+        "contentHash": "3uILGIXb+5UxeOw7wpG5bUVhzd64pT0GMFYHeo01cXKy+eYsq5Jz7tTwuWb8PabwhFmIdSRlDBnxwKkeYiO2pw=="
       },
       "IKVM.Image.runtime.osx-arm64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "fQBRzFzDiUk1u8KPEhtKv4EyVPfU6J0rCw/pVYEPE1ts/E+ufP+G7uQ1B/eqrFx2WZZ76dbAvo3lDuqry0xr5w=="
+        "resolved": "8.10.2",
+        "contentHash": "qISZOXT8lMJk2QxnTWQI67DxWkvctW+JZBmK/6AHPD8KCQM/P99+lnfUZJTG6amYqkEbopFeQyq5QU/gBOvZFA=="
       },
       "IKVM.Image.runtime.osx-x64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "MyBTLTn45FEP4cGozeTrVgTUgL64LIiEq7yjT/75YgOmiONBdt9PexGjHc0jobRpaU8Sdm8ZhowBQaHS1Gum5A=="
+        "resolved": "8.10.2",
+        "contentHash": "MbY9ZqGbkBWULjPkr1kuy8fbfsjN4+/Kh0qRzIOu/WJ6SwR1NolL5sxzai1Eixmj1cpV/pwPMO6f7ho2keO+hg=="
       },
       "IKVM.Image.runtime.win-arm64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "t/4T9+YPIaV/r412N7XdQs+hhmxGhkwR5blwQjsEt93gGjwuxuVyeK51PTNVG5JQWqZSZpdpBNALbcBeeMFW3A=="
+        "resolved": "8.10.2",
+        "contentHash": "mVRsCfor1LuPjRsSPfgKJpDCNk5Vpr6MorGbuDOwb8MOgHHlguklRtZjx6WRc+YDVYK6PEval3ED2qvasHPTyg=="
       },
       "IKVM.Image.runtime.win-x64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "LUSg+l0AIgZH+Ass91f/Ub8/v8d37YfUU891L7q3ii1JNa23jqk2VHUVvJOUcvKsraIYIw7hNNhPikQe5hL7qQ=="
+        "resolved": "8.10.2",
+        "contentHash": "f7EcNyyrQSA9/FEEeBjy/D6QWZonYBk6YvmomhiKMI0dJU2X/9au1Xb5JNo/YDOycS+g15RX/kprgetZ4FlyZA=="
       },
       "IKVM.Image.runtime.win-x86": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "mqnFuGdj9Y4ISgp6bXY8+XzaEj3vi9PdcZ29PIdZPIkp6Ro+OJwRwpISI5SHSVJhvftt0sYOKwHN7FMjSlNKUg=="
+        "resolved": "8.10.2",
+        "contentHash": "JP4qBNmUSG3J1gHtBS16oQ5PINFvbec5RS0r7SyoG+DrFSCyYOJmJ1JLHtRBBe3j+UESHR1hzY2vDGVeJRJ8HQ=="
       },
       "IKVM.MSBuild": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "Nx83AJu87XxOq9NQ9VVcuMLt8qEL/oew8frS02ld2wl9mY+U+9HIKGi5AlL7VDMRLDzywG/3k9IEBc2r/QJjWg==",
+        "resolved": "8.10.2",
+        "contentHash": "woSkMRowXxmcr2fmbwKj/1f/TJiaRQn7xSkLLnzkKxTHIHVIc2yA4XlIiYyq2BI/PC+V+sW56UJTOqvTgCMU9w==",
         "dependencies": {
-          "IKVM.MSBuild.Tools": "8.9.1"
+          "IKVM.MSBuild.Tools": "8.10.2"
         }
       },
       "IKVM.MSBuild.Tools": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "Jj3kkLdpRgjO7uVXxF8donGMmo+t/pQNTIHDvyJ5ULt6G+KWh2cwAni+ITS5j0gBMJkcra0Z6FKGpgeLus9n4g==",
+        "resolved": "8.10.2",
+        "contentHash": "usROWHf3oy9bBGtUDFxOvAfMSiaOl6jCh4iZlZmHGV5HG5uEFYG//OPQePT6MmTHYfyUw5rPbiYxv+0odAfBTQ==",
         "dependencies": {
-          "IKVM.MSBuild.Tools.runtime.linux-arm": "8.9.1",
-          "IKVM.MSBuild.Tools.runtime.linux-arm64": "8.9.1",
-          "IKVM.MSBuild.Tools.runtime.linux-x64": "8.9.1",
-          "IKVM.MSBuild.Tools.runtime.osx-arm64": "8.9.1",
-          "IKVM.MSBuild.Tools.runtime.osx-x64": "8.9.1",
-          "IKVM.MSBuild.Tools.runtime.win-arm64": "8.9.1",
-          "IKVM.MSBuild.Tools.runtime.win-x64": "8.9.1"
+          "IKVM.MSBuild.Tools.runtime.linux-arm": "8.10.2",
+          "IKVM.MSBuild.Tools.runtime.linux-arm64": "8.10.2",
+          "IKVM.MSBuild.Tools.runtime.linux-x64": "8.10.2",
+          "IKVM.MSBuild.Tools.runtime.osx-arm64": "8.10.2",
+          "IKVM.MSBuild.Tools.runtime.osx-x64": "8.10.2",
+          "IKVM.MSBuild.Tools.runtime.win-arm64": "8.10.2",
+          "IKVM.MSBuild.Tools.runtime.win-x64": "8.10.2"
         }
       },
       "IKVM.MSBuild.Tools.runtime.linux-arm": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "cOWEHgEO/Vu5j/fRXH4IYoaZd6ThJ01GHT8q4nqod0s/BI2TTz+vFI6P0oW+QqIEOpl97eZxdi8NP+zcn/wULQ=="
+        "resolved": "8.10.2",
+        "contentHash": "Yh77xQo6xJ4qSFYO6yt4xenuRWXSX3itaOXf0NmHdQBTK55ipwxtn++YsQPfd/WMJUvWdNsV66eYCtGqKIDKng=="
       },
       "IKVM.MSBuild.Tools.runtime.linux-arm64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "GlPaMLnnApUDfTgT/VQUtlvNmhHHTpEgQ2Tliamua1nJqzeyPRv7K6mKg7vVU7DSTrBCVBoU5EYkh9FadDfapw=="
+        "resolved": "8.10.2",
+        "contentHash": "98aWQ/B5sH5xop0yFDMPysL7polSe5TaOjvHxELHTHXmFp3lKAdMY7F5WB1VFvUx4UbYIZYxku/y3gQ/Di4NZg=="
       },
       "IKVM.MSBuild.Tools.runtime.linux-x64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "Scxr8+5q/sZH2Hsc8hjE78M7Q/BDvbw3jMoz/NNhKR1yC2Srn4NG/9glAXpYiGqa/xsuDE5ZZXsubzQWuOAJUA=="
+        "resolved": "8.10.2",
+        "contentHash": "+zGzn6AFLVLcU+MtoKBW444qrTEdSoMutGpPh+11yl34Xm6dCNxyi2nxTugavy2iTyKqz9rAVKHe0qSj5yifUg=="
       },
       "IKVM.MSBuild.Tools.runtime.osx-arm64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "WghG9+7I5amX6L5TzQ3lvEAYCmpsI7zeioK5nFIg32h+sfICpntiKOEPCvYxFVBNYc7mUlNjCktnyfTUS71xFg=="
+        "resolved": "8.10.2",
+        "contentHash": "72M1EtMvVpLkxlQM+TQC3MCfnAq79OXqRY7TZ4spVnXNRfJe6bkJmplbUnlBZ4sXZyrU+Urz9nqRAPObM29Uiw=="
       },
       "IKVM.MSBuild.Tools.runtime.osx-x64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "npZ3ABfS6Fwk6ZfPrtW5YEQPNyLCs1CiTy+0Zi/iMoBpSrMyOmHHaZsVhDQpGQeWc7Ztmo7mMRMcoyN/bYTnWQ=="
+        "resolved": "8.10.2",
+        "contentHash": "SCHlQNuBaashv3hPMq7b7LDTWj6NroQVq94G0p7P28YsajXcjp2mWeN/liSuSrnIQCP7QmOabGlqehZvZRp1XQ=="
       },
       "IKVM.MSBuild.Tools.runtime.win-arm64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "nPI5GT3oKt8YRXmFFSPzxZFFmKs1JBigLZlZ0kPirVdhHbBxmiD88fizwH0SHYms/CB8VoPVeHuBoyeci6AYrQ=="
+        "resolved": "8.10.2",
+        "contentHash": "vXvCik3dJSBYNHo+z75o9P+rcjW9I1UV2bdFp+Hxxezwxz6Xi0FuOU/PuWsoqzzj3oFfx//SEM5ZfYjqIFOykA=="
       },
       "IKVM.MSBuild.Tools.runtime.win-x64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "IuOQpKWTtZa5bRytTpDqVBgU2s4IUIZRKCl557a9KbwmJ5vPThve6aO6VTuEJmePGGwvPjIbHfPSz1BfejG49w=="
+        "resolved": "8.10.2",
+        "contentHash": "S8YiDPLWLlL23h01gh9MWCkRZ9yuJ6Xw4eI3/h65K1wpdb65z5nFcEOu7/sdgaPE3LAkGVa6mYGNKYnDQZGfzQ=="
       },
       "Microsoft.Bcl.AsyncInterfaces": {
         "type": "Transitive",
@@ -230,13 +231,22 @@
         "resolved": "4.5.1",
         "contentHash": "Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg=="
       },
+      "System.Collections.Immutable": {
+        "type": "Transitive",
+        "resolved": "8.0.0",
+        "contentHash": "AurL6Y5BA1WotzlEvVaIDpqzpIPvYnnldxru8oXJU2yFxFUy3+pNXjXd1ymO+RA0rq0+590Q8gaz2l3Sr7fmqg==",
+        "dependencies": {
+          "System.Memory": "4.5.5",
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        }
+      },
       "System.IO.Pipelines": {
         "type": "Transitive",
-        "resolved": "6.0.3",
-        "contentHash": "ryTgF+iFkpGZY1vRQhfCzX0xTdlV3pyaTTqRu2ETbEv+HlV7O6y7hyQURnghNIXvctl5DuZ//Dpks6HdL/Txgw==",
+        "resolved": "8.0.0",
+        "contentHash": "FHNOatmUq0sqJOkTx+UF/9YK1f180cnW5FVqnQMvYUN0elp6wFzbtPSiqbo1/ru8ICp43JM1i7kKkk6GsNGHlA==",
         "dependencies": {
           "System.Buffers": "4.5.1",
-          "System.Memory": "4.5.4",
+          "System.Memory": "4.5.5",
           "System.Threading.Tasks.Extensions": "4.5.4"
         }
       },
@@ -277,8 +287,8 @@
       },
       "System.Text.Json": {
         "type": "Transitive",
-        "resolved": "8.0.0",
-        "contentHash": "OdrZO2WjkiEG6ajEFRABTRCi/wuXQPxeV6g8xvUJqdxMvvuCCEk86zPla8UiIQJz3durtUEbNyY/3lIhS0yZvQ==",
+        "resolved": "8.0.4",
+        "contentHash": "bAkhgDJ88XTsqczoxEMliSrpijKZHhbJQldhAmObj/RbrN3sU5dcokuXmWJWsdQAhiMJ9bTayWsL1C9fbbCRhw==",
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "8.0.0",
           "System.Buffers": "4.5.1",
@@ -306,13 +316,13 @@
     "net6.0": {
       "IKVM": {
         "type": "Direct",
-        "requested": "[8.9.1, )",
-        "resolved": "8.9.1",
-        "contentHash": "fKMhwRlzStXJRRYt86DUeKo6GR2nrMbOFSfuWnJjfUqsP/wHB+cw8rpUU1o4+StMof8RZGTaxi3FxoX8mA6Tdg==",
+        "requested": "[8.10.2, )",
+        "resolved": "8.10.2",
+        "contentHash": "ME/exnX2ZS2Raokz8FbxiQ/ZDG8m2gdkCZ/u9o/eAa19Z2z8mdU5BJFHD057ob5QoaYEdjasf4Obzw+RZcr92w==",
         "dependencies": {
-          "IKVM.ByteCode": "8.9.1",
-          "IKVM.Image": "8.9.1",
-          "IKVM.MSBuild": "8.9.1",
+          "IKVM.ByteCode": "9.0.0",
+          "IKVM.Image": "8.10.2",
+          "IKVM.MSBuild": "8.10.2",
           "Microsoft.Extensions.DependencyModel": "6.0.0",
           "System.Data.Odbc": "6.0.0"
         }
@@ -347,143 +357,144 @@
       },
       "IKVM.ByteCode": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "xzHy/T8s+vnQTl1qAHtXZIOa7QRK1PLEysf4v5I2NaeBZGLVB3JmaF/ALDuWIdf3848v/Qcu3csOSRu1Kn3zYw==",
+        "resolved": "9.0.0",
+        "contentHash": "bl1oJTB4c1sF18Sj+E1lecIwT0XM7K4V+ZhRBEdJRa/vc+f5GJZuzDE+S3El37XVq971bcVo2alzA19p/C73sA==",
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
-          "System.IO.Pipelines": "6.0.3",
+          "System.Collections.Immutable": "8.0.0",
+          "System.IO.Pipelines": "8.0.0",
           "System.Memory": "4.5.5"
         }
       },
       "IKVM.Image": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "YoVe5h+mg3+pG4p6edldVApA4yj6D4ANrtJRjhfB6aR22ZA4xIEdxJTdhh5eC58BdMmXvxdqUjxxtXy6+r0MKA==",
+        "resolved": "8.10.2",
+        "contentHash": "zXCOKCmIDkiatq6TzJJn9dTh4uwODPKRROIUBscV5ukls/6GKLAyQcUFCrLLJl/jD4tNv8CctEdoK5CB+7/SUA==",
         "dependencies": {
-          "IKVM.Image.runtime.linux-arm": "8.9.1",
-          "IKVM.Image.runtime.linux-arm64": "8.9.1",
-          "IKVM.Image.runtime.linux-musl-arm": "8.9.1",
-          "IKVM.Image.runtime.linux-musl-arm64": "8.9.1",
-          "IKVM.Image.runtime.linux-musl-x64": "8.9.1",
-          "IKVM.Image.runtime.linux-x64": "8.9.1",
-          "IKVM.Image.runtime.osx-arm64": "8.9.1",
-          "IKVM.Image.runtime.osx-x64": "8.9.1",
-          "IKVM.Image.runtime.win-arm64": "8.9.1",
-          "IKVM.Image.runtime.win-x64": "8.9.1",
-          "IKVM.Image.runtime.win-x86": "8.9.1"
+          "IKVM.Image.runtime.linux-arm": "8.10.2",
+          "IKVM.Image.runtime.linux-arm64": "8.10.2",
+          "IKVM.Image.runtime.linux-musl-arm": "8.10.2",
+          "IKVM.Image.runtime.linux-musl-arm64": "8.10.2",
+          "IKVM.Image.runtime.linux-musl-x64": "8.10.2",
+          "IKVM.Image.runtime.linux-x64": "8.10.2",
+          "IKVM.Image.runtime.osx-arm64": "8.10.2",
+          "IKVM.Image.runtime.osx-x64": "8.10.2",
+          "IKVM.Image.runtime.win-arm64": "8.10.2",
+          "IKVM.Image.runtime.win-x64": "8.10.2",
+          "IKVM.Image.runtime.win-x86": "8.10.2"
         }
       },
       "IKVM.Image.runtime.linux-arm": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "S1mxF07VYxhmJEn8+2Qv8JSX5/Yq2aavpJ7TyOqdkD1Naupnrm9UcSQ0jf6siwsor0y6s2nMElhbWF6R+Eg+jw=="
+        "resolved": "8.10.2",
+        "contentHash": "WcuRsMUf7Vr1TcQCSP8jm6as3XcorTFicsM7PB6EJylakujWdys9oncrYu1Cf2A3NBxSuxvGH1BYUdGo1jr1cg=="
       },
       "IKVM.Image.runtime.linux-arm64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "5IFxJyRRunyEuw6YrViilNHcNFPvX3csb+j5PbKymmQ0Bci1PHImT27Sge4YzGbAN21BhpVE4wPxOlHBgK8s5Q=="
+        "resolved": "8.10.2",
+        "contentHash": "kX7ceQEaHPcaoFBcTVZSkp3NkRtDEJkD0u3wUdgThlqmlq5UTcx2H93G9HITCpc6rFExfc4ytTax4glDHqqBoA=="
       },
       "IKVM.Image.runtime.linux-musl-arm": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "zQ9btUQXhrqbueXvWU/vFwfplhn3WWw8t9/zvEd9XxiXCgmnpI+ZvSsApgz08PG3IE4lb00b0n/tullSe4nPpg=="
+        "resolved": "8.10.2",
+        "contentHash": "GJ/j/RZXsXlq7bRXcz1hymYBSfzBxDBKi8g7Mu616BtL/pC+SeTtW0zEmKOMURogvC3exEj02qciGFdezv/3MA=="
       },
       "IKVM.Image.runtime.linux-musl-arm64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "UqminOWe/uoxqO72U36veAHu5RRg0CAVQ2y+po0yQtLjzhRpjX5KgoNAplXhWDATDvVVWQUrtKF+A4bQapptyA=="
+        "resolved": "8.10.2",
+        "contentHash": "paV9sts4di6sTy71OtqogbXtI+5Ko0cTG38NoP8QmBZE9heRq/8T5TRNt5OMN/+ydhIuFOnyz2oVT2AsoKenqA=="
       },
       "IKVM.Image.runtime.linux-musl-x64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "TJ5nO78dii5sRHKcifzgNdW8X4pYSibejsatM0JB8/yy7jvoYly8PjUJqPgfbvFblUuFOd/B4SAWuATDNApLFA=="
+        "resolved": "8.10.2",
+        "contentHash": "ZaFYxU0EZ8WhaYcedfLZkizOa64netCFGITcOADR6wLIDc3/jl7vx+9gaaS3UgIH0s31AURqMxOYPuJdVk+hzA=="
       },
       "IKVM.Image.runtime.linux-x64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "JC41sw5xySUFWuRntIrEhawhcuG+pRZmcIlswugNw6rzXmIVRK6MibeU8aNx6WDdFLThAw8RJsIQRd+/WMyTgg=="
+        "resolved": "8.10.2",
+        "contentHash": "3uILGIXb+5UxeOw7wpG5bUVhzd64pT0GMFYHeo01cXKy+eYsq5Jz7tTwuWb8PabwhFmIdSRlDBnxwKkeYiO2pw=="
       },
       "IKVM.Image.runtime.osx-arm64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "fQBRzFzDiUk1u8KPEhtKv4EyVPfU6J0rCw/pVYEPE1ts/E+ufP+G7uQ1B/eqrFx2WZZ76dbAvo3lDuqry0xr5w=="
+        "resolved": "8.10.2",
+        "contentHash": "qISZOXT8lMJk2QxnTWQI67DxWkvctW+JZBmK/6AHPD8KCQM/P99+lnfUZJTG6amYqkEbopFeQyq5QU/gBOvZFA=="
       },
       "IKVM.Image.runtime.osx-x64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "MyBTLTn45FEP4cGozeTrVgTUgL64LIiEq7yjT/75YgOmiONBdt9PexGjHc0jobRpaU8Sdm8ZhowBQaHS1Gum5A=="
+        "resolved": "8.10.2",
+        "contentHash": "MbY9ZqGbkBWULjPkr1kuy8fbfsjN4+/Kh0qRzIOu/WJ6SwR1NolL5sxzai1Eixmj1cpV/pwPMO6f7ho2keO+hg=="
       },
       "IKVM.Image.runtime.win-arm64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "t/4T9+YPIaV/r412N7XdQs+hhmxGhkwR5blwQjsEt93gGjwuxuVyeK51PTNVG5JQWqZSZpdpBNALbcBeeMFW3A=="
+        "resolved": "8.10.2",
+        "contentHash": "mVRsCfor1LuPjRsSPfgKJpDCNk5Vpr6MorGbuDOwb8MOgHHlguklRtZjx6WRc+YDVYK6PEval3ED2qvasHPTyg=="
       },
       "IKVM.Image.runtime.win-x64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "LUSg+l0AIgZH+Ass91f/Ub8/v8d37YfUU891L7q3ii1JNa23jqk2VHUVvJOUcvKsraIYIw7hNNhPikQe5hL7qQ=="
+        "resolved": "8.10.2",
+        "contentHash": "f7EcNyyrQSA9/FEEeBjy/D6QWZonYBk6YvmomhiKMI0dJU2X/9au1Xb5JNo/YDOycS+g15RX/kprgetZ4FlyZA=="
       },
       "IKVM.Image.runtime.win-x86": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "mqnFuGdj9Y4ISgp6bXY8+XzaEj3vi9PdcZ29PIdZPIkp6Ro+OJwRwpISI5SHSVJhvftt0sYOKwHN7FMjSlNKUg=="
+        "resolved": "8.10.2",
+        "contentHash": "JP4qBNmUSG3J1gHtBS16oQ5PINFvbec5RS0r7SyoG+DrFSCyYOJmJ1JLHtRBBe3j+UESHR1hzY2vDGVeJRJ8HQ=="
       },
       "IKVM.MSBuild": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "Nx83AJu87XxOq9NQ9VVcuMLt8qEL/oew8frS02ld2wl9mY+U+9HIKGi5AlL7VDMRLDzywG/3k9IEBc2r/QJjWg==",
+        "resolved": "8.10.2",
+        "contentHash": "woSkMRowXxmcr2fmbwKj/1f/TJiaRQn7xSkLLnzkKxTHIHVIc2yA4XlIiYyq2BI/PC+V+sW56UJTOqvTgCMU9w==",
         "dependencies": {
-          "IKVM.MSBuild.Tools": "8.9.1"
+          "IKVM.MSBuild.Tools": "8.10.2"
         }
       },
       "IKVM.MSBuild.Tools": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "Jj3kkLdpRgjO7uVXxF8donGMmo+t/pQNTIHDvyJ5ULt6G+KWh2cwAni+ITS5j0gBMJkcra0Z6FKGpgeLus9n4g==",
+        "resolved": "8.10.2",
+        "contentHash": "usROWHf3oy9bBGtUDFxOvAfMSiaOl6jCh4iZlZmHGV5HG5uEFYG//OPQePT6MmTHYfyUw5rPbiYxv+0odAfBTQ==",
         "dependencies": {
-          "IKVM.MSBuild.Tools.runtime.linux-arm": "8.9.1",
-          "IKVM.MSBuild.Tools.runtime.linux-arm64": "8.9.1",
-          "IKVM.MSBuild.Tools.runtime.linux-x64": "8.9.1",
-          "IKVM.MSBuild.Tools.runtime.osx-arm64": "8.9.1",
-          "IKVM.MSBuild.Tools.runtime.osx-x64": "8.9.1",
-          "IKVM.MSBuild.Tools.runtime.win-arm64": "8.9.1",
-          "IKVM.MSBuild.Tools.runtime.win-x64": "8.9.1"
+          "IKVM.MSBuild.Tools.runtime.linux-arm": "8.10.2",
+          "IKVM.MSBuild.Tools.runtime.linux-arm64": "8.10.2",
+          "IKVM.MSBuild.Tools.runtime.linux-x64": "8.10.2",
+          "IKVM.MSBuild.Tools.runtime.osx-arm64": "8.10.2",
+          "IKVM.MSBuild.Tools.runtime.osx-x64": "8.10.2",
+          "IKVM.MSBuild.Tools.runtime.win-arm64": "8.10.2",
+          "IKVM.MSBuild.Tools.runtime.win-x64": "8.10.2"
         }
       },
       "IKVM.MSBuild.Tools.runtime.linux-arm": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "cOWEHgEO/Vu5j/fRXH4IYoaZd6ThJ01GHT8q4nqod0s/BI2TTz+vFI6P0oW+QqIEOpl97eZxdi8NP+zcn/wULQ=="
+        "resolved": "8.10.2",
+        "contentHash": "Yh77xQo6xJ4qSFYO6yt4xenuRWXSX3itaOXf0NmHdQBTK55ipwxtn++YsQPfd/WMJUvWdNsV66eYCtGqKIDKng=="
       },
       "IKVM.MSBuild.Tools.runtime.linux-arm64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "GlPaMLnnApUDfTgT/VQUtlvNmhHHTpEgQ2Tliamua1nJqzeyPRv7K6mKg7vVU7DSTrBCVBoU5EYkh9FadDfapw=="
+        "resolved": "8.10.2",
+        "contentHash": "98aWQ/B5sH5xop0yFDMPysL7polSe5TaOjvHxELHTHXmFp3lKAdMY7F5WB1VFvUx4UbYIZYxku/y3gQ/Di4NZg=="
       },
       "IKVM.MSBuild.Tools.runtime.linux-x64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "Scxr8+5q/sZH2Hsc8hjE78M7Q/BDvbw3jMoz/NNhKR1yC2Srn4NG/9glAXpYiGqa/xsuDE5ZZXsubzQWuOAJUA=="
+        "resolved": "8.10.2",
+        "contentHash": "+zGzn6AFLVLcU+MtoKBW444qrTEdSoMutGpPh+11yl34Xm6dCNxyi2nxTugavy2iTyKqz9rAVKHe0qSj5yifUg=="
       },
       "IKVM.MSBuild.Tools.runtime.osx-arm64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "WghG9+7I5amX6L5TzQ3lvEAYCmpsI7zeioK5nFIg32h+sfICpntiKOEPCvYxFVBNYc7mUlNjCktnyfTUS71xFg=="
+        "resolved": "8.10.2",
+        "contentHash": "72M1EtMvVpLkxlQM+TQC3MCfnAq79OXqRY7TZ4spVnXNRfJe6bkJmplbUnlBZ4sXZyrU+Urz9nqRAPObM29Uiw=="
       },
       "IKVM.MSBuild.Tools.runtime.osx-x64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "npZ3ABfS6Fwk6ZfPrtW5YEQPNyLCs1CiTy+0Zi/iMoBpSrMyOmHHaZsVhDQpGQeWc7Ztmo7mMRMcoyN/bYTnWQ=="
+        "resolved": "8.10.2",
+        "contentHash": "SCHlQNuBaashv3hPMq7b7LDTWj6NroQVq94G0p7P28YsajXcjp2mWeN/liSuSrnIQCP7QmOabGlqehZvZRp1XQ=="
       },
       "IKVM.MSBuild.Tools.runtime.win-arm64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "nPI5GT3oKt8YRXmFFSPzxZFFmKs1JBigLZlZ0kPirVdhHbBxmiD88fizwH0SHYms/CB8VoPVeHuBoyeci6AYrQ=="
+        "resolved": "8.10.2",
+        "contentHash": "vXvCik3dJSBYNHo+z75o9P+rcjW9I1UV2bdFp+Hxxezwxz6Xi0FuOU/PuWsoqzzj3oFfx//SEM5ZfYjqIFOykA=="
       },
       "IKVM.MSBuild.Tools.runtime.win-x64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "IuOQpKWTtZa5bRytTpDqVBgU2s4IUIZRKCl557a9KbwmJ5vPThve6aO6VTuEJmePGGwvPjIbHfPSz1BfejG49w=="
+        "resolved": "8.10.2",
+        "contentHash": "S8YiDPLWLlL23h01gh9MWCkRZ9yuJ6Xw4eI3/h65K1wpdb65z5nFcEOu7/sdgaPE3LAkGVa6mYGNKYnDQZGfzQ=="
       },
       "Microsoft.Build.Tasks.Git": {
         "type": "Transitive",
@@ -517,6 +528,14 @@
         "resolved": "4.5.1",
         "contentHash": "Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg=="
       },
+      "System.Collections.Immutable": {
+        "type": "Transitive",
+        "resolved": "8.0.0",
+        "contentHash": "AurL6Y5BA1WotzlEvVaIDpqzpIPvYnnldxru8oXJU2yFxFUy3+pNXjXd1ymO+RA0rq0+590Q8gaz2l3Sr7fmqg==",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        }
+      },
       "System.Data.Odbc": {
         "type": "Transitive",
         "resolved": "6.0.0",
@@ -527,8 +546,8 @@
       },
       "System.IO.Pipelines": {
         "type": "Transitive",
-        "resolved": "6.0.3",
-        "contentHash": "ryTgF+iFkpGZY1vRQhfCzX0xTdlV3pyaTTqRu2ETbEv+HlV7O6y7hyQURnghNIXvctl5DuZ//Dpks6HdL/Txgw=="
+        "resolved": "8.0.0",
+        "contentHash": "FHNOatmUq0sqJOkTx+UF/9YK1f180cnW5FVqnQMvYUN0elp6wFzbtPSiqbo1/ru8ICp43JM1i7kKkk6GsNGHlA=="
       },
       "System.Memory": {
         "type": "Transitive",
@@ -569,13 +588,13 @@
     "net8.0": {
       "IKVM": {
         "type": "Direct",
-        "requested": "[8.9.1, )",
-        "resolved": "8.9.1",
-        "contentHash": "fKMhwRlzStXJRRYt86DUeKo6GR2nrMbOFSfuWnJjfUqsP/wHB+cw8rpUU1o4+StMof8RZGTaxi3FxoX8mA6Tdg==",
+        "requested": "[8.10.2, )",
+        "resolved": "8.10.2",
+        "contentHash": "ME/exnX2ZS2Raokz8FbxiQ/ZDG8m2gdkCZ/u9o/eAa19Z2z8mdU5BJFHD057ob5QoaYEdjasf4Obzw+RZcr92w==",
         "dependencies": {
-          "IKVM.ByteCode": "8.9.1",
-          "IKVM.Image": "8.9.1",
-          "IKVM.MSBuild": "8.9.1",
+          "IKVM.ByteCode": "9.0.0",
+          "IKVM.Image": "8.10.2",
+          "IKVM.MSBuild": "8.10.2",
           "Microsoft.Extensions.DependencyModel": "8.0.0",
           "System.Data.Odbc": "8.0.0"
         }
@@ -610,143 +629,144 @@
       },
       "IKVM.ByteCode": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "xzHy/T8s+vnQTl1qAHtXZIOa7QRK1PLEysf4v5I2NaeBZGLVB3JmaF/ALDuWIdf3848v/Qcu3csOSRu1Kn3zYw==",
+        "resolved": "9.0.0",
+        "contentHash": "bl1oJTB4c1sF18Sj+E1lecIwT0XM7K4V+ZhRBEdJRa/vc+f5GJZuzDE+S3El37XVq971bcVo2alzA19p/C73sA==",
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
-          "System.IO.Pipelines": "6.0.3",
+          "System.Collections.Immutable": "8.0.0",
+          "System.IO.Pipelines": "8.0.0",
           "System.Memory": "4.5.5"
         }
       },
       "IKVM.Image": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "YoVe5h+mg3+pG4p6edldVApA4yj6D4ANrtJRjhfB6aR22ZA4xIEdxJTdhh5eC58BdMmXvxdqUjxxtXy6+r0MKA==",
+        "resolved": "8.10.2",
+        "contentHash": "zXCOKCmIDkiatq6TzJJn9dTh4uwODPKRROIUBscV5ukls/6GKLAyQcUFCrLLJl/jD4tNv8CctEdoK5CB+7/SUA==",
         "dependencies": {
-          "IKVM.Image.runtime.linux-arm": "8.9.1",
-          "IKVM.Image.runtime.linux-arm64": "8.9.1",
-          "IKVM.Image.runtime.linux-musl-arm": "8.9.1",
-          "IKVM.Image.runtime.linux-musl-arm64": "8.9.1",
-          "IKVM.Image.runtime.linux-musl-x64": "8.9.1",
-          "IKVM.Image.runtime.linux-x64": "8.9.1",
-          "IKVM.Image.runtime.osx-arm64": "8.9.1",
-          "IKVM.Image.runtime.osx-x64": "8.9.1",
-          "IKVM.Image.runtime.win-arm64": "8.9.1",
-          "IKVM.Image.runtime.win-x64": "8.9.1",
-          "IKVM.Image.runtime.win-x86": "8.9.1"
+          "IKVM.Image.runtime.linux-arm": "8.10.2",
+          "IKVM.Image.runtime.linux-arm64": "8.10.2",
+          "IKVM.Image.runtime.linux-musl-arm": "8.10.2",
+          "IKVM.Image.runtime.linux-musl-arm64": "8.10.2",
+          "IKVM.Image.runtime.linux-musl-x64": "8.10.2",
+          "IKVM.Image.runtime.linux-x64": "8.10.2",
+          "IKVM.Image.runtime.osx-arm64": "8.10.2",
+          "IKVM.Image.runtime.osx-x64": "8.10.2",
+          "IKVM.Image.runtime.win-arm64": "8.10.2",
+          "IKVM.Image.runtime.win-x64": "8.10.2",
+          "IKVM.Image.runtime.win-x86": "8.10.2"
         }
       },
       "IKVM.Image.runtime.linux-arm": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "S1mxF07VYxhmJEn8+2Qv8JSX5/Yq2aavpJ7TyOqdkD1Naupnrm9UcSQ0jf6siwsor0y6s2nMElhbWF6R+Eg+jw=="
+        "resolved": "8.10.2",
+        "contentHash": "WcuRsMUf7Vr1TcQCSP8jm6as3XcorTFicsM7PB6EJylakujWdys9oncrYu1Cf2A3NBxSuxvGH1BYUdGo1jr1cg=="
       },
       "IKVM.Image.runtime.linux-arm64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "5IFxJyRRunyEuw6YrViilNHcNFPvX3csb+j5PbKymmQ0Bci1PHImT27Sge4YzGbAN21BhpVE4wPxOlHBgK8s5Q=="
+        "resolved": "8.10.2",
+        "contentHash": "kX7ceQEaHPcaoFBcTVZSkp3NkRtDEJkD0u3wUdgThlqmlq5UTcx2H93G9HITCpc6rFExfc4ytTax4glDHqqBoA=="
       },
       "IKVM.Image.runtime.linux-musl-arm": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "zQ9btUQXhrqbueXvWU/vFwfplhn3WWw8t9/zvEd9XxiXCgmnpI+ZvSsApgz08PG3IE4lb00b0n/tullSe4nPpg=="
+        "resolved": "8.10.2",
+        "contentHash": "GJ/j/RZXsXlq7bRXcz1hymYBSfzBxDBKi8g7Mu616BtL/pC+SeTtW0zEmKOMURogvC3exEj02qciGFdezv/3MA=="
       },
       "IKVM.Image.runtime.linux-musl-arm64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "UqminOWe/uoxqO72U36veAHu5RRg0CAVQ2y+po0yQtLjzhRpjX5KgoNAplXhWDATDvVVWQUrtKF+A4bQapptyA=="
+        "resolved": "8.10.2",
+        "contentHash": "paV9sts4di6sTy71OtqogbXtI+5Ko0cTG38NoP8QmBZE9heRq/8T5TRNt5OMN/+ydhIuFOnyz2oVT2AsoKenqA=="
       },
       "IKVM.Image.runtime.linux-musl-x64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "TJ5nO78dii5sRHKcifzgNdW8X4pYSibejsatM0JB8/yy7jvoYly8PjUJqPgfbvFblUuFOd/B4SAWuATDNApLFA=="
+        "resolved": "8.10.2",
+        "contentHash": "ZaFYxU0EZ8WhaYcedfLZkizOa64netCFGITcOADR6wLIDc3/jl7vx+9gaaS3UgIH0s31AURqMxOYPuJdVk+hzA=="
       },
       "IKVM.Image.runtime.linux-x64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "JC41sw5xySUFWuRntIrEhawhcuG+pRZmcIlswugNw6rzXmIVRK6MibeU8aNx6WDdFLThAw8RJsIQRd+/WMyTgg=="
+        "resolved": "8.10.2",
+        "contentHash": "3uILGIXb+5UxeOw7wpG5bUVhzd64pT0GMFYHeo01cXKy+eYsq5Jz7tTwuWb8PabwhFmIdSRlDBnxwKkeYiO2pw=="
       },
       "IKVM.Image.runtime.osx-arm64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "fQBRzFzDiUk1u8KPEhtKv4EyVPfU6J0rCw/pVYEPE1ts/E+ufP+G7uQ1B/eqrFx2WZZ76dbAvo3lDuqry0xr5w=="
+        "resolved": "8.10.2",
+        "contentHash": "qISZOXT8lMJk2QxnTWQI67DxWkvctW+JZBmK/6AHPD8KCQM/P99+lnfUZJTG6amYqkEbopFeQyq5QU/gBOvZFA=="
       },
       "IKVM.Image.runtime.osx-x64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "MyBTLTn45FEP4cGozeTrVgTUgL64LIiEq7yjT/75YgOmiONBdt9PexGjHc0jobRpaU8Sdm8ZhowBQaHS1Gum5A=="
+        "resolved": "8.10.2",
+        "contentHash": "MbY9ZqGbkBWULjPkr1kuy8fbfsjN4+/Kh0qRzIOu/WJ6SwR1NolL5sxzai1Eixmj1cpV/pwPMO6f7ho2keO+hg=="
       },
       "IKVM.Image.runtime.win-arm64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "t/4T9+YPIaV/r412N7XdQs+hhmxGhkwR5blwQjsEt93gGjwuxuVyeK51PTNVG5JQWqZSZpdpBNALbcBeeMFW3A=="
+        "resolved": "8.10.2",
+        "contentHash": "mVRsCfor1LuPjRsSPfgKJpDCNk5Vpr6MorGbuDOwb8MOgHHlguklRtZjx6WRc+YDVYK6PEval3ED2qvasHPTyg=="
       },
       "IKVM.Image.runtime.win-x64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "LUSg+l0AIgZH+Ass91f/Ub8/v8d37YfUU891L7q3ii1JNa23jqk2VHUVvJOUcvKsraIYIw7hNNhPikQe5hL7qQ=="
+        "resolved": "8.10.2",
+        "contentHash": "f7EcNyyrQSA9/FEEeBjy/D6QWZonYBk6YvmomhiKMI0dJU2X/9au1Xb5JNo/YDOycS+g15RX/kprgetZ4FlyZA=="
       },
       "IKVM.Image.runtime.win-x86": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "mqnFuGdj9Y4ISgp6bXY8+XzaEj3vi9PdcZ29PIdZPIkp6Ro+OJwRwpISI5SHSVJhvftt0sYOKwHN7FMjSlNKUg=="
+        "resolved": "8.10.2",
+        "contentHash": "JP4qBNmUSG3J1gHtBS16oQ5PINFvbec5RS0r7SyoG+DrFSCyYOJmJ1JLHtRBBe3j+UESHR1hzY2vDGVeJRJ8HQ=="
       },
       "IKVM.MSBuild": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "Nx83AJu87XxOq9NQ9VVcuMLt8qEL/oew8frS02ld2wl9mY+U+9HIKGi5AlL7VDMRLDzywG/3k9IEBc2r/QJjWg==",
+        "resolved": "8.10.2",
+        "contentHash": "woSkMRowXxmcr2fmbwKj/1f/TJiaRQn7xSkLLnzkKxTHIHVIc2yA4XlIiYyq2BI/PC+V+sW56UJTOqvTgCMU9w==",
         "dependencies": {
-          "IKVM.MSBuild.Tools": "8.9.1"
+          "IKVM.MSBuild.Tools": "8.10.2"
         }
       },
       "IKVM.MSBuild.Tools": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "Jj3kkLdpRgjO7uVXxF8donGMmo+t/pQNTIHDvyJ5ULt6G+KWh2cwAni+ITS5j0gBMJkcra0Z6FKGpgeLus9n4g==",
+        "resolved": "8.10.2",
+        "contentHash": "usROWHf3oy9bBGtUDFxOvAfMSiaOl6jCh4iZlZmHGV5HG5uEFYG//OPQePT6MmTHYfyUw5rPbiYxv+0odAfBTQ==",
         "dependencies": {
-          "IKVM.MSBuild.Tools.runtime.linux-arm": "8.9.1",
-          "IKVM.MSBuild.Tools.runtime.linux-arm64": "8.9.1",
-          "IKVM.MSBuild.Tools.runtime.linux-x64": "8.9.1",
-          "IKVM.MSBuild.Tools.runtime.osx-arm64": "8.9.1",
-          "IKVM.MSBuild.Tools.runtime.osx-x64": "8.9.1",
-          "IKVM.MSBuild.Tools.runtime.win-arm64": "8.9.1",
-          "IKVM.MSBuild.Tools.runtime.win-x64": "8.9.1"
+          "IKVM.MSBuild.Tools.runtime.linux-arm": "8.10.2",
+          "IKVM.MSBuild.Tools.runtime.linux-arm64": "8.10.2",
+          "IKVM.MSBuild.Tools.runtime.linux-x64": "8.10.2",
+          "IKVM.MSBuild.Tools.runtime.osx-arm64": "8.10.2",
+          "IKVM.MSBuild.Tools.runtime.osx-x64": "8.10.2",
+          "IKVM.MSBuild.Tools.runtime.win-arm64": "8.10.2",
+          "IKVM.MSBuild.Tools.runtime.win-x64": "8.10.2"
         }
       },
       "IKVM.MSBuild.Tools.runtime.linux-arm": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "cOWEHgEO/Vu5j/fRXH4IYoaZd6ThJ01GHT8q4nqod0s/BI2TTz+vFI6P0oW+QqIEOpl97eZxdi8NP+zcn/wULQ=="
+        "resolved": "8.10.2",
+        "contentHash": "Yh77xQo6xJ4qSFYO6yt4xenuRWXSX3itaOXf0NmHdQBTK55ipwxtn++YsQPfd/WMJUvWdNsV66eYCtGqKIDKng=="
       },
       "IKVM.MSBuild.Tools.runtime.linux-arm64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "GlPaMLnnApUDfTgT/VQUtlvNmhHHTpEgQ2Tliamua1nJqzeyPRv7K6mKg7vVU7DSTrBCVBoU5EYkh9FadDfapw=="
+        "resolved": "8.10.2",
+        "contentHash": "98aWQ/B5sH5xop0yFDMPysL7polSe5TaOjvHxELHTHXmFp3lKAdMY7F5WB1VFvUx4UbYIZYxku/y3gQ/Di4NZg=="
       },
       "IKVM.MSBuild.Tools.runtime.linux-x64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "Scxr8+5q/sZH2Hsc8hjE78M7Q/BDvbw3jMoz/NNhKR1yC2Srn4NG/9glAXpYiGqa/xsuDE5ZZXsubzQWuOAJUA=="
+        "resolved": "8.10.2",
+        "contentHash": "+zGzn6AFLVLcU+MtoKBW444qrTEdSoMutGpPh+11yl34Xm6dCNxyi2nxTugavy2iTyKqz9rAVKHe0qSj5yifUg=="
       },
       "IKVM.MSBuild.Tools.runtime.osx-arm64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "WghG9+7I5amX6L5TzQ3lvEAYCmpsI7zeioK5nFIg32h+sfICpntiKOEPCvYxFVBNYc7mUlNjCktnyfTUS71xFg=="
+        "resolved": "8.10.2",
+        "contentHash": "72M1EtMvVpLkxlQM+TQC3MCfnAq79OXqRY7TZ4spVnXNRfJe6bkJmplbUnlBZ4sXZyrU+Urz9nqRAPObM29Uiw=="
       },
       "IKVM.MSBuild.Tools.runtime.osx-x64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "npZ3ABfS6Fwk6ZfPrtW5YEQPNyLCs1CiTy+0Zi/iMoBpSrMyOmHHaZsVhDQpGQeWc7Ztmo7mMRMcoyN/bYTnWQ=="
+        "resolved": "8.10.2",
+        "contentHash": "SCHlQNuBaashv3hPMq7b7LDTWj6NroQVq94G0p7P28YsajXcjp2mWeN/liSuSrnIQCP7QmOabGlqehZvZRp1XQ=="
       },
       "IKVM.MSBuild.Tools.runtime.win-arm64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "nPI5GT3oKt8YRXmFFSPzxZFFmKs1JBigLZlZ0kPirVdhHbBxmiD88fizwH0SHYms/CB8VoPVeHuBoyeci6AYrQ=="
+        "resolved": "8.10.2",
+        "contentHash": "vXvCik3dJSBYNHo+z75o9P+rcjW9I1UV2bdFp+Hxxezwxz6Xi0FuOU/PuWsoqzzj3oFfx//SEM5ZfYjqIFOykA=="
       },
       "IKVM.MSBuild.Tools.runtime.win-x64": {
         "type": "Transitive",
-        "resolved": "8.9.1",
-        "contentHash": "IuOQpKWTtZa5bRytTpDqVBgU2s4IUIZRKCl557a9KbwmJ5vPThve6aO6VTuEJmePGGwvPjIbHfPSz1BfejG49w=="
+        "resolved": "8.10.2",
+        "contentHash": "S8YiDPLWLlL23h01gh9MWCkRZ9yuJ6Xw4eI3/h65K1wpdb65z5nFcEOu7/sdgaPE3LAkGVa6mYGNKYnDQZGfzQ=="
       },
       "Microsoft.Build.Tasks.Git": {
         "type": "Transitive",
@@ -772,6 +792,11 @@
         "resolved": "8.0.0",
         "contentHash": "dk9JPxTCIevS75HyEQ0E4OVAFhB2N+V9ShCXf8Q6FkUQZDkgLI12y679Nym1YqsiSysuQskT7Z+6nUf3yab6Vw=="
       },
+      "System.Collections.Immutable": {
+        "type": "Transitive",
+        "resolved": "8.0.0",
+        "contentHash": "AurL6Y5BA1WotzlEvVaIDpqzpIPvYnnldxru8oXJU2yFxFUy3+pNXjXd1ymO+RA0rq0+590Q8gaz2l3Sr7fmqg=="
+      },
       "System.Data.Odbc": {
         "type": "Transitive",
         "resolved": "8.0.0",
@@ -782,8 +807,8 @@
       },
       "System.IO.Pipelines": {
         "type": "Transitive",
-        "resolved": "6.0.3",
-        "contentHash": "ryTgF+iFkpGZY1vRQhfCzX0xTdlV3pyaTTqRu2ETbEv+HlV7O6y7hyQURnghNIXvctl5DuZ//Dpks6HdL/Txgw=="
+        "resolved": "8.0.0",
+        "contentHash": "FHNOatmUq0sqJOkTx+UF/9YK1f180cnW5FVqnQMvYUN0elp6wFzbtPSiqbo1/ru8ICp43JM1i7kKkk6GsNGHlA=="
       },
       "System.Memory": {
         "type": "Transitive",
