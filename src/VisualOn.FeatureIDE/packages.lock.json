@@ -52,9 +52,9 @@
       },
       "Validation": {
         "type": "Direct",
-        "requested": "[2.5.51, )",
-        "resolved": "2.5.51",
-        "contentHash": "g/Aug7PVWaenlJ0QUyt/mEetngkQNsMCuNeRVXbcJED1nZS7JcK+GTU4kz3jcQ7bFuKfi8PF4ExXH7XSFNuSLQ=="
+        "requested": "[2.6.68, )",
+        "resolved": "2.6.68",
+        "contentHash": "5mZ+aXsYQnr3Wxz5O2tmbgPaa5kn9R+ZlfnPyGBogXI2sh4uTiHtvU++N4bURtn9vmDYIu2Zu323K9hFz9poXQ=="
       },
       "IKVM.ByteCode": {
         "type": "Transitive",
@@ -324,9 +324,9 @@
       },
       "Validation": {
         "type": "Direct",
-        "requested": "[2.5.51, )",
-        "resolved": "2.5.51",
-        "contentHash": "g/Aug7PVWaenlJ0QUyt/mEetngkQNsMCuNeRVXbcJED1nZS7JcK+GTU4kz3jcQ7bFuKfi8PF4ExXH7XSFNuSLQ=="
+        "requested": "[2.6.68, )",
+        "resolved": "2.6.68",
+        "contentHash": "5mZ+aXsYQnr3Wxz5O2tmbgPaa5kn9R+ZlfnPyGBogXI2sh4uTiHtvU++N4bURtn9vmDYIu2Zu323K9hFz9poXQ=="
       },
       "IKVM.ByteCode": {
         "type": "Transitive",
@@ -572,9 +572,9 @@
       },
       "Validation": {
         "type": "Direct",
-        "requested": "[2.5.51, )",
-        "resolved": "2.5.51",
-        "contentHash": "g/Aug7PVWaenlJ0QUyt/mEetngkQNsMCuNeRVXbcJED1nZS7JcK+GTU4kz3jcQ7bFuKfi8PF4ExXH7XSFNuSLQ=="
+        "requested": "[2.6.68, )",
+        "resolved": "2.6.68",
+        "contentHash": "5mZ+aXsYQnr3Wxz5O2tmbgPaa5kn9R+ZlfnPyGBogXI2sh4uTiHtvU++N4bURtn9vmDYIu2Zu323K9hFz9poXQ=="
       },
       "IKVM.ByteCode": {
         "type": "Transitive",
