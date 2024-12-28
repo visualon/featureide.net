@@ -79,9 +79,9 @@
       },
       "NUnit": {
         "type": "Direct",
-        "requested": "[4.3.1, )",
-        "resolved": "4.3.1",
-        "contentHash": "798HDjDWfo2/BVWAeqIny3hRP2z/uk2EVeTeFB69EGHQWxFZ1oVXRaobtOdkzBF4b/olUuWXDJzgtW63aBRDxg==",
+        "requested": "[4.3.2, )",
+        "resolved": "4.3.2",
+        "contentHash": "puVXayXNmEu7MFQSUswGmUjOy3M3baprMbkLl5PAutpeDoGTr+jPv33qAYsqxywi2wJCq8l/O3EhHoLulPE1iQ==",
         "dependencies": {
           "System.Memory": "4.6.0",
           "System.Threading.Tasks.Extensions": "4.5.4",
@@ -436,9 +436,9 @@
       },
       "NUnit": {
         "type": "Direct",
-        "requested": "[4.3.1, )",
-        "resolved": "4.3.1",
-        "contentHash": "798HDjDWfo2/BVWAeqIny3hRP2z/uk2EVeTeFB69EGHQWxFZ1oVXRaobtOdkzBF4b/olUuWXDJzgtW63aBRDxg=="
+        "requested": "[4.3.2, )",
+        "resolved": "4.3.2",
+        "contentHash": "puVXayXNmEu7MFQSUswGmUjOy3M3baprMbkLl5PAutpeDoGTr+jPv33qAYsqxywi2wJCq8l/O3EhHoLulPE1iQ=="
       },
       "NUnit.Analyzers": {
         "type": "Direct",
@@ -795,9 +795,9 @@
       },
       "NUnit": {
         "type": "Direct",
-        "requested": "[4.3.1, )",
-        "resolved": "4.3.1",
-        "contentHash": "798HDjDWfo2/BVWAeqIny3hRP2z/uk2EVeTeFB69EGHQWxFZ1oVXRaobtOdkzBF4b/olUuWXDJzgtW63aBRDxg=="
+        "requested": "[4.3.2, )",
+        "resolved": "4.3.2",
+        "contentHash": "puVXayXNmEu7MFQSUswGmUjOy3M3baprMbkLl5PAutpeDoGTr+jPv33qAYsqxywi2wJCq8l/O3EhHoLulPE1iQ=="
       },
       "NUnit.Analyzers": {
         "type": "Direct",
