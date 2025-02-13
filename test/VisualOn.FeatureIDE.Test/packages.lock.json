@@ -44,20 +44,20 @@
       },
       "NExpect": {
         "type": "Direct",
-        "requested": "[2.0.113, )",
-        "resolved": "2.0.113",
-        "contentHash": "nvMtTywYaOTBErb1/pB75aqK39YQtS4d0ZSh/bm2n/838tTjiiaRXqBXpa4LyAh+sLpDQ5yXTWvOSa/Q7ukIWw==",
+        "requested": "[2.0.114, )",
+        "resolved": "2.0.114",
+        "contentHash": "KMmOUCTyiq/phbdiKHR+OZUhR8pRJbHjiI5re/c35HU2XS9/Cvg6A8lKL8xYRUYHddGkbNdFaJsCQZnNK1xpqQ==",
         "dependencies": {
           "System.Runtime.InteropServices.RuntimeInformation": "4.3.0"
         }
       },
       "NExpect.Matchers.NSubstitute": {
         "type": "Direct",
-        "requested": "[2.0.113, )",
-        "resolved": "2.0.113",
-        "contentHash": "IdhdSy8lZSse/+rDb5hOOdXY8yoFRsfwoPtHih1isLRa1y0qKXQ6DPq52rfpATiMCVBHlxsQLFs6R3idgxzjOg==",
+        "requested": "[2.0.114, )",
+        "resolved": "2.0.114",
+        "contentHash": "Y81nBOqBRMZpoKXZhj2OXLod7ucMgBCfn4NXZCEJqWr6Spl9LXwgUXsSgMv3gvQoZ+K1GYMilsiq7KCJeKHtew==",
         "dependencies": {
-          "NExpect": "2.0.113",
+          "NExpect": "2.0.114",
           "NSubstitute": "5.1.0"
         }
       },
@@ -437,17 +437,17 @@
       },
       "NExpect": {
         "type": "Direct",
-        "requested": "[2.0.113, )",
-        "resolved": "2.0.113",
-        "contentHash": "nvMtTywYaOTBErb1/pB75aqK39YQtS4d0ZSh/bm2n/838tTjiiaRXqBXpa4LyAh+sLpDQ5yXTWvOSa/Q7ukIWw=="
+        "requested": "[2.0.114, )",
+        "resolved": "2.0.114",
+        "contentHash": "KMmOUCTyiq/phbdiKHR+OZUhR8pRJbHjiI5re/c35HU2XS9/Cvg6A8lKL8xYRUYHddGkbNdFaJsCQZnNK1xpqQ=="
       },
       "NExpect.Matchers.NSubstitute": {
         "type": "Direct",
-        "requested": "[2.0.113, )",
-        "resolved": "2.0.113",
-        "contentHash": "IdhdSy8lZSse/+rDb5hOOdXY8yoFRsfwoPtHih1isLRa1y0qKXQ6DPq52rfpATiMCVBHlxsQLFs6R3idgxzjOg==",
+        "requested": "[2.0.114, )",
+        "resolved": "2.0.114",
+        "contentHash": "Y81nBOqBRMZpoKXZhj2OXLod7ucMgBCfn4NXZCEJqWr6Spl9LXwgUXsSgMv3gvQoZ+K1GYMilsiq7KCJeKHtew==",
         "dependencies": {
-          "NExpect": "2.0.113",
+          "NExpect": "2.0.114",
           "NSubstitute": "5.1.0"
         }
       },
@@ -832,17 +832,17 @@
       },
       "NExpect": {
         "type": "Direct",
-        "requested": "[2.0.113, )",
-        "resolved": "2.0.113",
-        "contentHash": "nvMtTywYaOTBErb1/pB75aqK39YQtS4d0ZSh/bm2n/838tTjiiaRXqBXpa4LyAh+sLpDQ5yXTWvOSa/Q7ukIWw=="
+        "requested": "[2.0.114, )",
+        "resolved": "2.0.114",
+        "contentHash": "KMmOUCTyiq/phbdiKHR+OZUhR8pRJbHjiI5re/c35HU2XS9/Cvg6A8lKL8xYRUYHddGkbNdFaJsCQZnNK1xpqQ=="
       },
       "NExpect.Matchers.NSubstitute": {
         "type": "Direct",
-        "requested": "[2.0.113, )",
-        "resolved": "2.0.113",
-        "contentHash": "IdhdSy8lZSse/+rDb5hOOdXY8yoFRsfwoPtHih1isLRa1y0qKXQ6DPq52rfpATiMCVBHlxsQLFs6R3idgxzjOg==",
+        "requested": "[2.0.114, )",
+        "resolved": "2.0.114",
+        "contentHash": "Y81nBOqBRMZpoKXZhj2OXLod7ucMgBCfn4NXZCEJqWr6Spl9LXwgUXsSgMv3gvQoZ+K1GYMilsiq7KCJeKHtew==",
         "dependencies": {
-          "NExpect": "2.0.113",
+          "NExpect": "2.0.114",
           "NSubstitute": "5.1.0"
         }
       },
