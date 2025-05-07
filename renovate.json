@@ -46,7 +46,7 @@
     {
       "customType": "regex",
       "description": "Update jar versions",
-      "fileMatch": ["^Directory\\.Build\\.props$"],
+      "managerFilePatterns": ["/^Directory\\.Build\\.props$/"],
       "matchStringsStrategy": "any",
       "matchStrings": [
         "<!-- renovate: datasource=(?<datasource>.+?) depName=(?<depName>.+?)(?: (?:packageName)=(?<packageName>.+?))?(?: versioning=(?<versioning>.+?))? -->\\s+<[^>]+>(?<currentValue>.+?)<\\/[^>]+>"
