@@ -6,11 +6,11 @@ repositories {
   mavenCentral()
 }
 
-java {
-  toolchain {
-    languageVersion = JavaLanguageVersion.of(11)
-  }
-}
+// java {
+//   toolchain {
+//     languageVersion = JavaLanguageVersion.of(11)
+//   }
+// }
 
 version = '0.0.1'
 
@@ -25,4 +25,7 @@ test {
 dependencies {
   implementation fileTree(include: ['*.jar'], dir: 'libs')
   testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
+  // https://stackoverflow.com/a/79614468/10109857
+  testRuntimeOnly 'org.junit.platform:junit-platform-engine:1.12.2'
+  testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.12.2'
 }
