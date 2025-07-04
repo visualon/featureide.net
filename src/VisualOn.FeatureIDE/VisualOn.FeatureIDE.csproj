@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net472;net6.0;net8.0</TargetFrameworks>
-    <TargetFrameworks Condition="'$(NoNet4)' == 'true'">net6.0;net8.0</TargetFrameworks>
+    <TargetFrameworks>net472;net8.0</TargetFrameworks>
+    <TargetFrameworks Condition="'$(NoNet4)' == 'true'">net8.0</TargetFrameworks>
     <Product>FeatureIDE</Product>
     <Copyright>VisualOn GmbH $([System.DateTime]::Now.ToString("yyyy"))</Copyright>
     <Authors>VisualOn</Authors>

@@ -8,7 +8,7 @@ IKVM compiled dotnet version of the [FeatureIDE](https://featureide.github.io) l
 
 This is the IKVM version; which is to say that this is compiled from Java to .NET
 
-Currently `net472`, `net6.0` and `net8.0` are the minimum supported runtimes.
+Currently `net472` and `net8.0` are the minimum supported runtimes.
 
 ## Changes
 
