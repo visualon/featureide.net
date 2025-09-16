@@ -44,20 +44,20 @@
       },
       "NExpect": {
         "type": "Direct",
-        "requested": "[2.0.121, )",
-        "resolved": "2.0.121",
-        "contentHash": "lUfGX5SzlAuGFmEu3+UfVTPBIfX83Zlj5l0iHokoy8OkvhfNUwc+/nMyAAt6Pnyr3mN85tSR+Zo5ST92zd9dXA==",
+        "requested": "[2.0.122, )",
+        "resolved": "2.0.122",
+        "contentHash": "jPkqyJ0pmPvgY36H90b0PH4WOq/hiKY2shzE4Oy+Xb7yi3tjMLN/uqneaFFVragnFIRDhem0oGG0vywoxnvQQQ==",
         "dependencies": {
           "System.Runtime.InteropServices.RuntimeInformation": "4.3.0"
         }
       },
       "NExpect.Matchers.NSubstitute": {
         "type": "Direct",
-        "requested": "[2.0.121, )",
-        "resolved": "2.0.121",
-        "contentHash": "BTijRFVQD1zom/0gOopjfSoMVNDqI+JxYukzgHA3MBzj1i/bmUA+3yk0ZRdD/Y56pr2DvB7feFN7TsKUc8VIdQ==",
+        "requested": "[2.0.122, )",
+        "resolved": "2.0.122",
+        "contentHash": "VnnyZ/h8ycEFYjGN4b5xCAup2zsebZqper/d9rTWyUpiFYnnrqgdajuPEG7VlY5Kr7Ds5Z67epdws9WwP+JlOA==",
         "dependencies": {
-          "NExpect": "2.0.121",
+          "NExpect": "2.0.122",
           "NSubstitute": "5.1.0"
         }
       },
@@ -512,17 +512,17 @@
       },
       "NExpect": {
         "type": "Direct",
-        "requested": "[2.0.121, )",
-        "resolved": "2.0.121",
-        "contentHash": "lUfGX5SzlAuGFmEu3+UfVTPBIfX83Zlj5l0iHokoy8OkvhfNUwc+/nMyAAt6Pnyr3mN85tSR+Zo5ST92zd9dXA=="
+        "requested": "[2.0.122, )",
+        "resolved": "2.0.122",
+        "contentHash": "jPkqyJ0pmPvgY36H90b0PH4WOq/hiKY2shzE4Oy+Xb7yi3tjMLN/uqneaFFVragnFIRDhem0oGG0vywoxnvQQQ=="
       },
       "NExpect.Matchers.NSubstitute": {
         "type": "Direct",
-        "requested": "[2.0.121, )",
-        "resolved": "2.0.121",
-        "contentHash": "BTijRFVQD1zom/0gOopjfSoMVNDqI+JxYukzgHA3MBzj1i/bmUA+3yk0ZRdD/Y56pr2DvB7feFN7TsKUc8VIdQ==",
+        "requested": "[2.0.122, )",
+        "resolved": "2.0.122",
+        "contentHash": "VnnyZ/h8ycEFYjGN4b5xCAup2zsebZqper/d9rTWyUpiFYnnrqgdajuPEG7VlY5Kr7Ds5Z67epdws9WwP+JlOA==",
         "dependencies": {
-          "NExpect": "2.0.121",
+          "NExpect": "2.0.122",
           "NSubstitute": "5.1.0"
         }
       },
