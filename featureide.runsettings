@@ -20,4 +20,19 @@
       </DataCollector>
     </DataCollectors>
   </DataCollectionRunSettings>
+
+  <LoggerRunSettings>
+    <Loggers>
+      <Logger friendlyName="console" enabled="True">
+        <Configuration>
+          <Verbosity>minimal</Verbosity>
+        </Configuration>
+      </Logger>
+      <Logger friendlyName="junit" enabled="True">
+        <Configuration>
+          <LogFileName>{assembly}.{framework}.junit.xml</LogFileName>
+        </Configuration>
+      </Logger>
+    </Loggers>
+  </LoggerRunSettings>
 </RunSettings>

@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <!-- <PackageReference Include="IKVM" /> -->
+    <PackageReference Include="JunitXml.TestLogger" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
     <PackageReference Include="NExpect" />
     <PackageReference Include="NExpect.Matchers.NSubstitute" />
