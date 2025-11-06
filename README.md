@@ -1,7 +1,8 @@
 # FeatureIDE.net
 
 [![build](https://github.com/visualon/featureide.net/actions/workflows/build.yml/badge.svg)](https://github.com/visualon/featureide.net/actions/workflows/build.yml)
-[![github-release](https://badgen.net/github/release/visualon/featureide.net?icon=github)](https://github.com/visualon/featureide.net/releases/latest)
+[![github-release](https://img.shields.io/github/v/release/visualon/featureide.net?logo=github
+)](https://github.com/visualon/featureide.net/releases/latest)
 [![nuget](https://img.shields.io/nuget/v/VisualOn.FeatureIDE?label=VisualOn.FeatureIDE&logo=nuget)](https://www.nuget.org/packages/VisualOn.FeatureIDE)
 [![codecov](https://codecov.io/github/visualon/featureide.net/graph/badge.svg?token=Ww7lDX3tNX)](https://codecov.io/github/visualon/featureide.net)
 ![LICENSE](https://img.shields.io/github/license/visualon/featureide.net)
