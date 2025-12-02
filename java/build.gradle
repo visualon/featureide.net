@@ -7,7 +7,9 @@ repositories {
 }
 
 java {
-  sourceCompatibility = JavaVersion.VERSION_11
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(17)
+  }
 }
 
 version = '0.0.1'
