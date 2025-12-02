@@ -35,6 +35,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nuget-
 
+      - uses: actions/setup-dotnet@2016bd2012dba4e32de620c46fe006a3ac9f0602 # v5.0.1
+        with:
+          dotnet-version: 10
+          dotnet-quality: ga
+
       - name: prepare
         run: dotnet restore
 

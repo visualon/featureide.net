@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net48;net8.0</TargetFrameworks>
-    <TargetFrameworks Condition="'$(NoNet4)' == 'true'">net8.0</TargetFrameworks>
+    <TargetFrameworks>net48;net8.0;net10.0</TargetFrameworks>
+    <TargetFrameworks Condition="'$(NoNet4)' == 'true'">net8.0;net10.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
@@ -42,11 +42,12 @@
     <Reference Include="$(SolutionDir)src\VisualOn.FeatureIDE\bin\$(Configuration)\net472\de.ovgu.featureide.fm.dll" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
-    <Reference Include="$(SolutionDir)src\VisualOn.FeatureIDE\bin\$(Configuration)\net8.0\org.sat4j.core.dll" />
-    <Reference Include="$(SolutionDir)src\VisualOn.FeatureIDE\bin\$(Configuration)\net8.0\org.sat4j.pb.dll" />
-    <Reference Include="$(SolutionDir)src\VisualOn.FeatureIDE\bin\$(Configuration)\net8.0\de.ovgu.featureide.fm.dll" />
+  <ItemGroup Condition="'$(TargetFramework)' != 'net48'">
+    <Reference Include="$(SolutionDir)src\VisualOn.FeatureIDE\bin\$(Configuration)\$(TargetFramework)\org.sat4j.core.dll" />
+    <Reference Include="$(SolutionDir)src\VisualOn.FeatureIDE\bin\$(Configuration)\$(TargetFramework)\org.sat4j.pb.dll" />
+    <Reference Include="$(SolutionDir)src\VisualOn.FeatureIDE\bin\$(Configuration)\$(TargetFramework)\de.ovgu.featureide.fm.dll" />
   </ItemGroup>
+
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\VisualOn.FeatureIDE\VisualOn.FeatureIDE.csproj" />
