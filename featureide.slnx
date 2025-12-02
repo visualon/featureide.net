@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Build.targets" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/VisualOn.FeatureIDE/VisualOn.FeatureIDE.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/VisualOn.FeatureIDE.Test/VisualOn.FeatureIDE.Test.csproj" />
+  </Folder>
+</Solution>
