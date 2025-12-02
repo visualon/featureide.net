@@ -21,8 +21,8 @@ test {
 }
 
 dependencies {
-  implementation 'org.ow2.sat4j:org.ow2.sat4j.core:2.3.5'
-  implementation 'org.ow2.sat4j:org.ow2.sat4j.pb:2.3.5'
+  implementation 'org.ow2.sat4j:org.ow2.sat4j.core:2.3.6'
+  implementation 'org.ow2.sat4j:org.ow2.sat4j.pb:2.3.6'
   implementation fileTree(include: ['*.jar'], dir: 'libs')
   testImplementation 'org.junit.jupiter:junit-jupiter:5.14.1'
   // https://docs.gradle.org/current/userguide/upgrading_version_8.html#test_framework_implementation_dependencies
