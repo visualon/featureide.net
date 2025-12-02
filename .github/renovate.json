@@ -3,15 +3,9 @@
   "extends": ["local>visualon/renovate-config"],
   "packageRules": [
     {
-      "description": "Don't automerge until we've good tests",
-      "matchDepNames": ["IKVM", "sat4j", "featureide", "org.sat4j.**"],
-      "automerge": false,
-      "semanticCommitType": "fix"
-    },
-    {
-      "description": "Group sat4j updates",
-      "matchSourceUrls": ["https://github.com/visualon/sat4j.net"],
-      "groupName": "Sat4j packages"
+      "description": "group sat4j packages",
+      "matchDepNames": ["org.ow2.sat4j:**", "sat4j"],
+      "groupName": "sat4j"
     },
     {
       "description": "Automerge test deps",
@@ -23,6 +17,8 @@
         "https://github.com/fluffynuts/NExpect",
         "https://github.com/microsoft/vstest",
         "https://github.com/Microsoft/MSBuildSdks",
+        "https://github.com/nsubstitute/**",
+        "https://github.com/nunit/**",
         "https://github.com/spekt/testlogger",
         "https://github.com/theramis/Snapper",
         "https://nsubstitute.github.io/"
@@ -30,17 +26,14 @@
       "automerge": true
     },
     {
-      "description": "Automerge test deps",
-      "automerge": true,
-      "matchSourceUrls": ["https://github.com/nsubstitute/**", "https://github.com/nunit/**"]
-    },
-    {
-      "matchDepNames": ["sat4j"],
-      "registryUrls": ["https://repository.ow2.org/nexus/content/repositories/releases"]
-    },
-    {
       "matchFileNames": ["java/**"],
       "semanticCommitType": "chore"
+    },
+    {
+      "description": "Don't automerge until we've good tests",
+      "matchDepNames": ["IKVM", "sat4j", "featureide", "org.ow2.sat4j:**"],
+      "automerge": false,
+      "semanticCommitType": "fix"
     }
   ],
   "customManagers": [
