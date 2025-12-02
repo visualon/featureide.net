@@ -19,8 +19,7 @@
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
     <RestoreLockedMode Condition="'$(CI)' == 'true'">true</RestoreLockedMode>
 
-
-    <!-- 2.3.6 version is broken -->
+    <!-- renovate: datasource=maven depName=sat4j packageName=org.ow2.sat4j:org.ow2.sat4j.pom -->
     <Sat4JVersion>2.3.5</Sat4JVersion>
     <!-- renovate: datasource=github-releases depName=featureide packageName=FeatureIDE/FeatureIDE -->
     <FeatureIDEVersion>v3.11.1</FeatureIDEVersion>
