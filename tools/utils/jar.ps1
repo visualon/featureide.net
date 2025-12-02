@@ -5,7 +5,7 @@
 function get-jar {
   param (
     [Parameter(Mandatory)]
-    [ValidateSet('de.ovgu.featureide.fm', 'org.sat4j.core', 'org.sat4j.pb')]
+    [ValidateSet('de.ovgu.featureide.fm')]
     [string] $name,
 
     [Parameter(Mandatory)]
@@ -16,11 +16,7 @@ function get-jar {
     $uri = "https://github.com/FeatureIDE/FeatureIDE/releases/download/v$version/de.ovgu.featureide.lib.fm-v$version.jar"
   }
   else {
-    # too big, so use official sat4j libs
-    # $uri = "https://raw.githubusercontent.com/FeatureIDE/FeatureIDE/v$version/plugins/de.ovgu.featureide.fm.core/lib/$name.jar"
-    $n = $name -replace 'org.sat4j.', ''
-    $baseUri = 'https://repository.ow2.org/nexus/content/repositories/releases/org/ow2/sat4j'
-    $uri = "$baseUri/org.ow2.sat4j.$n/$version/org.ow2.sat4j.$n-$version.jar"
+    throw "$name is not supported"
   }
 
   if ((Test-Path $file)) {
@@ -35,7 +31,7 @@ function get-jar {
 function copy-jar {
   param (
     [Parameter(Mandatory)]
-    [ValidateSet('de.ovgu.featureide.fm', 'org.sat4j.core', 'org.sat4j.pb')]
+    [ValidateSet('de.ovgu.featureide.fm')]
     [string] $name,
 
     [Parameter(Mandatory)]

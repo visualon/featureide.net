@@ -18,9 +18,5 @@ if (Test-Path $libs) {
 New-Item $libs -ItemType Directory -ErrorAction SilentlyContinue | Out-Null
 
 get-jar -name 'de.ovgu.featureide.fm' -version $jarVersion
-get-jar -name 'org.sat4j.core' -version $SAT4J_VERSION
-get-jar -name 'org.sat4j.pb' -version $SAT4J_VERSION
 copy-jar -name 'de.ovgu.featureide.fm' -version $jarVersion -target $libs
-copy-jar -name 'org.sat4j.core' -version $SAT4J_VERSION -target $libs
-copy-jar -name 'org.sat4j.pb' -version $SAT4J_VERSION -target $libs
 

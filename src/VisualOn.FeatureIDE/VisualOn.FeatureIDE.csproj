@@ -46,28 +46,28 @@
 
   <Target Name="DownloadJars" BeforeTargets="CollectPackageReferences" Condition="'$(TargetFramework)' == ''">
     <DownloadFile
-      SourceUrl="https://repository.ow2.org/nexus/content/repositories/releases/org/ow2/sat4j/org.ow2.sat4j.core/$(Sat4JVersion)/org.ow2.sat4j.core-$(Sat4JVersion).jar"
+      SourceUrl="https://repo.maven.apache.org/maven2/org/ow2/sat4j/org.ow2.sat4j.core/$(Sat4JVersion)/org.ow2.sat4j.core-$(Sat4JVersion).jar"
       DestinationFolder="$(MSBuildProjectDirectory)\bin"
-      DestinationFileName="org.sat4j.core.jar"
+      DestinationFileName="org.sat4j.core-$(Sat4JVersion).jar"
       SkipUnchangedFiles="true">
     </DownloadFile>
     <DownloadFile
-      SourceUrl="https://repository.ow2.org/nexus/content/repositories/releases/org/ow2/sat4j/org.ow2.sat4j.pb/$(Sat4JVersion)/org.ow2.sat4j.pb-$(Sat4JVersion).jar"
+      SourceUrl="https://repo.maven.apache.org/maven2/org/ow2/sat4j/org.ow2.sat4j.pb/$(Sat4JVersion)/org.ow2.sat4j.pb-$(Sat4JVersion).jar"
       DestinationFolder="$(MSBuildProjectDirectory)\bin"
-      DestinationFileName="org.sat4j.pb.jar"
+      DestinationFileName="org.sat4j.pb-$(Sat4JVersion).jar"
       SkipUnchangedFiles="true">
     </DownloadFile>
     <DownloadFile
       SourceUrl="https://github.com/FeatureIDE/FeatureIDE/releases/download/$(FeatureIDEVersion)/de.ovgu.featureide.lib.fm-$(FeatureIDEVersion).jar"
       DestinationFolder="$(MSBuildProjectDirectory)\bin"
-      DestinationFileName="de.ovgu.featureide.fm.jar"
+      DestinationFileName="de.ovgu.featureide.fm-$(FeatureIDEVersion).jar"
       SkipUnchangedFiles="true">
     </DownloadFile>
   </Target>
 
   <Target Name="AddJars">
     <ItemGroup>
-      <IkvmReference Include="$(MSBuildProjectDirectory)\bin\org.sat4j.core.jar">
+      <IkvmReference Include="$(MSBuildProjectDirectory)\bin\org.sat4j.core-$(Sat4JVersion).jar">
         <AssemblyName>org.sat4j.core</AssemblyName>
         <AssemblyVersion>$(Sat4JVersion.Split(`.`)[0]).0.0.0</AssemblyVersion>
         <AssemblyFileVersion>$(Sat4JVersion).0</AssemblyFileVersion>
@@ -76,22 +76,22 @@
         <DisableAutoAssemblyName>true</DisableAutoAssemblyName>
         <DisableAutoAssemblyVersion>true</DisableAutoAssemblyVersion>
       </IkvmReference>
-      <IkvmReference Include="$(MSBuildProjectDirectory)\bin\org.sat4j.pb.jar">
+      <IkvmReference Include="$(MSBuildProjectDirectory)\bin\org.sat4j.pb-$(Sat4JVersion).jar">
         <AssemblyName>org.sat4j.pb</AssemblyName>
         <AssemblyVersion>$(Sat4JVersion.Split(`.`)[0]).0.0.0</AssemblyVersion>
         <AssemblyFileVersion>$(Sat4JVersion)</AssemblyFileVersion>
         <KeyFile>$(SolutionDir)featureide.snk</KeyFile>
-        <References>$(MSBuildProjectDirectory)\bin\org.sat4j.core.jar</References>
+        <References>$(MSBuildProjectDirectory)\bin\org.sat4j.core-$(Sat4JVersion).jar</References>
         <Debug>false</Debug>
         <DisableAutoAssemblyName>true</DisableAutoAssemblyName>
         <DisableAutoAssemblyVersion>true</DisableAutoAssemblyVersion>
       </IkvmReference>
-      <IkvmReference Include="$(MSBuildProjectDirectory)\bin\de.ovgu.featureide.fm.jar">
+      <IkvmReference Include="$(MSBuildProjectDirectory)\bin\de.ovgu.featureide.fm-$(FeatureIDEVersion).jar">
         <AssemblyName>de.ovgu.featureide.fm</AssemblyName>
         <AssemblyVersion>$(FeatureIDEVersion.Replace(`v`, ``).Split(`.`)[0]).0.0.0</AssemblyVersion>
         <AssemblyFileVersion>$(FeatureIDEVersion.Replace(`v`, ``))</AssemblyFileVersion>
         <KeyFile>$(SolutionDir)featureide.snk</KeyFile>
-        <References>$(MSBuildProjectDirectory)\bin\org.sat4j.core.jar;$(MSBuildProjectDirectory)\bin\org.sat4j.pb.jar</References>
+        <References>$(MSBuildProjectDirectory)\bin\org.sat4j.core-$(Sat4JVersion).jar;$(MSBuildProjectDirectory)\bin\org.sat4j.pb-$(Sat4JVersion).jar</References>
         <Debug>false</Debug>
         <DisableAutoAssemblyName>true</DisableAutoAssemblyName>
         <DisableAutoAssemblyVersion>true</DisableAutoAssemblyVersion>
