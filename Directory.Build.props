@@ -22,7 +22,7 @@
     <!-- renovate: datasource=maven depName=sat4j packageName=org.ow2.sat4j:org.ow2.sat4j.pom -->
     <Sat4JVersion>2.3.5</Sat4JVersion>
     <!-- renovate: datasource=github-releases depName=featureide packageName=FeatureIDE/FeatureIDE -->
-    <FeatureIDEVersion>v3.11.1</FeatureIDEVersion>
+    <FeatureIDEVersion>v3.12.0</FeatureIDEVersion>
 
 
     <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)\featureide.snk</AssemblyOriginatorKeyFile>
