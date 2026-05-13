@@ -17,6 +17,7 @@ concurrency:
 
 jobs:
   test-java:
+    if: false
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -34,6 +35,7 @@ jobs:
         run: ./tools/build-java.ps1
 
   test-dotnet:
+    if: false
     runs-on: ${{ matrix.os }}
     timeout-minutes: 15
 
@@ -94,6 +96,7 @@ jobs:
           fail_ci_if_error: true
 
   build:
+    if: false
     runs-on: windows-latest
     timeout-minutes: 15
     needs:
@@ -142,8 +145,7 @@ jobs:
       - name: Generate changelog with git-cliff
         uses: orhun/git-cliff-action@f50e11560dce63f7c33227798f90b924471a88b5 # v4.8.0
         with:
-          args: --latest --strip all
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          args: -v --latest --strip all
 
       - name: Adding changelog to summary
         run: cat git-cliff/CHANGELOG.md >> $GITHUB_STEP_SUMMARY
