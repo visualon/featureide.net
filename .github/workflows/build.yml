@@ -131,11 +131,7 @@ jobs:
           path: bin/*.nupkg
 
   changelog:
-    needs:
-      - build
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
@@ -146,8 +142,7 @@ jobs:
       - name: Generate changelog with git-cliff
         uses: orhun/git-cliff-action@f50e11560dce63f7c33227798f90b924471a88b5 # v4.8.0
         with:
-          args: --latest --strip all
-          output: 'CHANGELOG.md'
+          args: --latest --strip all --output CHANGELOG.md
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Adding changelog to summary
