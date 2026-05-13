@@ -142,10 +142,16 @@ jobs:
           filter: blob:none
           show-progress: false
 
+      - name: create changelog
+        run: touch CHANGELOG.md
+
       - name: Generate changelog with git-cliff
         uses: orhun/git-cliff-action@f50e11560dce63f7c33227798f90b924471a88b5 # v4.8.0
         with:
           args: -v --latest --strip all
+        env:
+          DEBUG: true
+          OUTPUT: CHANGELOG.md
 
       - name: Adding changelog to summary
-        run: cat git-cliff/CHANGELOG.md >> $GITHUB_STEP_SUMMARY
+        run: cat CHANGELOG.md >> $GITHUB_STEP_SUMMARY
