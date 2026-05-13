@@ -149,3 +149,6 @@ jobs:
           args: --latest --strip all
           output: 'CHANGELOG.md'
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Adding changelog to summary
+        run: cat CHANGELOG.md >> $GITHUB_STEP_SUMMARY
