@@ -85,7 +85,9 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 0 # Important for changelog
-          filter: blob:none
+          # doesn't work with git-cliff
+          # https://github.com/orhun/git-cliff/issues/1521
+          # filter: blob:none
           show-progress: false
 
       - name: prepare version
@@ -94,12 +96,13 @@ jobs:
       - name: Generate changelog with git-cliff
         uses: orhun/git-cliff-action@f50e11560dce63f7c33227798f90b924471a88b5 # v4.8.0
         with:
-          args: --latest --strip all --output CHANGELOG.md
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          args: --latest --strip all
+        env:
+          OUTPUT: CHANGELOG.md
 
       - name: Create Release
         uses: ncipollo/release-action@339a81892b84b4eeb0f6e744e4574d79d0d9b8dd # v1.21.0
         with:
-          bodyFile: 'CHANGELOG.md'
+          bodyFile: CHANGELOG.md
           name: ${{ env.VERSION }}
           prerelease: ${{ contains(github.ref_name, '-') }}
