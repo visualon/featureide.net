@@ -139,11 +139,8 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 0 # Important for changelog
-          filter: blob:none
+          # filter: blob:none
           show-progress: false
-
-      - name: create changelog
-        run: touch CHANGELOG.md
 
       - name: Generate changelog with git-cliff
         uses: orhun/git-cliff-action@f50e11560dce63f7c33227798f90b924471a88b5 # v4.8.0
